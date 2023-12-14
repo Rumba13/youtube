@@ -1,0 +1,3 @@
+@mixin adaptive-font($min-font-size, $max-font-size, $multiplier) {
+  font-size: max($min-font-size, min($max-font-size, $multiplier));
+}
