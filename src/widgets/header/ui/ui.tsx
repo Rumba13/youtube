@@ -1,7 +1,14 @@
 import "./styles.scss";
+import {UserActions} from "../../user-actions";
+import {Search} from "../../search";
+import {Logo} from "./logo";
+import {MenuIcon} from "./menu-icon";
 
 export function Header() {
     return <header className="header">
-        header
+        <MenuIcon/>
+        <Logo/>
+        <Search/>
+        <UserActions/>
     </header>
 }

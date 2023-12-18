@@ -1,0 +1,30 @@
+.menu-icon {
+  position: relative;
+
+  &:hover .menu-icon__interaction {
+    background-color: #272727;
+  }
+}
+
+.menu-icon__interaction {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  transform: scale(1.7);
+  border-radius: 50%;
+  z-index: 1;
+
+
+}
+
+.menu-icon__icon {
+  display: block;
+  position: relative;
+  z-index: 3;
+  height: 24px;
+  width: 24px;
+  fill: currentColor;
+  cursor: pointer;
+}

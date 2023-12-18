@@ -1,3 +1,34 @@
 .header {
+  display: grid;
   grid-area: header;
+  width: 100%;
+
+  grid-template:
+    "menu-icon logo search user-actions" auto / auto auto auto 1fr;
+}
+
+.logo {
+  grid-area: logo;
+  border: 1px solid white;
+
+
+}
+
+.search {
+  grid-area: search;
+  border: 1px solid white;
+
+
+}
+
+.user-actions {
+  grid-area: user-actions;
+  border: 1px solid white;
+  margin-left: auto;
+}
+
+.menu-icon {
+  grid-area: menu-icon;
+  align-self: center;
+  margin: 0 23px;
 }
