@@ -8,17 +8,19 @@
 }
 
 .logo {
+  display: grid;
   grid-area: logo;
   border: 1px solid white;
 
+  align-items: center;
 
+  & > svg {
+  }
 }
 
 .search {
   grid-area: search;
   border: 1px solid white;
-
-
 }
 
 .user-actions {
