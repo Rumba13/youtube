@@ -7,5 +7,5 @@ type PropsType = {
 }
 
 export function Icon({icon, alt = "", className = ""}: PropsType) {
-    return <img className={"icon " ?? className} src={icon} alt={alt}/>
+    return <img className={`icon ${className  || ""}` } src={icon} alt={alt}/>
 }

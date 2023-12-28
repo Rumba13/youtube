@@ -1,7 +1,8 @@
 .menu-icon {
   position: relative;
+  margin: 0 24px;
 
-  &:hover .menu-icon__interaction {
+  &:hover .menu-icon__interaction { //TODO refuck
     background-color: #272727;
   }
 }
@@ -15,8 +16,6 @@
   transform: scale(1.7);
   border-radius: 50%;
   z-index: 1;
-
-
 }
 
 .menu-icon__icon {

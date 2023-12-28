@@ -1,0 +1,18 @@
+.voice-search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #272727;
+  border-radius: 50%;
+  margin-left: 12px;
+
+  &:hover {
+    background-color: #3d3d3d;
+  }
+
+  & .voice-search-icon__icon {
+    fill: white;
+  }
+}
