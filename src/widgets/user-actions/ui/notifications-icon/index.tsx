@@ -1,6 +1,6 @@
 import "./styles.scss";
 import {TextTip} from "../../../../shared/ui/text-tip";
-
+//TODO rename
 export function NotificationsIcon() { //TODO add state
     return <div className="notification-icon">
         <div className="notification-icon__interaction"></div>

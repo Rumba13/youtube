@@ -8,9 +8,11 @@ import {CrossIcon} from "./cross-icon";
 import {VoiceSearchIcon} from "./voice-search-icon";
 import {useState} from "react";
 import {TextTip} from "../../../shared/ui/text-tip";
+import {VoiceSearchModal} from "./voice-search-modal";
 
 export function Search() {
     const [isFormFocused, setIsFormFocused] = useState<boolean>(false);
+    const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
 
     return <div className={`search ${isFormFocused ? "focused" : ""}`}>
         <Formik initialValues={{query: ""}} onSubmit={(values, {setSubmitting}) => {
@@ -33,7 +35,8 @@ export function Search() {
                         <SearchIcon/>
                         <TextTip>Введите запрос</TextTip>
                     </button>
-                    <VoiceSearchIcon/>
+                    <VoiceSearchIcon toolTip onClick={() => setIsModalOpened(true)}/>
+                    <VoiceSearchModal isModalOpened={isModalOpened} setIsModalOpened={setIsModalOpened}/>
                 </Form>
             }
         </Formik>

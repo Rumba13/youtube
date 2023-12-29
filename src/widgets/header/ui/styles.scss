@@ -1,9 +1,11 @@
 .header {
   display: grid;
   grid-area: header;
+  padding-right: 44px;
+  align-items: center;
 
   grid-template:
-    "menu-icon logo search user-actions" auto / auto auto 1fr auto;
+    "menu-icon logo search create-video-icon notifications-icon user-profile-icon" auto / auto auto 1fr auto auto auto auto;
 }
 
 .logo {
@@ -14,11 +16,15 @@
   grid-area: search;
   justify-self: center;
 }
-
-.user-actions {
-  grid-area: user-actions;
+.create-video-icon {
+  grid-area: create-video-icon;
 }
-
+.notification-icon {
+  grid-area: notifications-icon;
+}
+.user-profile-icon {
+  grid-area: user-profile-icon;
+}
 .menu-icon {
   grid-area: menu-icon;
 }
