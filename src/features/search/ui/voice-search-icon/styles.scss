@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   width: 40px;
   height: 40px;
   margin-left: 12px;
@@ -10,6 +11,10 @@
 
   &:hover {
     background-color: #3d3d3d;
+
+    & .text-tip {
+      display: block;
+    }
   }
 
   & .voice-search-icon__icon {

@@ -6,9 +6,19 @@
   margin-right: 7px;
   cursor: pointer;
 
-  &:hover .notification-icon__interaction {
-    background-color: #272727;
+
+  &:hover {
+    & .text-tip {
+      display: block;
+    }
+
+    & .notification-icon__interaction {
+      background-color: #272727;
+    }
   }
+
+
+
 
   & .notification-icon__interaction {
     position: absolute;

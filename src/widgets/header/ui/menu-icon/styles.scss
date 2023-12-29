@@ -4,8 +4,19 @@
   margin: 0 16px;
   padding: 8px;
 
-  &:hover .menu-icon__interaction {
-    background-color: #272727;
+  & .text-tip {
+    font-family: 'Oswald', sans-serif;
+    font-size: 7px;
+  }
+
+  &:hover {
+    & .text-tip {
+      display: block;
+    }
+
+    & .menu-icon__interaction {
+      background-color: #272727;
+    }
   }
 }
 

@@ -7,9 +7,16 @@
   cursor: pointer;
 
 
-  &:hover .create-video-icon__interaction {
-    background-color: #272727;
+  &:hover {
+    & .text-tip {
+      display: block;
+    }
+    & .create-video-icon__interaction {
+      background-color: #272727;
+    }
   }
+
+
 
   & .create-video-icon__interaction {
     position: absolute;

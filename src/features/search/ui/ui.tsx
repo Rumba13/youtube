@@ -7,6 +7,7 @@ import {SearchIcon} from "./search-icon";
 import {CrossIcon} from "./cross-icon";
 import {VoiceSearchIcon} from "./voice-search-icon";
 import {useState} from "react";
+import {TextTip} from "../../../shared/ui/text-tip";
 
 export function Search() {
     const [isFormFocused, setIsFormFocused] = useState<boolean>(false);
@@ -30,6 +31,7 @@ export function Search() {
                     </label>
                     <button className="search-icon-button" type="submit" disabled={isSubmitting}>
                         <SearchIcon/>
+                        <TextTip>Введите запрос</TextTip>
                     </button>
                     <VoiceSearchIcon/>
                 </Form>
