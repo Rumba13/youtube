@@ -8,7 +8,7 @@ import {CrossIcon} from "./cross-icon";
 import {VoiceSearchIcon} from "./voice-search-icon";
 import {useState} from "react";
 
-export function Search() { //TODO refactor
+export function Search() {
     const [isFormFocused, setIsFormFocused] = useState<boolean>(false);
 
     return <div className={`search ${isFormFocused ? "focused" : ""}`}>

@@ -1,32 +1,24 @@
 .header {
   display: grid;
   grid-area: header;
-  width: 100%;
 
   grid-template:
     "menu-icon logo search user-actions" auto / auto auto 1fr auto;
-  justify-items: center;
 }
 
 .logo {
-  display: grid;
   grid-area: logo;
-  align-items: center;
-
-  & > svg {
-  }
 }
 
 .search {
   grid-area: search;
+  justify-self: center;
 }
 
 .user-actions {
   grid-area: user-actions;
-  margin-left: auto;
 }
 
 .menu-icon {
   grid-area: menu-icon;
-  align-self: center;
 }

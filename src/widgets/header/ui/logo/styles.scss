@@ -1,21 +1,23 @@
 .logo {
-  --svg-width: 90px;
-
+  display: grid;
+  align-items: center;
   position: relative;
   height: 100%;
+  padding-right: 20px;
   cursor: pointer;
   fill: white;
-  padding-right: 20px;
+
+  --svg-width: 90px;
 
   & > svg {
     width: var(--svg-width);
   }
 
   & .country-code {
+    position: absolute;
+    top: 12px;
+    left: calc(var(--svg-width) + 4px);
     font-size: 10px;
     color: #aaa;
-    position: absolute;
-    left: calc(var(--svg-width) + 4px);
-    top: 12px;
   }
 }

@@ -4,7 +4,6 @@ import {useEffect, useState} from "react";
 export function UserProfileIcon() {
     const [userProfileIcon, setUserProfileIcon] = useState<string | undefined>();
 
-
     useEffect(() => {
         userService.loadUserByJwt("").then(({icon}) => setUserProfileIcon(icon))
     }, []);

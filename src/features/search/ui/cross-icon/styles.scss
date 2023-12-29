@@ -1,10 +1,9 @@
-.cross-icon-wrapper {
+.cross-icon {
   position: relative;
-  border-radius: 50%;
-  height: 24px;
+  box-sizing: content-box;
   width: 24px;
-  margin: 5px;
-
+  height: 24px;
+  padding: 7px;
 
   & .cross-icon__interaction {
     position: absolute;
@@ -16,16 +15,16 @@
     height: 100%;
     border-radius: 50%;
     z-index: 1;
-    transform: scale(1.7);
 
     &:hover {
       background-color: #414141;
     }
   }
 
-  & .cross-icon {
+  & .cross-icon__icon {
     position: relative;
     pointer-events: none;
+    display: block;
     z-index: 3;
     fill: white;
   }
