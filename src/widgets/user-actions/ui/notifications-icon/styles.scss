@@ -27,4 +27,20 @@
     z-index: 3;
     fill: white;
   }
+
+  & .notification-icon__count {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    box-sizing: content-box;
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid #000c;
+    background-color: #ca0008;
+    z-index: 4;
+  }
 }
