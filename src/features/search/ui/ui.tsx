@@ -9,10 +9,13 @@ import {VoiceSearchIcon} from "./voice-search-icon";
 import {useState} from "react";
 import {TextTip} from "../../../shared/ui/text-tip";
 import {VoiceSearchModal} from "./voice-search-modal";
+import {observer} from "mobx-react";
+import {overlayState} from "../../../xzchto/overlay";
 
-export function Search() {
+export const Search = observer(() => {
     const [isFormFocused, setIsFormFocused] = useState<boolean>(false);
     const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
+    overlayState.setIsOverlayOpened(isModalOpened);
 
     return <div className={`search ${isFormFocused ? "focused" : ""}`}>
         <Formik initialValues={{query: ""}} onSubmit={(values, {setSubmitting}) => {
@@ -41,4 +44,4 @@ export function Search() {
             }
         </Formik>
     </div>
-}
+})

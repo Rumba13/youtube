@@ -19,5 +19,7 @@ export function VoiceSearchModal({isModalOpened, setIsModalOpened}: PropsType) {
             <VoiceSearchIcon/>
         </div>
     </div>
+
+
     //TODO add pulse component in future
 }
