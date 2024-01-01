@@ -1,7 +1,7 @@
 import "./styles.scss";
 import {TextTip} from "../../../../shared/ui/text-tip";
-import {PlayVideoIcon} from "../play-video-icon";
-import {StreamIcon} from "../stream-icon";
+import {PlayVideoIcon} from "../../../../shared/ui/play-video-icon";
+import {StreamIcon} from "../../../../shared/ui/stream-icon";
 import React, {useState} from "react";
 import {CreateVideoIcon} from "../../../../shared/ui/create-video-icon";
 import {CreateVideoActiveIcon} from "../../../../shared/ui/create-video-active-icon";
