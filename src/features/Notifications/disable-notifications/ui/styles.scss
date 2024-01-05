@@ -1,0 +1,10 @@
+.disable-notifications-button {
+  display: flex;
+
+  & .disable-notifications-button__title {
+
+  }
+  &:hover {
+    background-color: #535353;
+  }
+}

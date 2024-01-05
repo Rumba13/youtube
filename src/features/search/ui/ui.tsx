@@ -10,7 +10,7 @@ import {useState} from "react";
 import {TextTip} from "../../../shared/ui/text-tip";
 import {VoiceSearchModal} from "./voice-search-modal";
 import {observer} from "mobx-react";
-import {overlayState} from "../../../xzchto/overlay";
+import {overlayState} from "../../../app/overlay";
 
 export const Search = observer(() => {
     const [isFormFocused, setIsFormFocused] = useState<boolean>(false);

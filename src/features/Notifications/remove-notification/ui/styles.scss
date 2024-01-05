@@ -1,0 +1,23 @@
+.remove-notification-button {
+  display: flex;
+  align-items: center;
+  padding: 0 12px 0 16px;
+  height: 36px;
+
+  & .remove-notification-button__icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    margin-right: 16px;
+  }
+
+  & .remove-notification-button__title {
+    margin-right: 24px;
+    font-size: 14px;
+    color: #f1f1f1;
+  }
+
+  &:hover {
+    background-color: #535353;
+  }
+}

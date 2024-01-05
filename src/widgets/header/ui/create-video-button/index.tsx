@@ -6,7 +6,7 @@ import React, {useState} from "react";
 import {CreateVideoIcon} from "../../../../shared/ui/create-video-icon";
 import {CreateVideoActiveIcon} from "../../../../shared/ui/create-video-active-icon";
 
-export function CreateVideoButton() {
+export function CreateVideoButton() {//feature?
     const [isOptionsOpened, setIsOptionsOpened] = useState<boolean>(false);
     document.addEventListener("click", () => setIsOptionsOpened(false));
 

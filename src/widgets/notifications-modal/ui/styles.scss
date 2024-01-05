@@ -1,0 +1,45 @@
+.notifications {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  height: 642px;
+  width: 480px;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
+  background-color: #282828;
+
+  & .notifications-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 49px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    & .header__title {
+      font-size: 16px;
+      margin-left: 16px;
+      line-height: 49px;
+    }
+    & .gear-icon {
+      margin-left: auto;
+      margin-right: 9px;
+    }
+  }
+  & .notifications-list {
+    overflow-y: scroll; //TODO add custom scroll
+    padding-right: 10px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+
+  }
+
+
+  &.opened {
+    display: flex;
+  }
+}

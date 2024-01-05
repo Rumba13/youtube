@@ -1,12 +1,14 @@
 import React from 'react';
 import {DesktopLayout} from "../layouts/desktop-layout";
-import {Overlay} from "../xzchto/overlay/ui/ui";
+import {Overlay} from "./overlay/ui/ui";
+import {notificationsState} from "../widgets/notifications-modal";
 
 export function App() {
-    return (
-        <div className="app">
-            <Overlay/>
-            <DesktopLayout/>
-        </div>
-    );
+    notificationsState.loadNotifications();
+
+    return <div className="app">
+        <Overlay/>
+        <DesktopLayout/>
+    </div>
+
 }

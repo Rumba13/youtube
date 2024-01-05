@@ -1,0 +1,35 @@
+.gear-icon {
+  position: relative;
+  align-items: center;
+  padding: 8px;
+
+  &:hover {
+    & .text-tip {
+      display: block;
+    }
+
+    & .gear-icon__interaction {
+      background-color: #535353;
+    }
+  }
+
+  & .gear-icon__icon {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    z-index: 3;
+    fill: currentColor;
+    cursor: pointer;
+  }
+
+  & .gear-icon__interaction {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}

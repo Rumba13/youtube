@@ -1,0 +1,30 @@
+.dots-menu-icon {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  padding: 6px;
+
+  &.opened {
+    display: flex;
+  }
+
+  & .dots-menu-icon__icon {
+    align-self: center;
+    fill: white;
+    width: 24px;
+    height: 24px;
+  }
+
+  &:active {
+    border-color: #525252;
+    background-color: #525252;
+  }
+  &:not(:active) {
+    transition: 0.5s border;
+  }
+
+
+}

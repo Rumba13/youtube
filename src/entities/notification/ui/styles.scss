@@ -1,0 +1,62 @@
+.notification {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+          "new-mark image title preview"
+          ". . title ."
+          ". . date .";
+  max-height: 138px;
+  padding: 16px 16px 16px 0;
+
+  & .notification__image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    grid-area: image;
+    margin-right: 16px;
+  }
+
+  & .notification__title {
+    max-width: 234px;
+    grid-area: title;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+
+  .notification__preview-image {
+    width: 86px;
+    height: 48px;
+    grid-area: preview;
+    margin: 0 37px 0 16px;
+    border-radius: 4px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .notification__release-ago {
+    grid-area: date;
+    font-size: 12px;
+    color: #aaaaaa;
+  }
+
+  .notification__new-mark {
+    grid-area: new-mark;
+    margin: 22px 6px 0;
+    background-color: #3ea6ff;
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+  }
+
+
+  &:hover {
+    background-color: #3e3e3e;
+
+    & .dots-menu-icon {
+      display: flex;
+    }
+  }
+}

@@ -2,17 +2,23 @@ import "./styles.scss";
 import {Search} from "../../../features/search";
 import {Logo} from "./logo";
 import {MenuIcon} from "./menu-icon";
-import {NotificationsIcon} from "./notifications-icon";
 import {UserProfileIcon} from "./user-profile-icon";
 import {CreateVideoButton} from "./create-video-button";
+import {ModalSlotType, NotificationsButton} from "./notifications-button";
+import {NotificationActionsModalSlotType} from "../../../entities/notification"
 
-export function Header() {
+type PropsType = {
+    NotificationsModalSlot: ModalSlotType,
+    NotificationActionsModalSlot:NotificationActionsModalSlotType
+}
+
+export function Header({NotificationsModalSlot,NotificationActionsModalSlot}:PropsType) {
     return <header className="header">
         <MenuIcon/>
         <Logo/>
         <Search/>
         <CreateVideoButton/>
-        <NotificationsIcon/>
+        <NotificationsButton ModalSlot={NotificationsModalSlot} NotificationActionsModalSlot={NotificationActionsModalSlot}/>
         <UserProfileIcon/>
     </header>
 }
