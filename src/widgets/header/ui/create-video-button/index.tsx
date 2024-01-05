@@ -6,6 +6,7 @@ import {SvgIcon} from "../../../../shared/ui/svg-icon";
 import {StreamIcon} from "../../../../images/stream-icon";
 import {PlayVideoIcon} from "../../../../images/play-video-icon";
 import {CreateVideoIcon} from "../../../../images/create-video-icon";
+import {VerticalList} from "../../../../shared/ui/vertical-list";
 
 export function CreateVideoButton() {//feature?
     const [isOptionsOpened, setIsOptionsOpened] = useState<boolean>(false);
@@ -25,17 +26,17 @@ export function CreateVideoButton() {//feature?
             : <SvgIcon className="create-video-icon__icon" Icon={CreateVideoIcon}/>
         }
 
-        <div className={`options ${isOptionsOpened ? "opened" : ""}`}>
-            <div className="options-item">
+        <VerticalList className={isOptionsOpened ? "opened" : ""} listItemClassName="options-item" items={[
+            <>
                 <SvgIcon className="play-video-icon" Icon={PlayVideoIcon}/>
-                <a className="options-item__title" href="https://studio.youtube.com/channel/1/videos">Добавить видео</a>
-            </div>
-            <div className="options-item">
+                <a className="title" href="https://studio.youtube.com/channel/1/videos">Добавить видео</a>
+            </>,
+            <>
                 <SvgIcon className="stream-icon" Icon={StreamIcon}/>
-                <a className="options-item__title" href="https://studio.youtube.com/channel/1/livestreaming">Начать
+                <a className="title" href="https://studio.youtube.com/channel/1/livestreaming">Начать
                     трансляцию</a>
-            </div>
-        </div>
+            </>
+        ]}/>
         <TextTip>Создать</TextTip>
     </div>
 }

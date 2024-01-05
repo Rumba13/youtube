@@ -6,7 +6,7 @@
   margin-right: 8px;
   cursor: pointer;
 
-  & .options {
+  & .vertical-list {
     display: none;
     position: absolute;
     right: 0;
@@ -19,18 +19,13 @@
       display: block;
     }
 
-    & .options-item {
+    & .vertical-list__item {
       display: flex;
       align-items: center;
-      height: 40px;
-      white-space: nowrap;
       font-size: 14px;
-      text-align: center;
-      color: #f1f1f1;
       padding: 0 36px 0 16px;
 
-
-      & .options-item__title {
+      & .title {
         height: 100%;
         padding-right: 4px;
         margin-left: 16px;

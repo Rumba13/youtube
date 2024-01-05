@@ -1,16 +1,8 @@
-.notifications-actions-modal {
-  display: none;
-  flex-direction: column;
-  flex: 1;
+.notifications-actions-modal { //TODO remove !important
+  display: none !important;
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #282828;
-  padding: 8px 0;
-  white-space: nowrap;
-  border-radius: 12px;
-  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.1);
-
 
   &.opened {
     display: flex !important;
