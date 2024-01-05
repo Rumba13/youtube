@@ -1,16 +1,17 @@
 import "./styles.scss";
-import {NotificationsActiveIcon} from "../../../../shared/ui/notifications-active-icon";
+import {NotificationsActiveIcon} from "../../../../images/notifications-active-icon";
 import React from "react";
-import {NotificationsIcon as SharedNotificationIcon} from "../../../../shared/ui/notifications-icon";
+import {NotificationsIcon as SharedNotificationsIcon} from "../../../../images/notifications-icon"; //TODO refactoring fix naming
+import {SvgIcon} from "../../../../shared/ui/svg-icon";
 
 type PropsType = {
     isActive:boolean
 }
 export function NotificationIcon({isActive}:PropsType){
     if(isActive){
-        return <NotificationsActiveIcon/>;
+        return <SvgIcon className="notification-icon__icon" Icon={NotificationsActiveIcon}/>
     }
     else {
-        return <SharedNotificationIcon/>
+        return <SvgIcon className="notification-icon__icon" Icon={SharedNotificationsIcon}/>
     }
 }

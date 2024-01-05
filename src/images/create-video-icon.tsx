@@ -1,11 +1,5 @@
-import "./styles.scss";
-
-type PropsType = {
-    className?: string
-}
-
-export function CreateVideoIcon({className}: PropsType) {
-    return <svg className={`${className ? className : ""}`} xmlns="http://www.w3.org/2000/svg" height="24"
+export function CreateVideoIcon() {
+    return <svg xmlns="http://www.w3.org/2000/svg" height="24"
                 viewBox="0 0 24 24"
                 width="24" focusable="false">
         <path

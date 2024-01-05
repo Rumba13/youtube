@@ -6,7 +6,7 @@ type PropsType = {
     isOpened: boolean
 }
 
-export function NotificationsActionsModal({isOpened}: PropsType) { //TODO shared component
+export function NotificationsActionsModal({isOpened}: PropsType) { //TODO shared list component
     return <div className={`notifications-actions-modal ${isOpened ? "opened" : ""}`}>
         <RemoveNotificationButton/>
         <DisableNotificationsButton/>

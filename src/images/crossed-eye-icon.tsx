@@ -1,12 +1,7 @@
-import "./styles.scss";
 
-type PropsType = {
-    className?: string
-}
-
-export function CrossedEyeIcon({className}: PropsType) {
-    return <svg className={`${className ? className : ""}`} xmlns="http://www.w3.org/2000/svg"
-                enable-background="new 0 0 24 24" height="24"
+export function CrossedEyeIcon() {
+    return <svg xmlns="http://www.w3.org/2000/svg"
+                enableBackground="new 0 0 24 24" height="24"
                 viewBox="0 0 24 24"
                 width="24" focusable="false">
         <path

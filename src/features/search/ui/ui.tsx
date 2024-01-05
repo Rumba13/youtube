@@ -1,8 +1,8 @@
 import "./styles.scss";
+import keyboardIcon from "../../../images/keyboard-icon.png";
 import {Field, Form, Formik} from "formik";
 import {search} from "../api/search";
 import {Icon} from "../../../shared/ui/icon";
-import keyboardIcon from "../../../images/keyboard-icon.png";
 import {SearchIcon} from "./search-icon";
 import {CrossIcon} from "./cross-icon";
 import {VoiceSearchIcon} from "./voice-search-icon";
