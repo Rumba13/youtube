@@ -9,24 +9,28 @@ import {CreateVideoIcon} from "../../../../images/create-video-icon";
 import {VerticalList} from "../../../../shared/ui/vertical-list";
 
 export function CreateVideoButton() {//feature?
-    const [isOptionsOpened, setIsOptionsOpened] = useState<boolean>(false);
-    document.addEventListener("click", () => setIsOptionsOpened(false));
+    const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
+    document.addEventListener("click", () => setIsModalOpened(false));
 
-    function createVideoButtonOnClickHandler(e: React.MouseEvent) {
-        e.stopPropagation();
-        setIsOptionsOpened(!isOptionsOpened)
+    function toggleModal(event: React.MouseEvent) {
+
+        if (isModalOpened) {
+            event.stopPropagation();
+        }
+        setTimeout(() => setIsModalOpened(!isModalOpened), 0)
+        //Check https://github.com/rumba13/youtube/blob/8815f5abc553dd4303ed999dae3c4871e4219b91/src/widgets/header/ui/notifications-button/index.tsx#L33
     }
 
 
-    return <div className="create-video-button" onClick={createVideoButtonOnClickHandler}>
+    return <div className="create-video-button" onClick={toggleModal}>
         <div className="create-video-button__interaction"></div>
 
-        {isOptionsOpened
+        {isModalOpened
             ? <SvgIcon className="create-video-icon__icon" Icon={CreateVideoActiveIcon}/>
             : <SvgIcon className="create-video-icon__icon" Icon={CreateVideoIcon}/>
         }
 
-        <VerticalList className={isOptionsOpened ? "opened" : ""} listItemClassName="options-item" items={[
+        <VerticalList className={isModalOpened ? "opened" : ""} listItemClassName="options-item" items={[
             <>
                 <SvgIcon className="play-video-icon" Icon={PlayVideoIcon}/>
                 <a className="title" href="https://studio.youtube.com/channel/1/videos">Добавить видео</a>

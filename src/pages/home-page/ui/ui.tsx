@@ -1,6 +1,5 @@
 import "./styles.scss";
 
 export function HomePage() {
-    return <div className="home-page">
-    </div>
+    return <div className="home-page"></div>
 }

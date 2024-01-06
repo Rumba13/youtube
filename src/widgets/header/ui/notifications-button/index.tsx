@@ -19,15 +19,18 @@ export type ModalSlotType = (props: {
 
 export const NotificationsButton = observer(({ModalSlot, NotificationActionsModalSlot}: PropsType) => {
     const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
-    document.addEventListener("click", () => setIsModalOpened(false));
 
-    function toggleModal(e: React.MouseEvent) {
-        e.stopPropagation();
-        setIsModalOpened(!isModalOpened);
-    }
+    document.addEventListener("click", () => setIsModalOpened(false))
 
-    function stopPropagationInModal(e: React.MouseEvent) {
-        e.stopPropagation();
+    function toggleModal(event: React.MouseEvent) {
+
+        if (isModalOpened) {
+            event.stopPropagation();
+        }
+
+        setTimeout(() => setIsModalOpened(!isModalOpened), 0);
+        //its need to avoid event absorption by e.stopPropagation
+        //Without that "setTimeout" and "if (isModalOpened){...}" other modals won't close with click on element contains e.stopPropagation like modals buttons
     }
 
     return <div className="notification-icon"
@@ -38,7 +41,7 @@ export const NotificationsButton = observer(({ModalSlot, NotificationActionsModa
             ? <></>
             : <div className="notification-icon__count">{notificationsState.unViewedNotificationsCount}</div>
         }
-        <ModalSlot isOpened={isModalOpened} onClick={stopPropagationInModal}
+        <ModalSlot isOpened={isModalOpened} onClick={event => event.stopPropagation()}
                    NotificationsActionsModalSlot={NotificationActionsModalSlot}/>
         <TextTip>Уведомления</TextTip>
     </div>

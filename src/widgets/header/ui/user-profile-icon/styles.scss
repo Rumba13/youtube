@@ -1,14 +1,24 @@
 .user-profile-icon {
-  width: 32px;
-  height: 32px;
+  position: relative;
   margin-left: 15px;
-  box-sizing: content-box;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  overflow: hidden;
-  cursor: pointer;
 
-  &:active {
-    border-color: #4176c0;
+  & .user-profile-icon__icon {
+    width: 32px;
+    height: 32px;
+    box-sizing: content-box;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:active {
+      border-color: #4176c0;
+    }
+  }
+
+  & .user-actions-modal {
+    position: absolute;
+    top: 100%;
+    right: -30px;
   }
 }

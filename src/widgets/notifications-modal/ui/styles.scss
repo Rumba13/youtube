@@ -9,6 +9,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
   background-color: #282828;
+  overflow: hidden;
 
   & .notifications-header {
     display: flex;
@@ -22,19 +23,31 @@
       margin-left: 16px;
       line-height: 49px;
     }
+
     & .gear-icon {
       margin-left: auto;
       margin-right: 9px;
     }
   }
+
   & .notifications-list {
     overflow-y: scroll; //TODO add custom scroll
     padding-right: 10px;
 
     &::-webkit-scrollbar {
-      display: none;
+      width: 8px;
+      background-color: transparent;
+
     }
 
+    &::-webkit-scrollbar-track {
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #717171;
+      min-height: 100px;
+    }
 
   }
 
