@@ -15,29 +15,34 @@
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 49px;
+    height: 49px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
     & .header__title {
       font-size: 16px;
       margin-left: 16px;
-      line-height: 49px;
+      line-height: 50px;
     }
 
     & .gear-icon {
       margin-left: auto;
-      margin-right: 9px;
+      margin-right: 8px;
     }
   }
 
   & .notifications-list {
-    overflow-y: scroll; //TODO add custom scroll
-    padding-right: 10px;
+    --scroll-bar-width: 8px;
+
+    padding-right: var(--scroll-bar-width);
+
+    &:hover {
+      overflow-y: scroll;
+      padding-right: 0;
+    }
 
     &::-webkit-scrollbar {
-      width: 8px;
+      width: var(--scroll-bar-width);
       background-color: transparent;
-
     }
 
     &::-webkit-scrollbar-track {

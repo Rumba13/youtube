@@ -5,7 +5,7 @@
           "new-mark image title preview"
           ". . title ."
           ". . date .";
-  max-height: 138px;
+  min-height: 138px;
   padding: 16px 16px 16px 0;
 
   & .notification__image {
@@ -19,7 +19,7 @@
   & .notification__title {
     max-width: 234px;
     grid-area: title;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
     font-size: 14px;
     line-height: 20px;
     text-overflow: ellipsis;
@@ -30,7 +30,7 @@
     width: 86px;
     height: 48px;
     grid-area: preview;
-    margin: 0 37px 0 16px;
+    margin: 0 40px 0 16px;
     border-radius: 4px;
     object-fit: cover;
     overflow: hidden;

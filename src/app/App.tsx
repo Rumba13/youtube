@@ -1,6 +1,6 @@
 import React from 'react';
 import {DesktopLayout} from "../layouts/desktop-layout";
-import {Overlay} from "./overlay/ui/ui";
+import {Overlay} from "./overlay";
 import {notificationsState} from "../widgets/notifications-modal";
 
 export function App() {

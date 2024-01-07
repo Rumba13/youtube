@@ -19,7 +19,7 @@ export class NotificationsService {
 
         if (notificationId === "1") {
             return Promise.resolve({
-                title: "На канале \"Slave\" идет трансляция \"Просто хочу предупредить: в ромовой бабе есть немного рома, но нет бабы\"",
+                title: "На канале \"Nostoro\" идет трансляция \"Просто хочу предупредить: в ромовой бабе есть немного рома, но нет бабы\"",
                 icon: i,
                 previewImage: previewImage,
                 releasedAgo: new Date()

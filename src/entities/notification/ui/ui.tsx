@@ -22,7 +22,7 @@ export function NotificationCard({notification, ModalSlot, setOpenedModalId, ope
         <img className="notification__image" src={icon} alt=""/>
         <h2 className="notification__title">{title}</h2>
         <img src={previewImage} alt="" className="notification__preview-image"/>
-        <span className="notification__release-ago">2 дня назад</span>
+        <span className="notification__release-ago">6 часов назад</span>
         <div className="notification__new-mark"></div>
         <DotsMenuIcon currentModalId={title} openedModal={openedModal} setOpenedModalId={setOpenedModalId}
                       ModalSlot={ModalSlot}/>
