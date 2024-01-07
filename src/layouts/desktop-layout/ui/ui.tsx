@@ -5,10 +5,11 @@ import {Aside} from "../../../widgets/aside";
 import {NotificationsModal} from "../../../widgets/notifications-modal";
 import {NotificationsActionsModal} from "../../../widgets/notifications-actions-modal";
 import {UserActionsModal} from "../../../widgets/user-actions-modal";
+import {VideoActionsModal} from "../../../widgets/video-actions-modal";
 
 export function DesktopLayout() {
     return <>
-        <Header UserActionsModalSlot={UserActionsModal} NotificationsModalSlot={NotificationsModal} NotificationActionsModalSlot={NotificationsActionsModal}/>
+        <Header VideoActionsModal={VideoActionsModal} UserActionsModalSlot={UserActionsModal} NotificationsModalSlot={NotificationsModal} NotificationActionsModalSlot={NotificationsActionsModal}/>
         <Aside/>
         <Routes/>
     </>

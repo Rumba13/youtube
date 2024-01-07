@@ -3,12 +3,14 @@ import {TextTip} from "../../../../shared/ui/text-tip";
 import React, {useState} from "react";
 import {CreateVideoActiveIcon} from "../../../../images/create-video-active-icon";
 import {SvgIcon} from "../../../../shared/ui/svg-icon";
-import {StreamIcon} from "../../../../images/stream-icon";
-import {PlayVideoIcon} from "../../../../images/play-video-icon";
 import {CreateVideoIcon} from "../../../../images/create-video-icon";
-import {VerticalList} from "../../../../shared/ui/vertical-list";
+import {VideoActionsModalSlotType} from "../../../video-actions-modal";
 
-export function CreateVideoButton() {//feature?
+type PropsType = {
+    ModalSlot: VideoActionsModalSlotType
+}
+
+export function CreateVideoButton({ModalSlot}: PropsType) {//TODO separate modal from component
     const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
     document.addEventListener("click", () => setIsModalOpened(false));
 
@@ -30,17 +32,7 @@ export function CreateVideoButton() {//feature?
             : <SvgIcon className="create-video-icon__icon" Icon={CreateVideoIcon}/>
         }
 
-        <VerticalList className={isModalOpened ? "opened" : ""} listItemClassName="options-item" items={[
-            <>
-                <SvgIcon className="play-video-icon" Icon={PlayVideoIcon}/>
-                <a className="title" href="https://studio.youtube.com/channel/1/videos">Добавить видео</a>
-            </>,
-            <>
-                <SvgIcon className="stream-icon" Icon={StreamIcon}/>
-                <a className="title" href="https://studio.youtube.com/channel/1/livestreaming">Начать
-                    трансляцию</a>
-            </>
-        ]}/>
+        <ModalSlot isOpened={isModalOpened}/>
         <TextTip>Создать</TextTip>
     </div>
 }

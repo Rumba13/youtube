@@ -8,19 +8,26 @@ import {ModalSlotType, NotificationsButton} from "./notifications-button";
 import {NotificationActionsModalSlotType} from "../../../entities/notification"
 import {FC} from "react";
 import {UserActionsModalSlotType} from "../../user-actions-modal";
+import {VideoActionsModalSlotType} from "../../video-actions-modal";
 
 type PropsType = {
     NotificationsModalSlot: ModalSlotType,
     NotificationActionsModalSlot: NotificationActionsModalSlotType,
-    UserActionsModalSlot: UserActionsModalSlotType
+    UserActionsModalSlot: UserActionsModalSlotType,
+    VideoActionsModal: VideoActionsModalSlotType
 }
 
-export function Header({NotificationsModalSlot, NotificationActionsModalSlot, UserActionsModalSlot}: PropsType) {
+export function Header({
+                           NotificationsModalSlot,
+                           NotificationActionsModalSlot,
+                           UserActionsModalSlot,
+                           VideoActionsModal
+                       }: PropsType) {
     return <header className="header">
         <MenuIcon/>
         <Logo/>
         <Search/>
-        <CreateVideoButton/>
+        <CreateVideoButton ModalSlot={VideoActionsModal}/>
         <NotificationsButton ModalSlot={NotificationsModalSlot}
                              NotificationActionsModalSlot={NotificationActionsModalSlot}/>
         <UserProfileIcon UserActionsModalSlot={UserActionsModalSlot}/>
