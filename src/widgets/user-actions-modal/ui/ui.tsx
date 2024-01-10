@@ -18,6 +18,7 @@ import {QuestionIcon} from "../../../images/question-icon";
 import {DialogIcon} from "../../../images/dialog-icon";
 import {GearIcon} from "../../../images/gear-icon";
 import {ArrowIcon} from "../../../images/arrow-icon";
+import {useTranslation} from "react-i18next";
 
 type PropsType = {
     className?: string
@@ -27,85 +28,90 @@ type PropsType = {
 export type UserActionsModalSlotType = FC<PropsType>
 
 export function UserActionsModal({className, isOpened}: PropsType) {
+    const {t} = useTranslation();
+
     return <div className={`user-actions-modal${className ? " " + className : ""}${isOpened ? " opened" : ""}`}>
         <div className="user-actions-modal-header">
             <img className="header-icon" src={userIcon} alt="user-icon"/>
             <span className="header__title">Senderium</span>
             <span className="header__subtitle">@senderium5028</span>
-            <a className="header__link" href="https://www.youtube.com/channel/UC6Kav4lZ1H0SNIUidzfXwdA">Посмотреть
-                канал</a>
+            <a className="header__link" href="https://www.youtube.com/channel/UC6Kav4lZ1H0SNIUidzfXwdA">
+                {t("View Channel")}
+            </a>
         </div>
         <VerticalList className="user-actions-list" listItemClassName="user-actions-list__item" items={[
             <a className="item-link"
                href="https://myaccount.google.com/u/1/?utm_source=YouTubeWeb&tab=rk&utm_medium=act&tab=rk&hl=ru">
                 <SvgIcon className="item-icon" Icon={GoogleIcon}/>
-                Аккаунт Google
+                {t("Google Account")}
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={AccountChangeIcon}/>
-                Сменить аккаунт
+                {t("Change Account")}
                 <SvgIcon className="arrow"
                          Icon={ArrowIcon}/>
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={ExitIcon}/>
-                Выйти
+                {t("Exit")}
             </a>,
             <a className="item-link" href="https://studio.youtube.com/channel/UC6Kav4lZ1H0SNIUidzfXwdA">
                 <SvgIcon
                     className="item-icon" Icon={CreatorStudioIcon}/>
-                Творческая студия YouTube
+                {t("Creator Studio Youtube")}
             </a>,
             <a className="item-link" href="https://www.youtube.com/paid_memberships?ybp=mAEK">
                 <SvgIcon
                     className="item-icon" Icon={MoneyIcon}/>
-                Покупки и платные подписки
+                {t("Purchases And Paid Subscriptions")}
+
             </a>,
             <a className="item-link" href="https://myaccount.google.com/u/1/yourdata/youtube?hl=ru">
                 <SvgIcon
                     className="item-icon" Icon={AccountIcon}/>
-                Ваши данные на YouTube
+                {t("Your Data on Youtube")}
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={MoonIcon}/>
-                Тема: как на устройстве
+                {t("Theme")}
+
                 <SvgIcon className="arrow"
                          Icon={ArrowIcon}/>
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={LanguageIcon}/>
-                Язык: Русский
+                {t("Language")}
                 <SvgIcon className="arrow"
                          Icon={ArrowIcon}/>
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={ShieldIcon}/>
-                Безопасный режим: откл.
+                {t("Safe Mode")}
                 <SvgIcon className="arrow"
                          Icon={ArrowIcon}/>
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={WorldIcon}/>
-                Страна: Беларусь
+                {t("Country")}
                 <SvgIcon className="arrow"
                          Icon={ArrowIcon}/>
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={KeyboardIcon}/>
-                Быстрые клавиши
+                {t("Fast Keyboard")}
             </a>,
             <a className="item-link" href="https://www.youtube.com/account">
                 <SvgIcon className="item-icon"
                          Icon={GearIcon}/>
-                Настройки
+                {t("Options")}
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={QuestionIcon}/>
-                Справка
+                {t("Inquiry")}
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={DialogIcon}/>
-                Отправить отзыв
+                {t("Send Review")}
             </a>,
         ]}/>
     </div>

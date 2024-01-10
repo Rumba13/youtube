@@ -1,6 +1,7 @@
 import "./styles.scss";
 import {CrossIcon} from "../cross-icon";
 import {VoiceSearchButton} from "../voice-search-icon";
+import {useTranslation} from "react-i18next";
 
 type PropsType = {
     isModalOpened: boolean,
@@ -8,13 +9,13 @@ type PropsType = {
 }
 
 export function VoiceSearchModal({isModalOpened, setIsModalOpened}: PropsType) {
+const {t} = useTranslation();
 
     return <div className={`voice-search-modal ${isModalOpened ? "opened" : ""}`}>
         <div className="voice-search-modal-container">
             <CrossIcon className="voice-search-modal__cross" onClick={() => setIsModalOpened(false)}/>
-            <span className="voice-search-modal__title">Голосовой поиск</span>
-            <span className="voice-search-modal__content">Чтобы пользоваться голосовым поиском, перейдите в настройки
-            браузера и откройте приложению доступ к микрофону.
+            <span className="voice-search-modal__title">{t("Voice Search")}</span>
+            <span className="voice-search-modal__content">{t("To Use Voice Search")}
         </span>
             <VoiceSearchButton/>
         </div>
@@ -22,4 +23,5 @@ export function VoiceSearchModal({isModalOpened, setIsModalOpened}: PropsType) {
 
 
     //TODO add pulse component in future
+    //separate modal
 }

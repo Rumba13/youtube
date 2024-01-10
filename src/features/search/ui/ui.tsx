@@ -14,10 +14,12 @@ import {useScreenWidth} from "../../../shared/lib/use-screen-width";
 import {SearchButton} from "./search-button";
 import {SvgIcon} from "../../../shared/ui/svg-icon";
 import {searchState} from "../model/model";
+import {useTranslation} from "react-i18next";
 
 export const Search = observer(() => {
     const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
     const screenWidth = useScreenWidth();
+    const {t} = useTranslation();
 
     const {
         isSearchFocused,
@@ -66,7 +68,7 @@ export const Search = observer(() => {
                             <label className="search-form-container" htmlFor="query">
                                 <SvgIcon className="search-icon" Icon={SearchIcon}/>
                                 <Field className="search-form__field" type="text" name="query" id="query"
-                                       placeholder="Введите запрос" onFocus={() => setIsSearchFocused(true)}
+                                       placeholder={t("Enter Query")} onFocus={() => setIsSearchFocused(true)}
                                        onBlur={() => setIsSearchFocused(false)}/>
                                 <Icon className="search-form__virtual-keyboard-icon dark-theme" icon={keyboardIcon}/>
                                 {values.query &&

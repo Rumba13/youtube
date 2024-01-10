@@ -1,7 +1,10 @@
 import "./styles.scss";
 import {getCountryCode} from "../../lib/country-code";
+import {useTranslation} from "react-i18next";
 
 export function Logo() {
+    const {i18n} = useTranslation();
+
     return <div className="logo">
         <svg xmlns="http://www.w3.org/2000/svg" className="external-icon" viewBox="0 0 90 20" focusable="false"  >
             <svg viewBox="0 0 90 20" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
@@ -22,6 +25,6 @@ export function Logo() {
                 </g>
             </svg>
         </svg>
-        <span className="country-code">{getCountryCode()}</span>
+        <span className="country-code">{i18n.language.toUpperCase()}</span>
     </div>
 }

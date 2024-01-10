@@ -5,6 +5,7 @@ import {observer} from "mobx-react";
 import {notificationsState} from "../../../notifications-modal";
 import {NotificationsIcon} from "../notifications-icon";
 import {NotificationActionsModalSlotType} from "../../../../entities/notification";
+import {useTranslation} from "react-i18next";
 
 type PropsType = {
     ModalSlot: ModalSlotType,
@@ -19,7 +20,7 @@ export type ModalSlotType = (props: {
 
 export const NotificationsButton = observer(({ModalSlot, NotificationActionsModalSlot}: PropsType) => {
     const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
-
+    const {t} = useTranslation();
     document.addEventListener("click", () => setIsModalOpened(false))
 
     function toggleModal(event: React.MouseEvent) {
@@ -43,6 +44,6 @@ export const NotificationsButton = observer(({ModalSlot, NotificationActionsModa
         }
         <ModalSlot isOpened={isModalOpened} onClick={event => event.stopPropagation()}
                    NotificationsActionsModalSlot={NotificationActionsModalSlot}/>
-        <TextTip>Уведомления</TextTip>
+        <TextTip>{t("Notifications")}</TextTip>
     </div>
 })

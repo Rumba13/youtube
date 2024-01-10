@@ -5,6 +5,7 @@ import {CreateVideoActiveIcon} from "../../../../images/create-video-active-icon
 import {SvgIcon} from "../../../../shared/ui/svg-icon";
 import {CreateVideoIcon} from "../../../../images/create-video-icon";
 import {VideoActionsModalSlotType} from "../../../video-actions-modal";
+import {useTranslation} from "react-i18next";
 
 type PropsType = {
     ModalSlot: VideoActionsModalSlotType
@@ -12,7 +13,9 @@ type PropsType = {
 
 export function CreateVideoButton({ModalSlot}: PropsType) {//TODO separate modal from component
     const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
+    const {t} = useTranslation();
     document.addEventListener("click", () => setIsModalOpened(false));
+
 
     function toggleModal(event: React.MouseEvent) {
 
@@ -32,6 +35,6 @@ export function CreateVideoButton({ModalSlot}: PropsType) {//TODO separate modal
         }
 
         <ModalSlot isOpened={isModalOpened}/>
-        <TextTip>Создать</TextTip>
+        <TextTip>{t("Create")}</TextTip>
     </div>
 }

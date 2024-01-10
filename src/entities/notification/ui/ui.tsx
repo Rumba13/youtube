@@ -14,6 +14,7 @@ export type ModalSlotType = (props: { isOpened: boolean }) => JSX.Element;
 export function NotificationCard({notification, ModalSlot, setOpenedModalId, openedModal}: PropsType) {
     const {title, previewImage, icon, releasedAgo} = notification;
 
+
     if (!notification) {
         return <div>Loading...</div>
     }
