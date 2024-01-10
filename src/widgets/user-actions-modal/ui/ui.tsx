@@ -18,7 +18,7 @@ import {QuestionIcon} from "../../../images/question-icon";
 import {DialogIcon} from "../../../images/dialog-icon";
 import {GearIcon} from "../../../images/gear-icon";
 import {ArrowIcon} from "../../../images/arrow-icon";
-import {useTranslation} from "react-i18next";
+import {Trans, useTranslation} from "react-i18next";
 
 type PropsType = {
     className?: string
@@ -28,7 +28,13 @@ type PropsType = {
 export type UserActionsModalSlotType = FC<PropsType>
 
 export function UserActionsModal({className, isOpened}: PropsType) {
-    const {t} = useTranslation();
+    const {t, i18n} = useTranslation();
+
+    const language = t(i18n.language);
+    const theme = t("theme_" + "sync");
+    const location = t("by");
+    const isRestrictedModeEnable = false;
+
 
     return <div className={`user-actions-modal${className ? " " + className : ""}${isOpened ? " opened" : ""}`}>
         <div className="user-actions-modal-header">
@@ -73,26 +79,35 @@ export function UserActionsModal({className, isOpened}: PropsType) {
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={MoonIcon}/>
-                {t("Theme")}
+                <Trans i18nKey="Theme">
+                    {{theme}}
+                </Trans>
 
                 <SvgIcon className="arrow"
                          Icon={ArrowIcon}/>
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={LanguageIcon}/>
-                {t("Language")}
+                <Trans i18nKey="Language">
+                    {{language}}
+                </Trans>
                 <SvgIcon className="arrow"
                          Icon={ArrowIcon}/>
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={ShieldIcon}/>
-                {t("Safe Mode")}
+                <Trans i18nKey="Safe Mode">
+                    {{mode: t(isRestrictedModeEnable ? "restricted_mode_on" : "restricted_mode_off")}}
+                </Trans>
                 <SvgIcon className="arrow"
                          Icon={ArrowIcon}/>
             </a>,
             <a className="item-link">
                 <SvgIcon className="item-icon" Icon={WorldIcon}/>
-                {t("Country")}
+
+                <Trans i18nKey={"Country"}>
+                    {{location: t(location)}}
+                </Trans>
                 <SvgIcon className="arrow"
                          Icon={ArrowIcon}/>
             </a>,
