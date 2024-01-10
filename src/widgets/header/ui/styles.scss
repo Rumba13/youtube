@@ -1,30 +1,94 @@
 .header {
   display: grid;
   grid-area: header;
-  padding-right: 28px;
   align-items: center;
+  padding-right: 28px;
 
   grid-template:
     "menu-icon logo search create-video-icon notifications-icon user-profile-icon" auto / auto auto 1fr auto auto auto auto;
+
+  & > .logo {
+    grid-area: logo;
+  }
+
+  & > .search {
+    grid-area: search;
+    justify-self: center;
+  }
+
+  & > .create-video-button {
+    grid-area: create-video-icon;
+  }
+
+  & > .notification-icon {
+    grid-area: notifications-icon;
+  }
+
+  & > .user-profile-icon {
+    grid-area: user-profile-icon;
+  }
+
+  & > .menu-icon {
+    grid-area: menu-icon;
+  }
+
+  & > .search-icon-button.mini {
+    grid-area: search-button;
+  }
+
+  & > .voice-search-icon.mini {
+    grid-area: voice-search-button;
+  }
+
+  & > .back-button {
+    grid-area: back-button;
+    margin-left: 8px;
+  }
 }
 
-.logo {
-  grid-area: logo;
+@media(max-width: 750px) {
+  .header {
+    grid-template:
+    "menu-icon logo search-button voice-search-button create-video-icon notifications-icon user-profile-icon" auto / min-content 1fr auto auto auto auto auto;
+    padding-right: 35px;
+
+
+    & > .menu-icon { //TODO ???
+      margin-right: 20px;
+      margin-left: 8px;
+    }
+
+    & > .user-profile-icon {
+      margin-left: 15px;
+    }
+
+    & > .notification-icon,
+    & > .voice-search-icon.mini,
+    & > .create-video-button,
+    & > .search-icon-button.mini, {
+      margin: 0;
+    }
+
+
+    &.opened-search {
+      grid-template:
+      "back-button search" auto / auto 1fr;
+      padding-right: 0;
+
+      & > .search {
+      }
+
+    }
+  }
 }
 
-.search {
-  grid-area: search;
-  justify-self: center;
+@media(max-width: 450px) {
+  .header {
+    & > .create-video-button,
+    & > .notification-icon {
+      display: none;
+    }
+
+  }
 }
-.create-video-button {
-  grid-area: create-video-icon;
-}
-.notification-icon {
-  grid-area: notifications-icon;
-}
-.user-profile-icon {
-  grid-area: user-profile-icon;
-}
-.menu-icon {
-  grid-area: menu-icon;
-}
+

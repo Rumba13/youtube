@@ -10,5 +10,4 @@ export function App() {
         <Overlay/>
         <DesktopLayout/>
     </div>
-
 }

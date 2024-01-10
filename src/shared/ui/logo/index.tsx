@@ -1,5 +1,5 @@
 import "./styles.scss";
-import {getCountryCode} from "../../../../shared/lib/country-code";
+import {getCountryCode} from "../../lib/country-code";
 
 export function Logo() {
     return <div className="logo">

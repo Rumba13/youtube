@@ -1,6 +1,6 @@
 import "./styles.scss";
 import {CrossIcon} from "../cross-icon";
-import {VoiceSearchIcon} from "../voice-search-icon";
+import {VoiceSearchButton} from "../voice-search-icon";
 
 type PropsType = {
     isModalOpened: boolean,
@@ -16,7 +16,7 @@ export function VoiceSearchModal({isModalOpened, setIsModalOpened}: PropsType) {
             <span className="voice-search-modal__content">Чтобы пользоваться голосовым поиском, перейдите в настройки
             браузера и откройте приложению доступ к микрофону.
         </span>
-            <VoiceSearchIcon/>
+            <VoiceSearchButton/>
         </div>
     </div>
 

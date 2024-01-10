@@ -1,8 +1,12 @@
 .disable-notifications-button {
   display: flex;
   align-items: center;
-  padding: 0 12px 0 16px;
   height: 36px;
+  padding: 0 12px 0 16px;
+
+  &:hover {
+    background-color: #535353;
+  }
 
   & .disable-notifications-button__title {
     margin-right: 24px;
@@ -13,12 +17,7 @@
   & .disable-notifications-button__icon {
     width: 24px;
     height: 24px;
-    fill: white;
     margin-right: 16px;
-  }
-
-
-  &:hover {
-    background-color: #535353;
+    fill: white;
   }
 }

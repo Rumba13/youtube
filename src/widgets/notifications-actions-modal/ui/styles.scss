@@ -1,8 +1,8 @@
 .notifications-actions-modal { //TODO remove !important
-  display: none !important;
   position: absolute;
   top: 100%;
   right: 0;
+  display: none !important;
 
   &.opened {
     display: flex !important;

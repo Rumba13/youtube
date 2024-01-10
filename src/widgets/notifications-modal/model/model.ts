@@ -2,13 +2,13 @@ import {makeAutoObservable} from "mobx";
 import {NotificationsService} from "../../../shared/api/notifications-service";
 import {NotificationType} from "../../../shared/api/types/notification-type";
 
-export class NotificationsState {
+export class NotificationsState { //TODO refuck
     private notificationsService: NotificationsService;
-    private notificationsIds: string[] = [];
     public notifications?:NotificationType[];
+    public notificationsIds:string[] = [];
 
     get unViewedNotificationsCount(): number{
-        return this.notificationsIds.length;
+        return this.notifications?.length || 0;
     }
 
     constructor(notificationsService: NotificationsService) {

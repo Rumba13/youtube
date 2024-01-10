@@ -2,12 +2,12 @@ import "./styles.scss";
 import {ReactNode} from "react";
 
 type PropsType = {
-    children: ReactNode | ReactNode[],
     className?: string
+    children: ReactNode | ReactNode[],
 }
 
-export function TextTip({children, className}: PropsType) {
-    return <div className={`text-tip ${className ? className : ""}`}>
+export function TextTip({className, children}: PropsType) {
+    return <div className={`text-tip${className ? " " + className : ""}`}>
         {children}
     </div>
 }

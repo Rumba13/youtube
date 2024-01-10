@@ -1,13 +1,12 @@
 .voice-search-icon {
   display: flex;
-  justify-content: center;
   align-items: center;
   position: relative;
-  width: 40px;
-  height: 40px;
-  margin-left: 12px;
+  margin-left: 12px; //TODO refuck all margin in similar  components
+  margin-right: 8px;
   background-color: #272727;
   border-radius: 50%;
+  padding: 8px;
 
   &:hover {
     background-color: #3d3d3d;
@@ -17,7 +16,50 @@
     }
   }
 
+  & .voice-search-icon__interaction {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+
   & .voice-search-icon__icon {
+    width: 24px;
+    height: 24px;
     fill: white;
+  }
+
+  &.mini {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: transparent;
+    margin-left: 5px;
+
+    &:hover {
+      background-color: #272727;
+
+      & .text-tip {
+        display: block;
+        right: 100%;
+      }
+    }
+
+    & .voice-search-icon__interaction {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+    }
+
+    & .voice-search-icon__icon {
+      fill: white;
+      width: 24px;
+      height: 24px;
+    }
   }
 }

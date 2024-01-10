@@ -1,5 +1,5 @@
 import "./styles.scss";
-import {FC, ReactNode} from "react";
+import {FC} from "react";
 
 type PropsType = {
     className?: string
@@ -7,7 +7,7 @@ type PropsType = {
 }
 
 export function SvgIcon({Icon, className}: PropsType) {
-    return <div className={`svg-icon ${className ? className : ""}`}>
-        {<Icon/>}
+    return <div className={`svg-icon${className ? " " + className : ""}`}>
+        <Icon/>
     </div>
 }

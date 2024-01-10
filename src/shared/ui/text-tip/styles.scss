@@ -1,25 +1,26 @@
 .text-tip {
-  display: none;
   position: absolute;
   top: calc(100% + 10px);
   right: 50%;
-  transform: translateX(50%);
+  z-index: 1000;
+  display: none;
   padding: 10px;
   font-size: 12px;
-  color: white;
   text-align: center;
-  border-radius: 4px;
-  background-color: #616161;
-  z-index: 1000;
-  opacity: 0;
-  user-select: none;
   white-space: nowrap;
-  will-change: opacity;
+  user-select: none;
+  color: white;
+  background-color: #616161;
+  border-radius: 4px;
+  opacity: 0;
 
   animation: 100ms ease-in fadeInOpacity;
   animation-delay: 100ms;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+
+  transform: translateX(50%);
+  will-change: opacity;
 }
 
 @keyframes fadeInOpacity {

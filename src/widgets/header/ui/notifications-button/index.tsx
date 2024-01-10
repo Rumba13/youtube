@@ -3,7 +3,7 @@ import React, {JSX, MouseEventHandler, useEffect, useState} from "react";
 import {TextTip} from "../../../../shared/ui/text-tip";
 import {observer} from "mobx-react";
 import {notificationsState} from "../../../notifications-modal";
-import {NotificationIcon} from "../notification-icon";
+import {NotificationsIcon} from "../notifications-icon";
 import {NotificationActionsModalSlotType} from "../../../../entities/notification";
 
 type PropsType = {
@@ -35,7 +35,7 @@ export const NotificationsButton = observer(({ModalSlot, NotificationActionsModa
 
     return <div className="notification-icon"
                 onClick={toggleModal}>
-        <NotificationIcon isActive={isModalOpened}/>
+        <NotificationsIcon isActive={isModalOpened}/>
         <div className="notification-icon__interaction"></div>
         {notificationsState.unViewedNotificationsCount === 0
             ? <></>

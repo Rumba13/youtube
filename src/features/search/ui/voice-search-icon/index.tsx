@@ -3,11 +3,18 @@ import {TextTip} from "../../../../shared/ui/text-tip";
 import {MouseEventHandler} from "react";
 
 type PropsType = {
-    onClick?:MouseEventHandler,
-    toolTip?:boolean
+    onClick?: MouseEventHandler,
+    toolTip?: boolean,
+    className?: string,
+    type?: VoiceSearchIconType
 }
-export function VoiceSearchIcon({onClick,toolTip = false}:PropsType) {
-    return <div className="voice-search-icon" onClick={onClick}>
+
+type VoiceSearchIconType = "normal" | "mini";
+
+export function VoiceSearchButton({onClick, toolTip = false, className, type = "normal"}: PropsType) {
+    return <div className={`voice-search-icon${type === "mini" ? " mini": ""}${className ? " " + className : ""}`} onClick={onClick}>
+        <div className="voice-search-icon__interaction"></div>
+
         <svg className="voice-search-icon__icon" xmlns="http://www.w3.org/2000/svg" height="24"
              viewBox="0 0 24 24" width="24"
              focusable="false">
@@ -16,4 +23,7 @@ export function VoiceSearchIcon({onClick,toolTip = false}:PropsType) {
         </svg>
         {toolTip && <TextTip>Голосовой поиск</TextTip>}
     </div>
+
 }
+
+

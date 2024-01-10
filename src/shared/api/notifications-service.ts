@@ -11,7 +11,6 @@ export class NotificationsService {
             "4",
             "5",
             "6",
-
         ]);
     }
 
@@ -19,6 +18,7 @@ export class NotificationsService {
 
         if (notificationId === "1") {
             return Promise.resolve({
+                id: "1",
                 title: "На канале \"Nostoro\" идет трансляция \"Просто хочу предупредить: в ромовой бабе есть немного рома, но нет бабы\"",
                 icon: i,
                 previewImage: previewImage,
@@ -26,6 +26,7 @@ export class NotificationsService {
             });
         } else if (notificationId === "2") {
             return Promise.resolve({
+                id: "2",
                 title: "На канале \"Nostoro\" идет трансляция \"Просто хочу предупредить: в ромовой бабе есть немного рома, но нет бабы\"",
                 icon: i,
                 previewImage: previewImage,
@@ -33,6 +34,7 @@ export class NotificationsService {
             });
         } else {
             return Promise.resolve({
+                id: "3",
                 title: "На канале \"GayBomj\" идет трансляция \"Просто хочу предупредить: в ромовой бабе есть немного рома, но нет бабы\"",
                 icon: i,
                 previewImage: previewImage,

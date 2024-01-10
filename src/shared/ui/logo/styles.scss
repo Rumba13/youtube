@@ -1,11 +1,11 @@
 .logo {
-  display: grid;
-  align-items: center;
   position: relative;
+  display: flex;
+  align-items: center;
   height: 100%;
   padding-right: 20px;
-  cursor: pointer;
   fill: white;
+  cursor: pointer;
 
   --svg-width: 90px;
 
@@ -18,6 +18,6 @@
     top: 12px;
     left: calc(var(--svg-width) + 4px);
     font-size: 10px;
-    color: #aaa;
+    color: #aaaaaa;
   }
 }

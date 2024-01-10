@@ -8,11 +8,7 @@ type PropsType = {
 }
 
 export function NotificationsActionsModal({isOpened}: PropsType) { //TODO shared list component
-    // return <div className={`notifications-actions-modal ${isOpened ? "opened" : ""}`}>
-    //     <RemoveNotificationButton/>
-    //     <DisableNotificationsButton/>
-    // </div>
-    return <VerticalList className={`notifications-actions-modal ${isOpened ? "opened" : ""}`} items={[
+    return <VerticalList className={`notifications-actions-modal${isOpened ? " opened" : ""}`} items={[
         <RemoveNotificationButton/>,
         <DisableNotificationsButton/>
     ]}/>

@@ -9,7 +9,8 @@ import {VideoActionsModal} from "../../../widgets/video-actions-modal";
 
 export function DesktopLayout() {
     return <>
-        <Header VideoActionsModal={VideoActionsModal} UserActionsModalSlot={UserActionsModal} NotificationsModalSlot={NotificationsModal} NotificationActionsModalSlot={NotificationsActionsModal}/>
+        <Header VideoActionsModal={VideoActionsModal} UserActionsModalSlot={UserActionsModal}
+                NotificationsModalSlot={NotificationsModal} NotificationActionsModalSlot={NotificationsActionsModal}/>
         <Aside/>
         <Routes/>
     </>

@@ -1,10 +1,10 @@
 .video-actions-modal {
-  display: none;
   position: absolute;
-  right: 0;
   top: 100%;
-  border-radius: 12px;
+  right: 0;
+  display: none;
   padding: 8px 0;
+  border-radius: 12px;
   background-color: #282828;
 
   &.opened {
@@ -14,19 +14,19 @@
   & .vertical-list__item {
     display: flex;
     align-items: center;
-    font-size: 14px;
     padding: 0 36px 0 16px;
-
-    & .title {
-      height: 100%;
-      padding-right: 4px;
-      margin-left: 16px;
-      line-height: 40px;
-      user-select: none;
-    }
+    font-size: 14px;
 
     &:hover {
       background-color: #3e3e3e;
+    }
+
+    & .title {
+      height: 100%;
+      margin-left: 16px;
+      padding-right: 4px;
+      line-height: 40px;
+      user-select: none;
     }
   }
 

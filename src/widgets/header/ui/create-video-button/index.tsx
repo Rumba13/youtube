@@ -1,6 +1,6 @@
 import "./styles.scss";
-import {TextTip} from "../../../../shared/ui/text-tip";
 import React, {useState} from "react";
+import {TextTip} from "../../../../shared/ui/text-tip";
 import {CreateVideoActiveIcon} from "../../../../images/create-video-active-icon";
 import {SvgIcon} from "../../../../shared/ui/svg-icon";
 import {CreateVideoIcon} from "../../../../images/create-video-icon";
@@ -22,7 +22,6 @@ export function CreateVideoButton({ModalSlot}: PropsType) {//TODO separate modal
         setTimeout(() => setIsModalOpened(!isModalOpened), 0)
         //Check https://github.com/rumba13/youtube/blob/8815f5abc553dd4303ed999dae3c4871e4219b91/src/widgets/header/ui/notifications-button/index.tsx#L33
     }
-
 
     return <div className="create-video-button" onClick={toggleModal}>
         <div className="create-video-button__interaction"></div>

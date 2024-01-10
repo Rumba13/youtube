@@ -8,32 +8,40 @@
   min-height: 138px;
   padding: 16px 16px 16px 0;
 
+  &:hover {
+    background-color: #3e3e3e;
+
+    & .dots-menu {
+      display: flex;
+    }
+  }
+
   & .notification__image {
+    grid-area: image;
     width: 48px;
     height: 48px;
-    border-radius: 50%;
-    grid-area: image;
     margin-right: 16px;
+    border-radius: 50%;
   }
 
   & .notification__title {
-    max-width: 234px;
     grid-area: title;
+    max-width: 234px;
     margin-bottom: 7px;
     font-size: 14px;
     line-height: 20px;
-    text-overflow: ellipsis;
     white-space: normal;
+    text-overflow: ellipsis;
   }
 
   .notification__preview-image {
+    grid-area: preview;
     width: 86px;
     height: 48px;
-    grid-area: preview;
     margin: 0 40px 0 16px;
     border-radius: 4px;
-    object-fit: cover;
     overflow: hidden;
+    object-fit: cover;
   }
 
   .notification__release-ago {
@@ -44,19 +52,10 @@
 
   .notification__new-mark {
     grid-area: new-mark;
-    margin: 22px 6px 0;
-    background-color: #3ea6ff;
     width: 4px;
     height: 4px;
+    margin: 22px 6px 0;
     border-radius: 2px;
-  }
-
-
-  &:hover {
-    background-color: #3e3e3e;
-
-    & .dots-menu-icon {
-      display: flex;
-    }
+    background-color: #3ea6ff;
   }
 }

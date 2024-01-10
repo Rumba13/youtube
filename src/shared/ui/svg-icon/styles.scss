@@ -1,7 +1,9 @@
 .svg-icon {
-  height: 24px;
   width: 24px;
+  height: 24px;
 
-  & svg {
+  & > svg {
+    width: 100%;
+    height: 100%;
   }
 }
