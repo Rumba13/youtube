@@ -2,8 +2,9 @@ import "./styles.scss";
 import {MouseEventHandler, useEffect, useState} from "react";
 import {NotificationActionsModalSlotType, NotificationCard} from "../../../entities/notification";
 import {GearIcon} from "../../header/ui/gear-icon";
-import {notificationsState} from "../model/model";
+import {notificationsState} from "../../../entities/notification";
 import {useTranslation} from "react-i18next";
+import {observer} from "mobx-react";
 
 type PropsType = {
     isOpened: boolean,
@@ -11,17 +12,17 @@ type PropsType = {
     NotificationsActionsModalSlot: NotificationActionsModalSlotType
 }
 
-export function NotificationsModal({isOpened, onClick, NotificationsActionsModalSlot}: PropsType) {
+export const NotificationsModal = observer(({isOpened, onClick, NotificationsActionsModalSlot}: PropsType) => {
     const [openedNotificationsListId, setOpenedModalId] = useState<string>("")
     const {t} = useTranslation();
 
 
     useEffect(() => {
-        notificationsState.loadNotificationsData();
+        notificationsState.loadNotifications();
     }, []);
 
-    if (!notificationsState.notifications) {
-        return <div>Loading...</div>
+    if (notificationsState.isLoading) {
+        return <div>sd</div>
     }
 
     return <div className={`notifications${isOpened ? " opened" : ""}`} onClick={onClick}>
@@ -36,4 +37,4 @@ export function NotificationsModal({isOpened, onClick, NotificationsActionsModal
                                   key={notification.id}/>)}
         </div>
     </div>
-}
+})

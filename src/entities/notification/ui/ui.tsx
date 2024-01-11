@@ -35,7 +35,6 @@ export function NotificationCard({notification, ModalSlot, setOpenedModalId, ope
                 : <Trans i18nKey="New Video" streamName={contentName}>{{videoName: contentName}}</Trans>
             }
 
-
         </h2>
         <img src={previewImage} alt="" className="notification__preview-image"/>
         <span className="notification__release-ago">
