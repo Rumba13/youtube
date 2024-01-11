@@ -11,19 +11,22 @@ import {Logo} from "../../../shared/ui/logo";
 import {observer} from "mobx-react";
 import {BackButton} from "./back-button";
 import {searchState} from "../../../features/search/model/model";
+import {VoiceSearchModalSlotType} from "../../voice-search-modal/ui/ui";
 
 type PropsType = {
     NotificationsModalSlot: ModalSlotType,
     NotificationActionsModalSlot: NotificationActionsModalSlotType,
     UserActionsModalSlot: UserActionsModalSlotType,
-    VideoActionsModal: VideoActionsModalSlotType
+    VideoActionsModal: VideoActionsModalSlotType,
+    VoiceSearchModalSlot: VoiceSearchModalSlotType
 }
 
 export const Header = observer(({
                                     NotificationsModalSlot,
                                     NotificationActionsModalSlot,
                                     UserActionsModalSlot,
-                                    VideoActionsModal
+                                    VideoActionsModal,
+                                    VoiceSearchModalSlot
                                 }: PropsType) => {
     const {isSearchOpened, setIsSearchOpened} = searchState;
 
@@ -39,6 +42,6 @@ export const Header = observer(({
         }
         {isSearchOpened && <BackButton onClick={() => setIsSearchOpened(false)}/>}
 
-        <Search/>
+        <Search VoiceSearchModalSlot={VoiceSearchModalSlot}/>
     </header>
 })

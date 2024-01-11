@@ -1,13 +1,13 @@
 .voice-search-modal {
-  display: none;
   position: absolute;
   left: 50%;
+  z-index: 900;
   transform: translateX(-50%);
+  display: none;
   width: 592px;
   height: 464px;
   padding: 20px;
   background-color: #212121;
-  z-index: 900;
   opacity: 1;
 
   &.opened {
@@ -15,16 +15,15 @@
   }
 
   & .voice-search-modal-container {
-    display: flex;
     position: relative;
+    display: flex;
     flex-direction: column;
     height: 100%;
 
     & .voice-search-modal__cross {
       position: absolute;
-      right: -10px;
       top: -10px;
-
+      right: -10px;
     }
 
     & .voice-search-modal__title {
@@ -45,8 +44,8 @@
       transform: translateX(-50%);
       width: 68px;
       height: 68px;
-      cursor: pointer;
       background-color: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
 
       &:hover {
         background-color: rgba(255, 255, 255, 0.2);

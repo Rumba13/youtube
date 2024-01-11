@@ -1,22 +1,26 @@
 import "./styles.scss";
 import keyboardIcon from "../../../images/keyboard-icon.png";
+import {SvgIcon} from "../../../shared/ui/svg-icon";
+import {useTranslation} from "react-i18next";
+import {useEffect, useState} from "react";
+import {useScreenWidth} from "../../../shared/lib/use-screen-width";
+import {observer} from "mobx-react";
 import {Field, Form, Formik} from "formik";
-import {search} from "../api/search";
 import {Icon} from "../../../shared/ui/icon";
 import {SearchIcon} from "../../../images/search-icon";
 import {CrossIcon} from "./cross-icon";
 import {VoiceSearchButton} from "./voice-search-icon";
-import {useEffect, useState} from "react";
-import {VoiceSearchModal} from "./voice-search-modal";
-import {observer} from "mobx-react";
-import {overlayState} from "../../../app/overlay";
-import {useScreenWidth} from "../../../shared/lib/use-screen-width";
 import {SearchButton} from "./search-button";
-import {SvgIcon} from "../../../shared/ui/svg-icon";
+import {search} from "../api/search";
+import {overlayState} from "../../../app/overlay";
 import {searchState} from "../model/model";
-import {useTranslation} from "react-i18next";
+import {VoiceSearchModalSlotType} from "../../../widgets/voice-search-modal/ui/ui";
 
-export const Search = observer(() => {
+type PropsType = {
+    VoiceSearchModalSlot: VoiceSearchModalSlotType,
+}
+
+export const Search = observer(({VoiceSearchModalSlot}: PropsType) => {
     const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
     const screenWidth = useScreenWidth();
     const {t} = useTranslation();
@@ -80,7 +84,7 @@ export const Search = observer(() => {
                             <VoiceSearchButton type={isSearchMinified ? "mini" : "normal"} toolTip
                                                onClick={() => setIsModalOpened(true)}/>
 
-                            <VoiceSearchModal isModalOpened={isModalOpened} setIsModalOpened={setIsModalOpened}/>
+                            <VoiceSearchModalSlot isOpened={isModalOpened} setIsOpened={setIsModalOpened}/>
                         </Form>
                     }
                 </Formik>
