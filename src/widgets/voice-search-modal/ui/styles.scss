@@ -37,7 +37,7 @@
       color: #aaaaaa;
     }
 
-    & .voice-search-icon {
+    & .voice-search-button {
       position: absolute;
       bottom: 50px;
       left: 50%;
@@ -51,7 +51,7 @@
         background-color: rgba(255, 255, 255, 0.2);
       }
 
-      & .voice-search-icon__icon {
+      & .voice-search-button__icon {
         width: 40px;
         height: 40px;
       }

@@ -1,6 +1,5 @@
 import "./styles.scss";
 import {Search} from "../../../features/search";
-import {MenuIcon} from "./menu-icon";
 import {UserProfileIcon} from "./user-profile-icon";
 import {CreateVideoButton} from "./create-video-button";
 import {ModalSlotType, NotificationsButton} from "./notifications-button";
@@ -12,6 +11,7 @@ import {observer} from "mobx-react";
 import {BackButton} from "./back-button";
 import {searchState} from "../../../features/search/model/model";
 import {VoiceSearchModalSlotType} from "../../voice-search-modal/ui/ui";
+import {MenuButton} from "./menu-button";
 
 type PropsType = {
     NotificationsModalSlot: ModalSlotType,
@@ -32,7 +32,7 @@ export const Header = observer(({
 
     return <header className={`header${isSearchOpened ? " opened-search" : ""}`}>
         {!isSearchOpened && <>
-            <MenuIcon/>
+            <MenuButton/>
             <Logo/>
             <UserProfileIcon UserActionsModalSlot={UserActionsModalSlot}/>
             <NotificationsButton ModalSlot={NotificationsModalSlot}

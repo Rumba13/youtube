@@ -3,9 +3,12 @@ import React, {JSX, MouseEventHandler, useEffect, useState} from "react";
 import {TextTip} from "../../../../shared/ui/text-tip";
 import {observer} from "mobx-react";
 import {notificationsState} from "../../../notifications-modal";
-import {NotificationsIcon} from "../notifications-icon";
 import {NotificationActionsModalSlotType} from "../../../../entities/notification";
 import {useTranslation} from "react-i18next";
+import {Button} from "../../../../shared/ui/button";
+import {SvgIcon} from "../../../../shared/ui/svg-icon";
+import {NotificationsActiveIcon} from "../../../../images/notifications-active-icon";
+import {NotificationsIcon as NotificationsIconSvg} from "../../../../images/notifications-icon";
 
 type PropsType = {
     ModalSlot: ModalSlotType,
@@ -34,16 +37,15 @@ export const NotificationsButton = observer(({ModalSlot, NotificationActionsModa
         //Without that "setTimeout" and "if (isModalOpened){...}" other modals won't close with click on element contains e.stopPropagation like modals buttons
     }
 
-    return <div className="notification-icon"
-                onClick={toggleModal}>
-        <NotificationsIcon isActive={isModalOpened}/>
-        <div className="notification-icon__interaction"></div>
-        {notificationsState.unViewedNotificationsCount === 0
-            ? <></>
-            : <div className="notification-icon__count">{notificationsState.unViewedNotificationsCount}</div>
+    return <Button className="notification-icon" onClick={toggleModal}>
+        <SvgIcon className="notification-icon__icon"
+                 Icon={isModalOpened ? NotificationsActiveIcon : NotificationsIconSvg}/>
+
+        {!(notificationsState.unViewedNotificationsCount === 0) &&
+            <div className="notification-icon__count">{notificationsState.unViewedNotificationsCount}</div>
         }
         <ModalSlot isOpened={isModalOpened} onClick={event => event.stopPropagation()}
                    NotificationsActionsModalSlot={NotificationActionsModalSlot}/>
         <TextTip>{t("Notifications")}</TextTip>
-    </div>
+    </Button>
 })

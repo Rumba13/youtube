@@ -28,7 +28,7 @@
     grid-area: user-profile-icon;
   }
 
-  & > .menu-icon {
+  & > .menu-button {
     grid-area: menu-icon;
   }
 
@@ -36,7 +36,7 @@
     grid-area: search-button;
   }
 
-  & > .voice-search-icon.mini {
+  & > .voice-search-button.mini {
     grid-area: voice-search-button;
   }
 
@@ -53,7 +53,7 @@
     padding-right: 35px;
 
 
-    & > .menu-icon { //TODO ???
+    & > .menu-button { //TODO ???
       margin-right: 20px;
       margin-left: 8px;
     }
@@ -63,7 +63,7 @@
     }
 
     & > .notification-icon,
-    & > .voice-search-icon.mini,
+    & > .voice-search-button.mini,
     & > .create-video-button,
     & > .search-icon-button.mini, {
       margin: 0;

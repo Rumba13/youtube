@@ -1,10 +1,11 @@
 import "./styles.scss";
 import {MouseEventHandler, useEffect, useState} from "react";
 import {NotificationActionsModalSlotType, NotificationCard} from "../../../entities/notification";
-import {GearIcon} from "../../header/ui/gear-icon";
 import {notificationsState} from "../../../entities/notification";
 import {useTranslation} from "react-i18next";
 import {observer} from "mobx-react";
+import {SettingsButton} from "../../header";
+import {Button} from "../../../shared/ui/button";
 
 type PropsType = {
     isOpened: boolean,
@@ -13,28 +14,28 @@ type PropsType = {
 }
 
 export const NotificationsModal = observer(({isOpened, onClick, NotificationsActionsModalSlot}: PropsType) => {
-    const [openedNotificationsListId, setOpenedModalId] = useState<string>("")
+    const [openedNotificationsModalId, setOpenedModalId] = useState<string>("")
     const {t} = useTranslation();
-
 
     useEffect(() => {
         notificationsState.loadNotifications();
     }, []);
 
     if (notificationsState.isLoading) {
-        return <div>sd</div>
+        return <></>
     }
 
     return <div className={`notifications${isOpened ? " opened" : ""}`} onClick={onClick}>
         <div className="notifications-header">
             <span className="header__title">{t("Notifications")}</span>
-            <GearIcon/>
+            <SettingsButton/>
         </div>
         <div className="notifications-list">
             {notificationsState.notifications.map(notification =>
                 <NotificationCard notification={notification} ModalSlot={NotificationsActionsModalSlot}
-                                  openedModal={openedNotificationsListId} setOpenedModalId={setOpenedModalId}
+                                  openedModal={openedNotificationsModalId} setOpenedModalId={setOpenedModalId}
                                   key={notification.id}/>)}
         </div>
     </div>
+
 })

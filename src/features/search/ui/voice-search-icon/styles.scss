@@ -1,65 +1,57 @@
-.voice-search-icon {
+.voice-search-button {
   display: flex;
   align-items: center;
   position: relative;
-  margin-left: 12px; //TODO refuck all margin in similar  components
+  margin-left: 12px;
   margin-right: 8px;
-  background-color: #272727;
   border-radius: 50%;
   padding: 8px;
 
-  &:hover {
-    background-color: #3d3d3d;
+  & .button__interaction {
+    background-color: #272727;
 
-    & .text-tip {
-      display: block;
+    &:hover {
+      background-color: #3d3d3d !important;
+
+      & ~ .text-tip {
+        display: block;
+      }
     }
   }
 
-  & .voice-search-icon__interaction {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-  }
-
-  & .voice-search-icon__icon {
-    width: 24px;
-    height: 24px;
+  & .voice-search-button__icon {
+    position: relative;
+    z-index: 3;
     fill: white;
+    pointer-events: none;
   }
 
   &.mini {
-    display: flex;
-    position: relative;
-    align-items: center;
-    padding: 8px;
-    border-radius: 50%;
-    background-color: transparent;
     margin-left: 5px;
 
-    &:hover {
-      background-color: #272727;
+    & .button__interaction {
+      background-color: transparent;
 
-      & .text-tip {
-        display: block;
-        right: 100%;
+      &:hover {
+        background-color: #272727 !important;
+
+        & ~ .text-tip {
+          display: block;
+        }
       }
     }
+  }
+}
 
-    & .voice-search-icon__interaction {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-    }
+.header.opened-search .voice-search-button.mini {
+  & .button__interaction {
 
-    & .voice-search-icon__icon {
-      fill: white;
-      width: 24px;
-      height: 24px;
+    &:hover {
+
+      & ~ .text-tip {
+        right: 0 !important;
+        transform: none;
+      }
     }
   }
 }

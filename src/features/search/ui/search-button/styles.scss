@@ -1,15 +1,4 @@
 .search-icon-button {
-
-  &:hover {
-    & .text-tip {
-      display: block;
-    }
-  }
-
-  & .search-icon {
-    width: 100%;
-  }
-
   position: relative;
   width: 64px;
   border: 1px solid #303030;
@@ -17,42 +6,31 @@
   border-radius: 0 40px 40px 0;
   background-color: #222222;
   fill: white;
-}
 
-.search-icon-button-mini {
-  position: relative;
-  background-color: transparent;
-  width: 40px;
-  height: 40px;
-
+  & .search-button-mini__icon {
+    width: 100%;
+  }
 
   &:hover {
     & .text-tip {
       display: block;
     }
-    & .search-icon-button-mini__interaction {
-      background-color: #272727;
+  }
+}
+
+.search-button-mini {
+
+  & .button__interaction:hover {
+    background-color: #272727;
+
+    & ~ .text-tip {
+      display: block;
     }
   }
 
-  & .search-icon {
-    width: 24px;
-    height: 24px;
+  & .search-button-mini__icon {
     position: relative;
     z-index: 3;
+    pointer-events: none;
   }
-  & .search-icon-button-mini__interaction {
-    background-color: transparent;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    border-radius: 50%;
-    z-index: 1;
-  }
-
-  padding: 8px;
-  border-radius: 50%;
-  fill: white;
 }

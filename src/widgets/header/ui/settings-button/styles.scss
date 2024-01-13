@@ -1,16 +1,21 @@
-.create-video-button {
-  margin-right: 8px;
+.gear-button {
+  position: relative;
+  align-items: center;
+  padding: 8px;
 
   & .button__interaction:hover {
+    background-color: #535353;
+
     & ~ .text-tip {
       display: block;
     }
   }
 
-  & .create-video-button__icon {
+  & .gear-button__icon {
     position: relative;
     z-index: 3;
     fill: currentColor;
     pointer-events: none;
+    cursor: pointer;
   }
 }

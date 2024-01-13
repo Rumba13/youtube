@@ -10,7 +10,7 @@
     & .search-form .search-form-container {
       border-color: #4176c0;
 
-      & .search-icon {
+      & .search-button-mini__icon {
         display: block;
       }
     }
@@ -30,7 +30,7 @@
       border: 1px solid #303030;
       border-radius: 40px 0 0 40px;
 
-      & .search-icon {
+      & .search-button-mini__icon {
         display: none;
         max-width: 20px;
         min-width: 20px;
@@ -84,7 +84,7 @@
 }
 
 @media(max-width: 750px) {
-  .voice-search-icon.mini {
+  .voice-search-button.mini {
 
     & .text-tip {
       right: 170% !important;

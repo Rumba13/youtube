@@ -4,6 +4,7 @@ import {TextTip} from "../../../../shared/ui/text-tip";
 import {SvgIcon} from "../../../../shared/ui/svg-icon";
 import React from "react";
 import {useTranslation} from "react-i18next";
+import {Button} from "../../../../shared/ui/button";
 
 type PropsType = {
     disabled?: boolean,
@@ -18,16 +19,14 @@ export function SearchButton({buttonType, type, disabled = false, onClick}: Prop
     if (type === "normal") {
         return <button className="search-icon-button" disabled={disabled} onClick={onClick}
                        type={buttonType}>
-            <SvgIcon className="search-icon" Icon={SearchIcon}/>
+            <SvgIcon className="search-button-mini__icon" Icon={SearchIcon}/>
             <TextTip>{t("Enter Search")}</TextTip>
         </button>
     } else {
-        return <button className="search-icon-button-mini" disabled={disabled} onClick={onClick}
-                       type={buttonType}>
-            <div className="search-icon-button-mini__interaction"></div>
-            <SvgIcon className="search-icon" Icon={SearchIcon}/>
+        return <Button className="search-button-mini" onClick={onClick}>
+            <SvgIcon className="search-button-mini__icon" Icon={SearchIcon}/>
             <TextTip>{t("Enter Search")}</TextTip>
-        </button>
+        </Button>
     }
 
 
