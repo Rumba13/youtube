@@ -1,3 +1,39 @@
 .aside {
   grid-area: aside;
+  width: 240px;
+  margin-top: 4px;
+
+  &.vertical-list {
+    background-color: transparent;
+    padding: 0 ;
+    box-shadow: none;
+  }
+
+  &.mini {
+    width: 72px;
+    padding: 0 4px;
+
+    & .aside-item {
+      display: flex;
+      flex-direction: column;
+      font-size: 10px;
+      padding: 16px 0 15px;
+      align-items: center;
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+
+        &:hover {
+          background-color: #272727;
+        }
+
+      & .aside-item__title {
+        align-self: center;
+      }
+
+      & .aside-item__icon {
+        margin-bottom: 6px;
+      }
+    }
+  }
 }

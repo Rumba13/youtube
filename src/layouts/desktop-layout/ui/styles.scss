@@ -2,5 +2,5 @@
   display: grid;
   grid-template:
   "header header" 56px
-  "aside main" auto / 240px 1fr;
+  "aside main" auto / auto 1fr;
 }

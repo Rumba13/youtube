@@ -2,6 +2,7 @@ import i18next from "i18next";
 import {initReactI18next} from "react-i18next";
 import XHR from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
+import {SubscriptionsIcon} from "../../images/subscriptions-icon";
 
 i18next
     .use(XHR)
@@ -50,7 +51,11 @@ i18next
                     "On The Channel": "On The Channel \"{{channelName}}\"",
                     "New Video": "new video appeared:\"{{videoName}}\"",
                     "New Stream": "new stream is going live \"{{streamName}}\"",
-                    "YouTube Main Page": "YouTube main page"
+                    "YouTube Main Page": "YouTube main page",
+                    "Home": "Home",
+                    "Shorts": "Shorts",
+                    "Subscriptions": "Subscriptions",
+                    "You": "You"
                 }
             },
             ru: {
@@ -95,7 +100,11 @@ i18next
                     "On The Channel": "На канале \"{{channelName}}\"",
                     "New Video": "появилось новое видео:\"{{videoName}}\"",
                     "New Stream": "идёт трансляция \"{{streamName}}\"",
-                    "YouTube Main Page": "Главная страница YouTube"
+                    "YouTube Main Page": "Главная страница YouTube",
+                    "Home": "Главная",
+                    "Shorts": "Shorts",
+                    "Subscriptions": "Подписки",
+                    "You": "Вы"
                 }
             },
 
