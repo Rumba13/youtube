@@ -13,10 +13,23 @@
     top: 0;
     z-index: 1;
     border-radius: 50%;
+    border: 1px solid transparent;
     cursor: pointer;
+    user-select: none;
 
     &:hover {
       background-color: #272727;
     }
+
+    &:active {
+      border-color: #525252;
+      background-color: #525252;
+    }
+
+    &:not(:active) {
+      transition: 0.4s border;
+    }
   }
+
+
 }
