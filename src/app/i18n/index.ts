@@ -49,7 +49,8 @@ i18next
                     "Ago": "ago",
                     "On The Channel": "On The Channel \"{{channelName}}\"",
                     "New Video": "new video appeared:\"{{videoName}}\"",
-                    "New Stream": "new stream is going live \"{{streamName}}\""
+                    "New Stream": "new stream is going live \"{{streamName}}\"",
+                    "YouTube Main Page": "YouTube main page"
                 }
             },
             ru: {
@@ -93,7 +94,8 @@ i18next
                     "Ago": "назад",
                     "On The Channel": "На канале \"{{channelName}}\"",
                     "New Video": "появилось новое видео:\"{{videoName}}\"",
-                    "New Stream": "идёт трансляция \"{{streamName}}\""
+                    "New Stream": "идёт трансляция \"{{streamName}}\"",
+                    "YouTube Main Page": "Главная страница YouTube"
                 }
             },
 
