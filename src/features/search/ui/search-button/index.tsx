@@ -19,7 +19,7 @@ export function SearchButton({buttonType, type, disabled = false, onClick}: Prop
     if (type === "normal") {
         return <button className="search-icon-button" disabled={disabled} onClick={onClick}
                        type={buttonType}>
-            <SvgIcon className="search-button-mini__icon" Icon={SearchIcon}/>
+            <SvgIcon className="search-icon-button__icon" Icon={SearchIcon}/>
             <TextTip>{t("Enter Search")}</TextTip>
         </button>
     } else {

@@ -1,14 +1,16 @@
 .search-icon-button {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 64px;
+  color: white;
+  background-color: #222222;
   border: 1px solid #303030;
   border-left: 0;
   border-radius: 0 40px 40px 0;
-  background-color: #222222;
-  fill: white;
 
-  & .search-button-mini__icon {
-    width: 100%;
+  & .search-icon-button__icon {
   }
 
   &:hover {
