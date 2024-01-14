@@ -7,7 +7,7 @@ type PropsType = {
 }
 
 export function NewVerticalList({className, children}: PropsType) {
-    return <ul className={`vertical-list${className ? " " + className : ""}`}>
+    return <ul className={`new-vertical-list${className ? " " + className : ""}`}>
         {children}
     </ul>
 }

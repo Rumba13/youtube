@@ -10,7 +10,7 @@ export function App() {
 
 
     useEffect(() => {
-    i18n.changeLanguage("ru")
+        i18n.changeLanguage("ru");
     }, []);
 
     return <div className="app">
