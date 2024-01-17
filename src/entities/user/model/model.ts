@@ -1,5 +1,5 @@
 import {makeAutoObservable} from "mobx";
-import {SubscriptionType} from "../../../shared/api/types/channel-type";
+import {SubscriptionType} from "../../../shared/api/types/subscription-type";
 import {UserService, UserServiceType} from "../../../shared/api/user-service";
 import {PlaylistType} from "../../../shared/api/types/playlist-type";
 

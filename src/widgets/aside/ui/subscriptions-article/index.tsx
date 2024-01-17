@@ -7,10 +7,12 @@ import {ArrowIcon} from "../../../../images/arrow-icon";
 import {userState} from "../../../../entities/user";
 import {useTranslation} from "react-i18next";
 import {useEffect, useState} from "react";
+import {observer} from "mobx-react";
+import {SubscriptionCard} from "../../../../entities/subscription";
+import {ExpandButton} from "../expand-button";
 
-type PropsType = {}
 
-export function SubscriptionsArticle({}: PropsType) {
+export const SubscriptionsArticle = observer(() => {
     const {t} = useTranslation();
 
     useEffect(() => {
@@ -19,7 +21,6 @@ export function SubscriptionsArticle({}: PropsType) {
 
     const {subscriptions} = userState;
     const [isSubscriptionArticleExpanded, setIsSubscriptionArticleExpanded] = useState<boolean>(false);
-    const expandButtonTitle = t("Show More Channels", {channelCount: subscriptions.length - 7});
 
     if (subscriptions.length === 0) {
         return <></>
@@ -27,27 +28,12 @@ export function SubscriptionsArticle({}: PropsType) {
 
     return <NewVerticalList
         className={`aside-article subscriptions${isSubscriptionArticleExpanded ? " " + "expanded" : ""}`}>
-        <span title={t("Subscriptions")} className="aside-item__title article-title">{t("Subscriptions")}</span>
+        <span className="aside-item__title article-title" title={t("Subscriptions")}>{t("Subscriptions")}</span>
 
-        {subscriptions.map(({title, icon, isNewVideo, isStream}) =>
-            <VerticalListItem className="aside-item subscription" title={title}>
-                <Icon className="aside-item__icon" icon={icon}/>
-                <span className="aside-item__title">{title}</span>
-            </VerticalListItem>)
-        }
+        {subscriptions.map((subscription) => <SubscriptionCard subscription={subscription}/>)}
 
-        {isSubscriptionArticleExpanded
-            ? <VerticalListItem className="aside-item" title={t("Collapse")}
-                                onClick={() => setIsSubscriptionArticleExpanded(!isSubscriptionArticleExpanded)}>
-                <SvgIcon className="aside-item__icon collapse-icon" Icon={ArrowIcon}/>
-                <span className="aside-item__title">{t("Collapse")}</span>
-            </VerticalListItem>
-            : <VerticalListItem className="aside-item" title={expandButtonTitle}
-                                onClick={() => setIsSubscriptionArticleExpanded(!isSubscriptionArticleExpanded)}>
-                <SvgIcon className="aside-item__icon expand-icon" Icon={ArrowIcon}/>
-                <span className="aside-item__title">{expandButtonTitle}</span>
-            </VerticalListItem>
-        }
+        <ExpandButton title={isSubscriptionArticleExpanded ? t("Collapse") : t("Show More Channels", {channelCount: subscriptions.length - 7})}
+                      onClick={() => setIsSubscriptionArticleExpanded(!isSubscriptionArticleExpanded)}
+                      isExpanded={isSubscriptionArticleExpanded}/>
     </NewVerticalList>
-
-}
+})

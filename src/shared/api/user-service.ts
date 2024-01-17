@@ -1,5 +1,5 @@
 import {UserType} from "./types/user-type";
-import {SubscriptionType} from "./types/channel-type";
+import {SubscriptionType} from "./types/subscription-type";
 import ahegao1 from "../../images/temp/ahegao-1.jpg";
 import ahegao2 from "../../images/temp/ahegao-2.jpg";
 import ahegao3 from "../../images/temp/ahegao-3.jpg";

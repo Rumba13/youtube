@@ -12,8 +12,10 @@ import {PlaylistIcon} from "../../../../images/playlist-icon";
 import {useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
 import {userState} from "../../../../entities/user";
+import {observer} from "mobx-react";
+import {ExpandButton} from "../expand-button";
 
-export function UserArticle() {
+export const UserArticle = observer(() => {
     const [isUserArticleExpanded, setIsUserArticleExpanded] = useState<boolean>(false);
     const {t} = useTranslation();
     const {playlists} = userState;
@@ -55,19 +57,10 @@ export function UserArticle() {
             </a>
         </VerticalListItem>)}
 
-        {isUserArticleExpanded
-            ? <VerticalListItem className="aside-item" title={t("Collapse")}
-                                onClick={() => setIsUserArticleExpanded(!isUserArticleExpanded)}>
-                <SvgIcon className="aside-item__icon collapse-icon" Icon={ArrowIcon}/>
-                <span className="aside-item__title">{t("Collapse")}</span>
-            </VerticalListItem>
-            : <VerticalListItem className="aside-item" title={t("Expand")}
-                                onClick={() => setIsUserArticleExpanded(!isUserArticleExpanded)}>
-                <SvgIcon className="aside-item__icon expand-icon" Icon={ArrowIcon}/>
-                <span className="aside-item__title">{t("Expand")}</span>
-            </VerticalListItem>
-        }
+        <ExpandButton title={isUserArticleExpanded ? t("Collapse") : t("Expand")}
+                      onClick={() => setIsUserArticleExpanded(!isUserArticleExpanded)}
+                      isExpanded={isUserArticleExpanded}/>
 
     </NewVerticalList>
 
-}
+})
