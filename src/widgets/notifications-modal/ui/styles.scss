@@ -8,7 +8,7 @@
   width: 480px;
   border-radius: 12px;
   box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
-  background-color: #282828;
+  background-color: var(--light-dark-color);
   overflow: hidden;
 
   & .notifications-header {
@@ -50,7 +50,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: #717171;
+      background-color: var(--fade-gray-color);
       min-height: 100px;
     }
 

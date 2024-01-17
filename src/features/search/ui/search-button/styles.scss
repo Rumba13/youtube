@@ -5,8 +5,8 @@
   justify-content: center;
   width: 64px;
   color: white;
-  background-color: #222222;
-  border: 1px solid #303030;
+  background-color: var(--light-dark-color);
+  border: 1px solid var(--lighter-dark-color);
   border-left: 0;
   border-radius: 0 40px 40px 0;
 
@@ -23,7 +23,7 @@
 .search-button-mini {
 
   & .button__interaction:hover {
-    background-color: #272727;
+    background-color: var(--light-dark-color);
 
     & ~ .text-tip {
       display: block;

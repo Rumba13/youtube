@@ -18,12 +18,12 @@
     user-select: none;
 
     &:hover {
-      background-color: #272727;
+      background-color: var(--light-dark-color);
     }
 
     &:active {
-      border-color: #525252;
-      background-color: #525252;
+      border-color: var(--gray-color);
+      background-color: var(--gray-color);
     }
 
     &:not(:active) {

@@ -1,0 +1,5 @@
+.aside-article.actions-article{
+  &:not(.expanded) .aside-item:not(:last-child):nth-child(1n+6) { //collapse list;
+    display: none;
+  }
+}

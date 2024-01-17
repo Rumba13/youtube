@@ -2,7 +2,7 @@
   display: none;
   width: 300px;
   max-height: 749px;
-  background-color: #282828;
+  background-color: var(--light-dark-color);
   border-radius: 12px;
   box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
 
@@ -41,7 +41,7 @@
       grid-area: link;
       margin-top: 8px;
       font-size: 14px;
-      color: #3ea6ff; //TODO separate colors to vars
+      color: var(--blue-color);
     }
   }
 
@@ -52,7 +52,7 @@
       height: 40px;
       font-size: 14px;
       box-sizing: content-box;
-      color: #f1f1f1;
+      color: var(--white-color);
 
       &:nth-child(3),
       &:nth-child(5),
@@ -78,7 +78,7 @@
         line-height: 40px;
 
         &:hover {
-          background-color: #3e3e3e;
+          background-color: var(-dark-gray-color);
         }
       }
 

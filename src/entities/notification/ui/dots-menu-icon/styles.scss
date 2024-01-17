@@ -12,8 +12,8 @@
   }
 
   &:active {
-    border-color: #525252;
-    background-color: #525252;
+    border-color: var(--gray-color);
+    background-color: var(--gray-color);
   }
 
   &:not(:active) {

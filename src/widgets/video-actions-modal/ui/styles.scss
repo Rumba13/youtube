@@ -5,7 +5,7 @@
   display: none;
   padding: 8px 0;
   border-radius: 12px;
-  background-color: #282828;
+  background-color: var(--light-dark-color);
 
   &.opened {
     display: block;
@@ -18,7 +18,7 @@
     font-size: 14px;
 
     &:hover {
-      background-color: #3e3e3e;
+      background-color: var(-dark-gray-color);
     }
 
     & .title {

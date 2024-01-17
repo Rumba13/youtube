@@ -8,7 +8,7 @@
     padding-left: 0;
 
     & .search-form .search-form-container {
-      border-color: #4176c0;
+      border-color: var(--dark-blue-color);
 
       & .search-icon {
         display: block;
@@ -26,8 +26,8 @@
       position: relative;
       display: flex;
       align-items: center;
-      background-color: #121212;
-      border: 1px solid #303030;
+      background-color: var(--dark-color);
+      border: 1px solid var(--lighter-dark-color);
       border-radius: 40px 0 0 40px;
 
       & .search-icon {
@@ -61,17 +61,17 @@
         font-weight: 400;
         line-height: 38px;
         color: white;
-        background-color: #121212;
+        background-color: var(--dark-color);
       }
     }
 
     & .search-icon-button {
       position: relative;
       width: 64px;
-      border: 1px solid #303030;
+      border: 1px solid var(--lighter-dark-color);
       border-left: 0;
       border-radius: 0 40px 40px 0;
-      background-color: #222222;
+      background-color: var(--light-dark-color);
       fill: white;
 
       &:hover {

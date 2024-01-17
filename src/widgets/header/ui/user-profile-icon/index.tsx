@@ -1,7 +1,7 @@
 import "./styles.scss";
-import {userService} from "../../../../shared/api/user-service";
 import React, {useEffect, useState} from "react";
 import {UserActionsModalSlotType} from "../../../user-actions-modal";
+import {UserService} from "../../../../shared/api/user-service";
 
 type PropsType = {
     UserActionsModalSlot: UserActionsModalSlotType
@@ -14,7 +14,7 @@ export function UserProfileIcon({UserActionsModalSlot}: PropsType) {
     document.addEventListener("click", () => setIsModalOpened(false));
 
     useEffect(() => {
-        userService.loadUserByJwt("").then(({icon}) => setUserProfileIcon(icon))
+        (new UserService()).loadUserByJwt("").then(({icon}) => setUserProfileIcon(icon))
     }, []);
 
     function toggleModal(event: React.MouseEvent) {

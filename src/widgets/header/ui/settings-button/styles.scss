@@ -4,7 +4,7 @@
   padding: 8px;
 
   & .button__interaction:hover {
-    background-color: #535353;
+    background-color: var(--gray-color);
 
     & ~ .text-tip {
       display: block;

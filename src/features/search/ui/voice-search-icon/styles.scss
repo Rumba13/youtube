@@ -8,10 +8,10 @@
   padding: 8px;
 
   & .button__interaction {
-    background-color: #272727;
+    background-color: var(--light-dark-color);
 
     &:hover {
-      background-color: #3d3d3d !important;
+      background-color: var(-dark-gray-color) !important;
 
       & ~ .text-tip {
         display: block;
@@ -33,7 +33,7 @@
       background-color: transparent;
 
       &:hover {
-        background-color: #272727 !important;
+        background-color: var(--light-dark-color) !important;
 
         & ~ .text-tip {
           display: block;
