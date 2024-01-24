@@ -5,7 +5,6 @@ import {useTranslation} from "react-i18next";
 import {useEffect} from "react";
 
 export function App() {
-
     const {i18n, t} = useTranslation();
 
 
