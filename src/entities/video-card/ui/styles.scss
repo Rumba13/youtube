@@ -9,7 +9,7 @@
   grid-template-columns: auto auto 1fr;
 
   height: 333px;
-  & > .video-preview {
+  & > .video-preview-wrapper {
     grid-area: video-preview;
     margin-bottom: 13px;
     pointer-events: none;

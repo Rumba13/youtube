@@ -70,6 +70,122 @@ export class VideoService {
                 title: "ЦАРЯ ДОЛЖНЫ УВАЖАТЬ. Молитвы в честь царя-кирилла",
                 views: 18000
             },
+            {
+                id: "8",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview1,
+                releaseDate: (new Date('Jan 30, 2024 16:54:00')),
+                title: "Вич доктор перекурил НОВУЮ мету. DOTA 2",
+                views: 6500
+            },
+            {
+                id: "9",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview2,
+                releaseDate: (new Date('Nov 17, 2021 03:24:00')),
+                title: "Вич-Доктор разносит кабины, +800 к аналу тотема",
+                views: 100000
+            }, {
+                id: "10",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview3,
+                releaseDate: (new Date('Jan 30, 2023 03:24:00')),
+                title: "Ауф братва мы богаты, го на гелике в МАСКВУ, Разябём усё",
+                views: 1500000
+            }, {
+                id: "11",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview4,
+                releaseDate: (new Date('Jan 30, 2024 03:24:00')),
+                title: "Жалкий свин презренно существует",
+                views: 2
+            }, {
+                id: "12",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview5,
+                releaseDate: (new Date('Sep 30, 2023 03:24:00')),
+                title: "Замотевский-Алкаш смеет посягать на бутылку водки бомжей-филаматов",
+                views: 58000000
+            }, {
+                id: "13",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview6,
+                releaseDate: (new Date('Dec 30, 2023 03:24:00')),
+                title: "Димку приговорили к расстрелу, и царь лично очистил мир от вони",
+                views: 154000
+            }, {
+                id: "14",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview7,
+                releaseDate: (new Date('Dec 30, 2023 10:24:00')),
+                title: "ЦАРЯ ДОЛЖНЫ УВАЖАТЬ. Молитвы в честь царя-кирилла",
+                views: 18000
+            },
+            {
+                id: "15",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview1,
+                releaseDate: (new Date('Jan 30, 2024 16:54:00')),
+                title: "Вич доктор перекурил НОВУЮ мету. DOTA 2",
+                views: 6500
+            },
+            {
+                id: "16",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview2,
+                releaseDate: (new Date('Nov 17, 2021 03:24:00')),
+                title: "Вич-Доктор разносит кабины, +800 к аналу тотема",
+                views: 100000
+            }, {
+                id: "17",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview3,
+                releaseDate: (new Date('Jan 30, 2023 03:24:00')),
+                title: "Ауф братва мы богаты, го на гелике в МАСКВУ, Разябём усё",
+                views: 1500000
+            }, {
+                id: "18",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview4,
+                releaseDate: (new Date('Jan 30, 2024 03:24:00')),
+                title: "Жалкий свин презренно существует",
+                views: 2
+            }, {
+                id: "19",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview5,
+                releaseDate: (new Date('Sep 30, 2023 03:24:00')),
+                title: "Замотевский-Алкаш смеет посягать на бутылку водки бомжей-филаматов",
+                views: 58000000
+            }, {
+                id: "20",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview6,
+                releaseDate: (new Date('Dec 30, 2023 03:24:00')),
+                title: "Димку приговорили к расстрелу, и царь лично очистил мир от вони",
+                views: 154000
+            }, {
+                id: "21",
+                channelId: "@Eva",
+                duration: 123,
+                preview: videoPreview7,
+                releaseDate: (new Date('Dec 30, 2023 10:24:00')),
+                title: "ЦАРЯ ДОЛЖНЫ УВАЖАТЬ. Молитвы в честь царя-кирилла",
+                views: 18000
+            },
         ]
     }
 
