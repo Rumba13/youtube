@@ -44,8 +44,6 @@ i18next
                     "theme_sync": "Device theme",
                     "restricted_mode_on": "On",
                     "restricted_mode_off": "Off",
-                    "keyHour_one": "{{count}} hour",
-                    "keyHour_other": "{{count}} hours",
                     "Ago": "ago",
                     "On The Channel": "On The Channel \"{{channelName}}\"",
                     "New Video": "new video appeared:\"{{videoName}}\"",
@@ -68,15 +66,12 @@ i18next
                     "Music": "Music",
                     "Gaming": "Gaming",
                     "Sport": "Sport",
-
                     "More From YouTube": "More from YouTube",
                     "YouTube Premium": "YouTube Premium",
                     "YouTube Studio": "YouTube Studio",
                     "YouTube Music": "YouTube Music",
                     "YouTube Kids": "YouTube Kids",
-
                     "Report History": "Report History",
-
                     "About": "About",
                     "Press": "Press",
                     "Copyright": "Copyright",
@@ -90,6 +85,27 @@ i18next
                     "How YouTube Works": "How YouTube works",
                     "Test New Feature": "Test new feature",
 
+                    "keySecond_one": "{{count}} second",
+                    "keySecond_other": "{{count}} seconds",
+                    "keyMinute_one": "{{count}} minute",
+                    "keyMinute_other": "{{count}} minutes",
+                    "keyHour_one": "{{count}} hour",
+                    "keyHour_other": "{{count}} hours",
+                    "keyDay_one": "{{count}} day",
+                    "keyDay_other": "{{count}} days",
+                    "keyWeek_one": "{{count}} week",
+                    "keyWeek_other": "{{count}} weeks",
+                    "keyMonth_one": "{{count}} month",
+                    "keyMonth_other": "{{count}} months",
+                    "keyYear_one": "{{count}} year",
+                    "keyYear_other": "{{count}} years",
+
+                    "million": "млн.",
+                    "thousand": "тыс.",
+                    "keyView_other": "views",
+                    "keyView_one": "view",
+                    "keyView_few": "просмотра",
+                    "keyView_many": "просмотров",
                 }
             },
             ru: {
@@ -127,9 +143,42 @@ i18next
                     "theme_sync": "как на устройстве",
                     "restricted_mode_on": "Да",
                     "restricted_mode_off": "Нет",
+
+                    "keySecond_one": "{{count}} секунда",
+                    "keySecond_few": "{{count}} секунды",
+                    "keySecond_many": "{{count}} секунд",
+
+                    "keyMinute_one": "{{count}} минута",
+                    "keyMinute_few": "{{count}} минуты",
+                    "keyMinute_many": "{{count}} минут",
+
                     "keyHour_one": "{{count}} час",
                     "keyHour_few": "{{count}} часа",
                     "keyHour_many": "{{count}} часов",
+
+                    "keyDay_one": "{{count}} день",
+                    "keyDay_few": "{{count}} дня",
+                    "keyDay_many": "{{count}} дней",
+
+                    "keyWeek_one": "{{count}} неделя",
+                    "keyWeek_few": "{{count}} недели",
+                    "keyWeek_many": "{{count}} недель",
+
+                    "keyMonth_one": "{{count}} месяц",
+                    "keyMonth_few": "{{count}} месяца",
+                    "keyMonth_many": "{{count}} месяцев",
+
+                    "keyYear_one": "{{count}} год",
+                    "keyYear_few": "{{count}} года",
+                    "keyYear_many": "{{count}} лет",
+
+                    "million": "млн.",
+                    "thousand": "тыс.",
+                    "keyView_one": "просмотр",
+                    "keyView_few": "просмотра",
+                    "keyView_many": "просмотров",
+                    "keyView_other": "просмотров",
+
                     "Ago": "назад",
                     "On The Channel": "На канале \"{{channelName}}\"",
                     "New Video": "появилось новое видео:\"{{videoName}}\"",

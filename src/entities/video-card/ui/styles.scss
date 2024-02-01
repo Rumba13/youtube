@@ -1,0 +1,65 @@
+.video {
+  display: grid;
+  grid-template:
+  "video-preview video-preview video-preview"
+  "channel-icon title title"
+  ". channel-name channel-name"
+  ". views released-ago";
+  grid-template-rows: min-content min-content min-content min-content;
+  grid-template-columns: auto auto 1fr;
+
+  height: 333px;
+  & > .video-preview {
+    grid-area: video-preview;
+    margin-bottom: 13px;
+    pointer-events: none;
+  }
+
+  & .video__channel-icon {
+    grid-area: channel-icon;
+    width: 36px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  & .video_title {
+    grid-area: title;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  & .video__channel-name,
+  & .video__views,
+  & .video__ago {
+
+    grid-area: channel-name;
+    font-size: 14px;
+    color: var(--light-gray-color);
+    margin-bottom: 3px;
+  }
+
+  & .video__channel-name {
+    grid-area: channel-name;
+    font-size: 14px;
+    color: var(--light-gray-color);
+    margin-top: -8px;
+  }
+
+  & .video__views {
+    grid-area: views;
+  }
+
+  & .video__ago {
+    grid-area: released-ago;
+
+    &:before {
+      content: "•";
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+}

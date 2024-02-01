@@ -1,0 +1,16 @@
+.home-page {
+  display: grid;
+  grid-template:
+          "video-tags" min-content
+          "video-list" auto / auto;
+
+
+  & > .video-tags {
+    grid-area: video-tags;
+
+  }
+
+  & > .video-list {
+    grid-area: video-list;
+  }
+}
