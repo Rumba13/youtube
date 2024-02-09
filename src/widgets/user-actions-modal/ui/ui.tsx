@@ -1,5 +1,5 @@
 import "./styles.scss";
-import {FC} from "react";
+import {FC, MouseEventHandler} from "react";
 import userIcon from "../../../images/temp/user-profile-icon.jpg";
 import {VerticalList} from "../../../shared/ui/vertical-list";
 import {GoogleIcon} from "../../../images/google-icon";
@@ -23,11 +23,12 @@ import {Trans, useTranslation} from "react-i18next";
 type PropsType = {
     className?: string
     isOpened: boolean,
+    onClick?: MouseEventHandler
 }
 
 export type UserActionsModalSlotType = FC<PropsType>
 
-export function UserActionsModal({className, isOpened}: PropsType) {
+export function UserActionsModal({className, isOpened, onClick}: PropsType) {
     const {t, i18n} = useTranslation();
 
     const language = t(i18n.language);
@@ -36,7 +37,8 @@ export function UserActionsModal({className, isOpened}: PropsType) {
     const isRestrictedModeEnable = false;
 
 
-    return <div className={`user-actions-modal${className ? " " + className : ""}${isOpened ? " opened" : ""}`}>
+    return <div className={`user-actions-modal${className ? " " + className : ""}${isOpened ? " opened" : ""}`}
+                onClick={onClick}>
         <div className="user-actions-modal-header">
             <img className="header-icon" src={userIcon} alt="user-icon"/>
             <span className="header__title">Senderium</span>

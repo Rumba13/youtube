@@ -14,11 +14,11 @@ type PropsType = {
 
 export function CreateVideoButton({ModalSlot}: PropsType) {
     const {t} = useTranslation();
-    const {isModalOpened, toggleModal} = useModal(false);
+    const {isModalOpened, toggleModal, stopPropagationInModal} = useModal();
 
     return <Button className="create-video-button" onClick={toggleModal}>
         <SvgIcon className="create-video-button__icon" Icon={isModalOpened ? CreateVideoActiveIcon : CreateVideoIcon}/>
-        <ModalSlot isOpened={isModalOpened}/>
+        <ModalSlot onClick={stopPropagationInModal} isOpened={isModalOpened}/>
         <TextTip>{t("Create")}</TextTip>
     </Button>
 }

@@ -20,7 +20,7 @@ function findParentModal(sharedNodeSelector: string | undefined) {
     return parentModal;
 }
 
-export function useModal(isOpenedByDefault: boolean, options: UseModalOptionsType = {}) {
+export function useModal(isOpenedByDefault: boolean = false, options: UseModalOptionsType = {}) {
     const [isModalOpened, setIsModalOpened] = useState<boolean>(isOpenedByDefault);
 
     const parentModal = findParentModal(options.parentModalSelector);
@@ -29,11 +29,12 @@ export function useModal(isOpenedByDefault: boolean, options: UseModalOptionsTyp
     });
 
     function toggleModal(event: React.MouseEvent) {
-
         if (isModalOpened) {
             event.stopPropagation();
         }
         setTimeout(() => setIsModalOpened(!isModalOpened), 0)
+        //its need to avoid event absorption by e.stopPropagation
+        //Without that "setTimeout" and "if (isModalOpened){...}" other modals won't close with click on element contains e.stopPropagation like modals buttons
     }
 
     function stopPropagationInModal(event: React.MouseEvent) {

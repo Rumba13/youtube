@@ -1,5 +1,5 @@
 import "./styles.scss";
-import React, {FC} from "react";
+import React, {FC, MouseEventHandler} from "react";
 import {SvgIcon} from "../../../shared/ui/svg-icon";
 import {PlayVideoIcon} from "../../../images/play-video-icon";
 import {StreamIcon} from "../../../images/stream-icon";
@@ -8,13 +8,14 @@ import {NewVerticalList} from "../../../shared/ui/new-vertical-list";
 import {VerticalListItem} from "../../../shared/ui/new-vertical-list/vertical-list-item";
 
 type PropsType = {
-    isOpened: boolean
+    isOpened: boolean,
+    onClick?:MouseEventHandler
 }
 
 export type CreateVideoActionsListSlotType = FC<PropsType>;
 
 
-export function CreateVideoActionsList({isOpened}: PropsType) {
+export function CreateVideoActionsList({isOpened, onClick}: PropsType) {
     const {t} = useTranslation();
 
     const items: JSX.Element[] = [
@@ -33,7 +34,7 @@ export function CreateVideoActionsList({isOpened}: PropsType) {
         </>
     ]
 
-    return <NewVerticalList className={`create-video-actions-modal${isOpened ? " opened" : ""}`}>
+    return <NewVerticalList className={`create-video-actions-modal${isOpened ? " opened" : ""}`} onClick={onClick}>
         {items.map(item => <VerticalListItem>
             {item}
         </VerticalListItem>)}
