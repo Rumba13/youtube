@@ -24,7 +24,6 @@ export function UserProfileIcon({UserActionsModalSlot}: PropsType) {
         }
 
         setTimeout(() => setIsModalOpened(!isModalOpened), 0);
-        //Check https://github.com/rumba13/youtube/blob/8815f5abc553dd4303ed999dae3c4871e4219b91/src/widgets/header/ui/notifications-button/index.tsx#L33
     }
     function stopPropagationInModal(event: React.MouseEvent) {
         if (isModalOpened) {

@@ -1,25 +1,31 @@
 import "./styles.scss";
 import {NotificationType} from "../../../shared/api/types/notification-type";
-import {DotsMenuIcon} from "./dots-menu-icon";
+import {DotsButton} from "../../../shared/ui/dots-menu-icon";
 import {Trans, useTranslation} from "react-i18next";
-import i18next from "i18next";
+import {FormatNotificationTitle} from "./format-notification-title";
+import {useModal} from "../../../shared/lib/use-modal";
+import React from "react";
 
 export type PropsType = {
     notification: NotificationType,
     ModalSlot: ModalSlotType,
-    openedModal: string,
-    setOpenedModalId: Function
 }
 
 export type ModalSlotType = (props: { isOpened: boolean }) => JSX.Element;
 
-export function NotificationCard({notification, ModalSlot, setOpenedModalId, openedModal}: PropsType) {
+export function NotificationCard({notification, ModalSlot}: PropsType) {
     const {title, previewImage, icon, releasedAgo} = notification; //TODO FUTURE refactor all when add state
     const {t, i18n} = useTranslation();
     const releasedHoursAgo = 6;
     const channelName = "Nostoro";
-    const contentType = "stream";
-    const contentName = "Что у тебя за дурацкое имя насос?";
+    const videoType = "stream";
+    const videoName = "Что у тебя за дурацкое имя насос?";
+
+    const {
+        isModalOpened,
+        toggleModal,
+        stopPropagationInModal
+    } = useModal(false, {parentModalSelector: ".notifications"});
 
     if (!notification) {
         return <div>Loading...</div>
@@ -27,21 +33,13 @@ export function NotificationCard({notification, ModalSlot, setOpenedModalId, ope
 
     return <div className="notification">
         <img className="notification__image" src={icon} alt=""/>
-        <h2 className="notification__title">
-            <Trans i18nKey="On The Channel" channelName={channelName}>{{channelName}}</Trans>&nbsp;
-
-            {contentType === "stream"
-                ? <Trans i18nKey="New Stream" streamName={contentName}>{{streamName: contentName}}</Trans>
-                : <Trans i18nKey="New Video" streamName={contentName}>{{videoName: contentName}}</Trans>
-            }
-
-        </h2>
-        <img src={previewImage} alt="" className="notification__preview-image"/>
-        <span className="notification__release-ago">
-            <Trans i18nKey="keyHour" count={releasedHoursAgo}>{{count: releasedHoursAgo}}</Trans> <Trans i18nKey="Ago"/>
-        </span>
+        <h2 className="notification__title">{FormatNotificationTitle(channelName, videoName, videoType, t)}</h2>
+        <img className="notification__preview-image" src={previewImage} alt=""/>
+        <span className="notification__release-ago">{`${t("keyHour", {count: releasedHoursAgo})} ${t("Ago")}`}</span>
         <div className="notification__new-mark"></div>
-        <DotsMenuIcon currentModalId={title} openedModal={openedModal} setOpenedModalId={setOpenedModalId}
-                      ModalSlot={ModalSlot}/>
+        <div className="button-wrapper">
+            <DotsButton isModalOpened={isModalOpened} isOpened={isModalOpened} onClick={toggleModal}
+                        ModalSlot={ModalSlot} onModalClick={stopPropagationInModal}/>
+        </div>
     </div>
 }

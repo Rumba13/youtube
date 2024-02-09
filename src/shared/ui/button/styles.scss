@@ -5,31 +5,33 @@
   width: 40px;
   height: 40px;
 
-  .button__interaction {
+  &.with-animation {
+    & .button__interaction {
+      &:hover {
+        background-color: var(--light-dark-color);
+      }
+
+      &:active {
+        border-color: var(--gray-color);
+        background-color: var(--gray-color);
+      }
+
+      &:not(:active) {
+        transition: 0.4s border;
+      }
+    }
+  }
+
+  & .button__interaction {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     border-radius: 50%;
     border: 1px solid transparent;
     cursor: pointer;
     user-select: none;
-
-    &:hover {
-      background-color: var(--light-dark-color);
-    }
-
-    &:active {
-      border-color: var(--gray-color);
-      background-color: var(--gray-color);
-    }
-
-    &:not(:active) {
-      transition: 0.4s border;
-    }
   }
-
-
 }

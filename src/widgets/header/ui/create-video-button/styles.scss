@@ -1,5 +1,6 @@
 .create-video-button {
   margin-right: 8px;
+  position: relative;
 
   & .button__interaction:hover {
     & ~ .text-tip {

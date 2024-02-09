@@ -9,9 +9,24 @@
   padding: 16px 16px 16px 0;
 
   &:hover {
-    background-color: var(-dark-gray-color);
+    background-color: var(--dark-gray-color);
 
-    & .dots-menu {
+    & .dots-button {
+      display: flex;
+    }
+  }
+
+  & .button-wrapper {
+    position: absolute;
+    right: 0;
+    top: 10px;
+  }
+
+  & .dots-button {
+    display: none;
+    fill: white;
+
+    &.opened {
       display: flex;
     }
   }

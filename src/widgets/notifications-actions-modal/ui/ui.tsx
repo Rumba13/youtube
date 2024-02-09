@@ -1,7 +1,7 @@
 import "./styles.scss";
-import {RemoveNotificationButton} from "../../../features/Notifications/remove-notification";
-import {DisableNotificationsButton} from "../../../features/Notifications/disable-notifications";
 import {VerticalList} from "../../../shared/ui/vertical-list";
+import {DisableNotificationsButton} from "../../../features/notification-group/disable-notifications";
+import {RemoveNotificationButton} from "../../../features/notification-group/remove-notification";
 
 type PropsType = {
     isOpened: boolean

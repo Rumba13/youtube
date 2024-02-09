@@ -1,8 +1,5 @@
 .new-vertical-list{
-  display: flex;
   flex-direction: column;
   flex: 1;
   white-space: nowrap;
-
-  & .vertical-list__item {}
 }

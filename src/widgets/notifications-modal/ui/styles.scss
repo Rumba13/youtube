@@ -2,6 +2,7 @@
   position: absolute;
   top: 100%;
   right: 0;
+  z-index: 300;
   display: none;
   flex-direction: column;
   height: 642px;
@@ -9,7 +10,6 @@
   border-radius: 12px;
   box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
   background-color: var(--light-dark-color);
-  overflow: hidden;
 
   & .notifications-header {
     display: flex;
@@ -31,9 +31,10 @@
   }
 
   & .notifications-list {
+    padding-right: var(--scroll-bar-width);
+    overflow: hidden;
     --scroll-bar-width: 8px;
 
-    padding-right: var(--scroll-bar-width);
 
     &:hover {
       overflow-y: scroll;

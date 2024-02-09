@@ -1,4 +1,5 @@
 .video {
+  position: relative;
   display: grid;
   grid-template:
   "video-preview video-preview video-preview"
@@ -7,8 +8,25 @@
   ". views released-ago";
   grid-template-rows: min-content min-content min-content min-content;
   grid-template-columns: auto auto 1fr;
-
   height: 333px;
+
+  &:hover {
+    & .dots-button {
+      display: flex;
+    }
+  }
+
+  & .dots-button {
+    display: none;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+
+    &.opened {
+      display: flex;
+    }
+  }
+
   & > .video-preview-wrapper {
     grid-area: video-preview;
     margin-bottom: 13px;
@@ -24,6 +42,7 @@
 
   & .video_title {
     grid-area: title;
+    padding-right: 30px;
     font-size: 16px;
     line-height: 22px;
     font-weight: 500;

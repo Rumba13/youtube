@@ -1,1 +1,1 @@
-export {VideoActionsModal, type VideoActionsModalSlotType} from "./ui/ui";
+export {VideoActionsList, type VideoActionsModalSlotType} from "./ui/ui";

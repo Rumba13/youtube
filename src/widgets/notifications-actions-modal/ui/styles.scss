@@ -3,6 +3,7 @@
   top: 100%;
   right: 0;
   display: none !important;
+  z-index: 400;
 
   &.opened {
     display: flex !important;

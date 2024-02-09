@@ -6,7 +6,7 @@ type PropsType = {
 }
 
 export function VerticalListItem({className, item}: PropsType) {
-    return <li className={`vertical-list__item ${className ? className : ""}`}>
+    return <li className={`video-actions-list__item ${className ? className : ""}`}>
         {item}
     </li>
 }

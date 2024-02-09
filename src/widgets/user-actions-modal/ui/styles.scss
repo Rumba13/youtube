@@ -1,5 +1,6 @@
 .user-actions-modal {
   display: none;
+  z-index: 300;
   width: 300px;
   max-height: 749px;
   background-color: var(--light-dark-color);
@@ -78,7 +79,7 @@
         line-height: 40px;
 
         &:hover {
-          background-color: var(-dark-gray-color);
+          background-color: var(--dark-gray-color);
         }
       }
 

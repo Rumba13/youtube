@@ -11,6 +11,6 @@ type PropsType = {
 export function VerticalList({className, listItemClassName, items}: PropsType) { //TODO rewwrite with children and keys
     return <ul className={`vertical-list${className ? " " + className : ""}`}>
         {items.map(item => <VerticalListItem
-            className={`vertical-list__item${listItemClassName ? " " + listItemClassName : ""}`} item={item}/>)}
+            className={`video-actions-list__item${listItemClassName ? " " + listItemClassName : ""}`} item={item}/>)}
     </ul>
 }
