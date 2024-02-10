@@ -1,5 +1,4 @@
 import "./styles.scss";
-import {VerticalList} from "../../../shared/ui/vertical-list";
 import {DisableNotificationsButton} from "../../../features/notification-group/disable-notifications";
 import {RemoveNotificationButton} from "../../../features/notification-group/remove-notification";
 
@@ -8,8 +7,12 @@ type PropsType = {
 }
 
 export function NotificationsActionsModal({isOpened}: PropsType) {
-    return <VerticalList className={`notifications-actions-modal${isOpened ? " opened" : ""}`} items={[
+    const items: JSX.Element[] = [
         <RemoveNotificationButton/>,
         <DisableNotificationsButton/>
-    ]}/>
+    ]
+
+    return <ul className={`list notifications-actions-list${isOpened ? " opened" : ""}`}>
+        {items.map(item => <li className="notifications-actions-list__item">{item}</li>)}
+    </ul>
 }

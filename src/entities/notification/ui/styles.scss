@@ -16,6 +16,10 @@
     }
   }
 
+  &:has(.dots-button .list:hover) { //TODO FUTURE IF HIGH SEMANTIC; add .modal instead of .list
+    background-color: initial;
+  }
+
   & .button-wrapper {
     position: absolute;
     right: 0;

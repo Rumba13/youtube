@@ -1,11 +1,11 @@
-.notifications-actions-modal { //TODO remove !important
+.notifications-actions-list {
   position: absolute;
   top: 100%;
   right: 0;
-  display: none !important;
+  display: none;
   z-index: 400;
 
   &.opened {
-    display: flex !important;
+    display: flex;
   }
 }
