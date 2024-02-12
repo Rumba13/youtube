@@ -82,3 +82,28 @@
     }
   }
 }
+//TODO Find more ease way to fix bug(video-actions-modal goes off screen on the right most column of video)
+@media(max-width: 1920px) {
+  .video:nth-child(5n) .dots-button .video-actions-list {
+    left: initial;
+    right: 0;
+  }
+}
+@media(max-width: 1704px) {
+  .video:nth-child(4) .dots-button .video-actions-list {
+    left: initial;
+    right: 0;
+  }
+}
+@media(max-width: 1388px) {
+  .video:nth-child(3) .dots-button .video-actions-list {
+    left: initial;
+    right: 0;
+  }
+}
+@media(max-width: 1072px) {
+  .video:nth-child(2) .dots-button .video-actions-list {
+    left: initial;
+    right: 0;
+  }
+}

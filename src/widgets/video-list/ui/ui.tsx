@@ -9,7 +9,6 @@ type PropsType = {
     VideoActionsModalSlot: VideoActionsModalSlotType
 }
 
-
 export const VideoList = observer(({VideoActionsModalSlot}: PropsType) => {
 
     const {videos, loadVideos} = videoState
