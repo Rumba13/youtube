@@ -1,1 +1,1 @@
-export {NotificationsActionsModal} from "./ui/ui";
+export {NotificationsActionsModal, type NotificationsActionsModalSlotType} from "./ui/ui";

@@ -5,13 +5,12 @@ import {Trans, useTranslation} from "react-i18next";
 import {FormatNotificationTitle} from "./format-notification-title";
 import {useModal} from "../../../shared/lib/use-modal";
 import React from "react";
+import {NotificationsActionsModalSlotType} from "../../../widgets/notifications-actions-modal";
 
 export type PropsType = {
     notification: NotificationType,
-    ModalSlot: ModalSlotType,
+    ModalSlot: NotificationsActionsModalSlotType,
 }
-
-export type ModalSlotType = (props: { isOpened: boolean }) => JSX.Element;
 
 export function NotificationCard({notification, ModalSlot}: PropsType) {
     const {title, previewImage, icon, releasedAgo} = notification; //TODO FUTURE refactor all when add state

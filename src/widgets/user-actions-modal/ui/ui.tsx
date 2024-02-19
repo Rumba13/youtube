@@ -1,5 +1,5 @@
 import "./styles.scss";
-import {FC, MouseEventHandler} from "react";
+import {FC, MouseEventHandler, useContext} from "react";
 import userIcon from "../../../images/temp/user-profile-icon.jpg";
 import {GoogleIcon} from "../../../images/google-icon";
 import {SvgIcon} from "../../../shared/ui/svg-icon";
@@ -19,6 +19,8 @@ import {GearIcon} from "../../../images/gear-icon";
 import {ArrowIcon} from "../../../images/arrow-icon";
 import {Trans, useTranslation} from "react-i18next";
 import {ListItemSeparator} from "../../../shared/ui/list-item-separator";
+import {RegisterModalStateContext} from "../../register-modal";
+import {LoginModalStateContext} from "../../login-modal";
 
 type PropsType = {
     className?: string
@@ -34,6 +36,8 @@ export function UserActionsModal({className, isOpened, onClick}: PropsType) {
     const theme = t("theme_" + "sync");
     const location = t("by");
     const isRestrictedModeEnable = false;
+    const {toggleModal:toggleRegisterModal} = useContext(RegisterModalStateContext);
+    const {toggleModal:toggleLoginModal} = useContext(LoginModalStateContext);
 
     const items: JSX.Element[] = [
         <a className="item-link"
@@ -116,6 +120,14 @@ export function UserActionsModal({className, isOpened, onClick}: PropsType) {
             {t("Options")}
         </a>,
         <ListItemSeparator/>,
+        <a className="item-link" onClick={toggleRegisterModal}>
+            <SvgIcon className="item-icon" Icon={AccountChangeIcon}/>
+            {t("Register")}
+        </a>,
+        <a className="item-link" onClick={toggleLoginModal}>
+            <SvgIcon className="item-icon" Icon={AccountIcon}/>
+            {t("Login")}
+        </a>,
         <a className="item-link">
             <SvgIcon className="item-icon" Icon={QuestionIcon}/>
             {t("Inquiry")}
@@ -124,6 +136,7 @@ export function UserActionsModal({className, isOpened, onClick}: PropsType) {
             <SvgIcon className="item-icon" Icon={DialogIcon}/>
             {t("Send Review")}
         </a>,
+
     ]
 
     return <div className={`user-actions-modal${className ? " " + className : ""}${isOpened ? " opened" : ""}`}

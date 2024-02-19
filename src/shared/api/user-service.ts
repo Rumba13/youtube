@@ -5,8 +5,8 @@ import ahegao2 from "../../images/temp/ahegao-2.jpg";
 import ahegao3 from "../../images/temp/ahegao-3.jpg";
 import {PlaylistType} from "./types/playlist-type";
 
-export class UserService {
-    public async loadUserByJwt(jwt: string): Promise<UserType> {
+export class UserService { //TODO separate subscriptions service
+    public async loadUserByJwt(jwt: string): Promise<UserType> { //TODO rename to auth(the best would be deprecate this part)
         return Promise.resolve({
             id: "123",
             icon: "https://distribution.faceit-cdn.net/images/ce6fbecf-0af4-4da0-bbb2-0eb09e5d767f.jpeg",

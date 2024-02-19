@@ -12,7 +12,7 @@
     display: block;
   }
 
-  & .video-actions-list__item {
+  & .create-video-actions-modal__item {
     display: flex;
     align-items: center;
     padding: 0 36px 0 16px;
@@ -28,6 +28,7 @@
       padding-right: 4px;
       line-height: 40px;
       user-select: none;
+      white-space: nowrap;
     }
   }
 }

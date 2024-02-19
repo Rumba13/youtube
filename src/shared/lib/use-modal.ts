@@ -4,31 +4,33 @@ type UseModalOptionsType = {
     parentModalSelector?: string
 }
 
-function findParentModal(sharedNodeSelector: string | undefined) {
-    let parentModal: Element | Document | null;
-    if (sharedNodeSelector !== undefined) {
-        parentModal = document.querySelector(sharedNodeSelector);
+const IS_LOGGING = true;
 
-        if (parentModal === null) {
-            parentModal = document;
-            console.warn("Use Modal cant find modals shared node, check shared node selector");
-        }
-    } else {
+function findParentModal(sharedNodeSelector: string) {
+    let parentModal: Element | Document | null;
+
+    parentModal = document.querySelector(sharedNodeSelector);
+
+    if (parentModal === null) {
         parentModal = document;
+        console.warn("Use Modal cant find modals shared node, check shared node selector " + sharedNodeSelector);
     }
 
     return parentModal;
 }
-
 export function useModal(isOpenedByDefault: boolean = false, options: UseModalOptionsType = {}) {
     const [isModalOpened, setIsModalOpened] = useState<boolean>(isOpenedByDefault);
 
-    const parentModal = findParentModal(options.parentModalSelector);
+    const parentModal = options.parentModalSelector ? findParentModal(options.parentModalSelector) : document;
+
     parentModal.addEventListener("click", (event) => {
+        console.log(`closing modal on ${event.target}`);
         setIsModalOpened(false);
     });
 
     function toggleModal(event: React.MouseEvent) {
+        console.log(`toggling modal to ${isModalOpened ? "close" : "open"} state ${options.parentModalSelector ?"in " + options.parentModalSelector : ""}`);
+
         if (isModalOpened) {
             event.stopPropagation();
         }
@@ -38,6 +40,8 @@ export function useModal(isOpenedByDefault: boolean = false, options: UseModalOp
     }
 
     function stopPropagationInModal(event: React.MouseEvent) {
+        console.log(`toggling modal to ${isModalOpened ? "close" : "open"} state`);
+
         if (isModalOpened) {
             event.stopPropagation();
         }

@@ -10,10 +10,9 @@ type PropsType = {
     onClick?: MouseEventHandler
 }
 
-export type CreateVideoActionsListSlotType = FC<PropsType>;
+export type CreateVideoActionsModalSlotType = FC<PropsType>;
 
-
-export function CreateVideoActionsList({isOpened, onClick}: PropsType) { //TODO refactoring
+export function CreateVideoActionsModal({isOpened, onClick}: PropsType) { //TODO refactoring
     const {t} = useTranslation();
 
     const items: JSX.Element[] = [
@@ -33,6 +32,6 @@ export function CreateVideoActionsList({isOpened, onClick}: PropsType) { //TODO 
     ]
 
     return <ul className={`create-video-actions-modal${isOpened ? " opened" : ""}`} onClick={onClick}>
-        {items.map(item => <li>{item}</li>)}
+        {items.map(item => <li className="create-video-actions-modal__item">{item}</li>)}
     </ul>
 }

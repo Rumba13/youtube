@@ -106,6 +106,10 @@ i18next
                     "keyView_one": "view",
                     "keyView_few": "просмотра",
                     "keyView_many": "просмотров",
+
+                    "Register": "Register",
+                    "Login" : "Login",
+
                 }
             },
             ru: {
@@ -219,6 +223,8 @@ i18next
                     "Policy And Safety" : "Правила и безопасность",
                     "How YouTube Works": "Как работает YouTube",
                     "Test New Feature": "Тестирование новых функций",
+                    "Register": "Зарегистрироваться",
+                    "Login" : "Войти",
                 }
             },
 
