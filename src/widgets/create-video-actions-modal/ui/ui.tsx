@@ -10,10 +10,9 @@ type PropsType = {
     onClick?: MouseEventHandler
 }
 
-export type CreateVideoActionsListSlotType = FC<PropsType>;
+export type CreateVideoActionsModalSlotType = FC<PropsType>;
 
-
-export function CreateVideoActionsList({isOpened, onClick}: PropsType) { //TODO refactoring
+export function CreateVideoActionsModal({isOpened, onClick}: PropsType) { //TODO refactoring
     const {t} = useTranslation();
 
     const items: JSX.Element[] = [

@@ -1,15 +1,16 @@
 import "./styles.scss";
-import React, {MouseEventHandler, useState} from "react";
-import {VideoActionsModalSlotType} from "../../../../widgets/video-actions-modal";
+import React, {MouseEventHandler} from "react";
 import {Button} from "../../button";
+import {ModalSlotType} from "../../../api/types/modal-slot-type";
 
 type PropsType = {
-    ModalSlot: VideoActionsModalSlotType,
+    ModalSlot: ModalSlotType,
     isOpened?: boolean,
     isModalOpened: boolean
     onClick?: MouseEventHandler,
     onModalClick?: MouseEventHandler,
 }
+
 
 export function DotsButton({ModalSlot, isOpened = false, onClick, onModalClick, isModalOpened}: PropsType) {
 
@@ -20,6 +21,6 @@ export function DotsButton({ModalSlot, isOpened = false, onClick, onModalClick, 
             <path
                 d="M12 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM10.5 12c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0-6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z"></path>
         </svg>
-        <ModalSlot isOpened={isModalOpened} onClick={onModalClick} />
+        <ModalSlot isOpened={isModalOpened} onClick={onModalClick}/>
     </Button>
 }

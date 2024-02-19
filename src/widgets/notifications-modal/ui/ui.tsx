@@ -1,15 +1,18 @@
 import "./styles.scss";
-import {MouseEventHandler, useEffect} from "react";
-import {NotificationActionsModalSlotType, NotificationCard} from "../../../entities/notification";
+import {FC, JSX, MouseEventHandler, useEffect} from "react";
+import {NotificationCard} from "../../../entities/notification";
 import {notificationsState} from "../../../entities/notification";
 import {useTranslation} from "react-i18next";
 import {observer} from "mobx-react";
 import {SettingsButton} from "../../header";
+import {NotificationsActionsModalSlotType} from "../../notifications-actions-modal";
+
+export type NotificationModalSlotType = FC<PropsType>
 
 type PropsType = {
     isOpened: boolean,
     onClick: MouseEventHandler,
-    NotificationsActionsModalSlot: NotificationActionsModalSlotType
+    NotificationsActionsModalSlot: NotificationsActionsModalSlotType
 }
 
 export const NotificationsModal = observer(({isOpened, onClick, NotificationsActionsModalSlot}: PropsType) => {

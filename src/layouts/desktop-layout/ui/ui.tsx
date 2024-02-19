@@ -6,11 +6,11 @@ import {NotificationsModal} from "../../../widgets/notifications-modal";
 import {NotificationsActionsModal} from "../../../widgets/notifications-actions-modal";
 import {UserActionsModal} from "../../../widgets/user-actions-modal";
 import {VoiceSearchModal} from "../../../widgets/voice-search-modal";
-import {CreateVideoActionsList} from "../../../widgets/create-video-actions-list";
+import {CreateVideoActionsModal} from "../../../widgets/create-video-actions-modal";
 
 export function DesktopLayout() {
     return <>
-        <Header VideoActionsModal={CreateVideoActionsList} UserActionsModalSlot={UserActionsModal}
+        <Header VideoActionsModal={CreateVideoActionsModal} UserActionsModalSlot={UserActionsModal}
                 NotificationsModalSlot={NotificationsModal} NotificationActionsModalSlot={NotificationsActionsModal}
                 VoiceSearchModalSlot={VoiceSearchModal}
         />

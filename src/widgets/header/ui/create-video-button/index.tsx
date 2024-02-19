@@ -5,11 +5,11 @@ import {SvgIcon} from "../../../../shared/ui/svg-icon";
 import {CreateVideoIcon} from "../../../../images/create-video-icon";
 import {useTranslation} from "react-i18next";
 import {Button} from "../../../../shared/ui/button";
-import {CreateVideoActionsListSlotType} from "../../../create-video-actions-list";
 import {useModal} from "../../../../shared/lib/use-modal";
+import {CreateVideoActionsModalSlotType} from "../../../create-video-actions-modal";
 
 type PropsType = {
-    ModalSlot: CreateVideoActionsListSlotType
+    ModalSlot: CreateVideoActionsModalSlotType
 }
 
 export function CreateVideoButton({ModalSlot}: PropsType) {

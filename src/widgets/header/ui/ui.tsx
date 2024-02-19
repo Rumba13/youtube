@@ -2,8 +2,7 @@ import "./styles.scss";
 import {Search} from "../../../features/search";
 import {UserProfileIcon} from "./user-profile-icon";
 import {CreateVideoButton} from "./create-video-button";
-import {ModalSlotType, NotificationsButton} from "./notifications-button";
-import {NotificationActionsModalSlotType} from "../../../entities/notification"
+import { NotificationsButton} from "./notifications-button";
 import {UserActionsModalSlotType} from "../../user-actions-modal";
 import {Logo} from "../../../shared/ui/logo";
 import {observer} from "mobx-react";
@@ -11,13 +10,15 @@ import {BackButton} from "./back-button";
 import {searchState} from "../../../features/search/model/model";
 import {VoiceSearchModalSlotType} from "../../voice-search-modal/ui/ui";
 import {MenuButton} from "./menu-button";
-import {CreateVideoActionsListSlotType} from "../../create-video-actions-list/ui/ui";
+import {CreateVideoActionsModalSlotType} from "../../create-video-actions-modal";
+import {NotificationsActionsModalSlotType} from "../../notifications-actions-modal";
+import {NotificationModalSlotType} from "../../notifications-modal/ui/ui";
 
 type PropsType = {
-    NotificationsModalSlot: ModalSlotType,
-    NotificationActionsModalSlot: NotificationActionsModalSlotType,
+    NotificationsModalSlot: NotificationModalSlotType,
+    NotificationActionsModalSlot: NotificationsActionsModalSlotType,
     UserActionsModalSlot: UserActionsModalSlotType,
-    VideoActionsModal: CreateVideoActionsListSlotType,
+    VideoActionsModal: CreateVideoActionsModalSlotType,
     VoiceSearchModalSlot: VoiceSearchModalSlotType
 }
 
