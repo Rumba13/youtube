@@ -1,44 +1,25 @@
 import {NotificationType} from "./types/notification-type";
-import i from "../../images/temp/user-profile-icon.jpg";
-import previewImage from "../../images/temp/preview-image.jpg"
+import { axiosServerConnection } from './axios-server-connection';
 
 export class NotificationsService {
     public async loadNotificationsCount(): Promise<number> {
-        return 3;
+      try {
+        return (await axiosServerConnection.get('/notifications-count')).data
+      }
+      catch (err) {
+        console.log(err);
+        return 0;
+      }
     }
 
     public async loadNotifications(): Promise<NotificationType[]> {
-        return new Promise((resolve, reject) => {
-
-            setTimeout(() =>
-                    resolve([
-                        {
-                            id: "1",
-                            title: "На канале \"Nostoro\" идет трансляция \"Просто хочу предупредить: в ромовой бабе есть немного рома, но нет бабы\"",
-                            icon: i,
-                            previewImage: previewImage,
-                            releasedAgo: new Date()
-                        },
-                        {
-                            id: "2",
-                            title: "На канале \"Nostoro\" идет трансляция \"Просто хочу предупредить: в ромовой бабе есть немного рома, но нет бабы\"",
-                            icon: i,
-                            previewImage: previewImage,
-                            releasedAgo: new Date()
-                        },
-                        {
-                            id: "3",
-                            title: "На канале \"GayBomj\" идет трансляция \"Просто хочу предупредить: в ромовой бабе есть немного рома, но нет бабы\"",
-                            icon: i,
-                            previewImage: previewImage,
-                            releasedAgo: new Date()
-                        }])
-                , 2000)
-
-
-        })
+      try {
+        return (await axiosServerConnection.get('/notifications')).data
+      }
+      catch (err) {
+        console.log(err);
+        return [];
+      }
 
     }
 }
-
-export const notificationsService = new NotificationsService();

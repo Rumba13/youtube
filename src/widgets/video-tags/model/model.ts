@@ -27,7 +27,7 @@ class VideoTagsState {
     public loadVideoTags = async () => {
         try {
             this.setIsLoading(true);
-            this.setVideoTags(await this.videoService.loadSearchTags());
+            this.setVideoTags(await this.videoService.loadVideoTags());
         } catch (err) {
             console.log(err);
             this.setIsError(true);

@@ -14,7 +14,8 @@ class VideoState {
     }
 
     public loadVideos = async () => {
-        this.setVideos(await this.videoService.loadRecommendedVideos())
+        const videos = await this.videoService.loadRecommendedVideos()
+        this.setVideos(videos);
     }
 }
 

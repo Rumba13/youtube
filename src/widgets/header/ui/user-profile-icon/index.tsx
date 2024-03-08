@@ -13,7 +13,7 @@ export function UserProfileIcon({UserActionsModalSlot}: PropsType) {
     const {isModalOpened, toggleModal, stopPropagationInModal} = useModal(false);
 
     useEffect(() => {
-        (new UserService()).loadUserByJwt("").then(({icon}) => setUserProfileIcon(icon))
+        (new UserService()).loadUserProfile("").then(({icon}) => setUserProfileIcon(icon))
     }, []);
 
     return <div className="user-profile-icon" onClick={stopPropagationInModal}>

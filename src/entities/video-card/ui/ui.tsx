@@ -8,6 +8,8 @@ import {formatViews} from "./format-views";
 import {DotsButton} from "../../../shared/ui/dots-menu-icon";
 import {useModal} from "../../../shared/lib/use-modal";
 import {VideoActionsModalSlotType} from "../../../widgets/video-actions-modal";
+import { loadChannelNameById } from '../api/load-channel-name-by-id';
+import { useEffect, useState } from 'react';
 
 type PropsType = {
     video: VideoType,
@@ -17,6 +19,11 @@ type PropsType = {
 export function VideoCard({video, VideoActionsModalSlot}: PropsType) {
     const {t} = useTranslation();
     const {isModalOpened, toggleModal, stopPropagationInModal} = useModal(false);
+    const [channelName, setChannelName] = useState<string | null>(null)
+
+    useEffect( () => {
+        loadChannelNameById(video.channelId).then((channelName) => setChannelName(channelName));
+    }, [video.channelId]);
 
     return <div className="video">
         <VideoPreview preview={video.preview}/>
@@ -28,7 +35,7 @@ export function VideoCard({video, VideoActionsModalSlot}: PropsType) {
                     isModalOpened={isModalOpened}
                     isOpened={isModalOpened}
         />
-        <span className="video__channel-name">{video.channelId}</span>
+        <span className="video__channel-name">{channelName}</span>
         <span className="video__views">{formatViews(video.views, t)}</span>
         <span className="video__ago">{formatReleasedDate(video.releaseDate, t)}</span>
     </div>
