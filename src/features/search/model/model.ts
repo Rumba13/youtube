@@ -1,25 +1,25 @@
-import {makeAutoObservable} from "mobx";
+import { makeAutoObservable } from 'mobx';
 
 class SearchState {
-    constructor() {
-        makeAutoObservable(this);
-    }
+  constructor() {
+    makeAutoObservable(this);
+  }
 
-    public isSearchMinified:boolean = false;
-    public isSearchOpened:boolean = false;
-    public isSearchFocused:boolean = false;
+  public isSearchMinified = false;
+  public isSearchOpened = false;
+  public isSearchFocused = false;
 
-    public setIsSearchMinified = (isSearchMinified:boolean) => {
-        this.isSearchMinified = isSearchMinified;
-    }
-    public setIsSearchOpened = (isSearchOpened:boolean) => {
-        this.isSearchOpened = isSearchOpened;
-    }
-    public setIsSearchFocused = (isSearchFocused:boolean) => {
-        this.isSearchFocused = isSearchFocused;
-    }
+  public setIsSearchMinified = (isSearchMinified: boolean) => {
+    this.isSearchMinified = isSearchMinified;
+  };
+  public setIsSearchOpened = (isSearchOpened: boolean) => {
+    this.isSearchOpened = isSearchOpened;
+  };
+  public setIsSearchFocused = (isSearchFocused: boolean) => {
+    this.isSearchFocused = isSearchFocused;
+  };
 }
 
-export type {SearchState as SearchStateType};
+export type { SearchState as SearchStateType };
 
 export const searchState = new SearchState();

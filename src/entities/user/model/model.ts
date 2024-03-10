@@ -1,34 +1,20 @@
-import {makeAutoObservable} from "mobx";
-import {SubscriptionType} from "../../../shared/api/types/subscription-type";
-import {UserService, UserServiceType} from "../../../shared/api/user-service";
-import {PlaylistType} from "../../../shared/api/types/playlist-type";
-import { PlaylistsService } from '../../../shared/api/playlists-service';
-import { SubscriptionsService } from '../../../shared/api/subscriptions.service';
+import { makeAutoObservable } from 'mobx';
+import { UserService, UserServiceType } from '../../../shared/api/user-service';
+import { UserType } from '../../../shared/api/types/user-type';
+import Cookies from 'universal-cookie';
 
 export class UserState {
-    public userService: UserServiceType;
-    public playlistsService:PlaylistsService;
-    public subscriptions: SubscriptionType[] = [];
-    public playlists: PlaylistType[] = [];
-    public subscriptionsService: SubscriptionsService;
+  public userService: UserServiceType;
+  public user: UserType | null = null;
+  public cookiesService: Cookies;
 
-    public setSubscriptions = (subscriptions: SubscriptionType[]) => this.subscriptions = subscriptions;
-    public setPlaylists = (playlists: PlaylistType[]) => this.playlists = playlists;
+  public setUser = (user: UserType) => (this.user = user);
 
-
-    constructor(userService: UserServiceType, playlistsService:PlaylistsService, subscriptionsService:SubscriptionsService) {
-        makeAutoObservable(this);
-        this.userService = userService;
-        this.playlistsService = playlistsService;
-        this.subscriptionsService = subscriptionsService
-    }
-
-    public async loadSubscriptions() {
-        this.setSubscriptions(await this.subscriptionsService.loadUserSubscriptions());
-    }
-    public async loadPlaylists() {
-        this.setPlaylists(await this.playlistsService.loadUserPlaylists());
-    }
+  constructor(userService: UserServiceType, cookiesService: Cookies) {
+    makeAutoObservable(this);
+    this.userService = userService;
+    this.cookiesService = cookiesService;
+  }
 }
 
-export const userState = new UserState(new UserService(), new PlaylistsService(), new SubscriptionsService());
+export const userState = new UserState(new UserService(), new Cookies());

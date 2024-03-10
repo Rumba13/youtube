@@ -1,1 +1,1 @@
-export {VoiceSearchModal} from "./ui/ui";
+export { VoiceSearchModal } from './ui/ui';

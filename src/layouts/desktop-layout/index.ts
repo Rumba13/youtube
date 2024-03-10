@@ -1,1 +1,1 @@
-export {DesktopLayout} from "./ui/ui"
+export { DesktopLayout } from './ui/ui';

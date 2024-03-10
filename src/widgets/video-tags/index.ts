@@ -1,1 +1,1 @@
-export {VideoTags} from "./ui/ui";
+export { VideoTags } from './ui/ui';

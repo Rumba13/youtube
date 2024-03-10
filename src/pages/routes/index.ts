@@ -1,1 +1,1 @@
-export {Routes} from "./ui/ui";
+export { Routes } from './ui/ui';

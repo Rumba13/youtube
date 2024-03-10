@@ -1,2 +1,2 @@
-export {disableNotifications} from "./model/model";
-export {DisableNotificationsButton} from "./ui/ui"
+export { disableNotifications } from './model/model';
+export { DisableNotificationsButton } from './ui/ui';

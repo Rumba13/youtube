@@ -1,1 +1,1 @@
-export {UserActionsModal, type UserActionsModalSlotType} from "./ui/ui";
+export { UserActionsModal, type UserActionsModalSlotType } from './ui/ui';

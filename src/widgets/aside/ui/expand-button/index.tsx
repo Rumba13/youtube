@@ -1,19 +1,19 @@
-import "./styles.scss";
-import {SvgIcon} from "../../../../shared/ui/svg-icon";
-import {ArrowIcon} from "../../../../images/arrow-icon";
-import {MouseEventHandler} from "react";
+import './styles.scss';
+import { SvgIcon } from '../../../../shared/ui/svg-icon';
+import { ArrowIcon } from '../../../../images/arrow-icon';
+import { MouseEventHandler } from 'react';
 
 type PropsType = {
-    title: string,
-    isExpanded: boolean
-    onClick?: MouseEventHandler,
+  title: string;
+  isExpanded: boolean;
+  onClick?: MouseEventHandler;
+};
 
-}
-
-export function ExpandButton({title, isExpanded, onClick}: PropsType) {
-    return <li className="aside-item" title={title}
-                             onClick={onClick}>
-        <SvgIcon className={`aside-item__icon ${isExpanded ? "collapse-icon" : "expand-icon"}`} Icon={ArrowIcon}/>
-        <span className="aside-item__title">{title}</span>
+export function ExpandButton({ title, isExpanded, onClick }: PropsType) {
+  return (
+    <li className="aside-item" title={title} onClick={onClick}>
+      <SvgIcon className={`aside-item__icon ${isExpanded ? 'collapse-icon' : 'expand-icon'}`} Icon={ArrowIcon} />
+      <span className="aside-item__title">{title}</span>
     </li>
+  );
 }

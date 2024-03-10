@@ -1,13 +1,13 @@
-import "./styles.scss";
+import './styles.scss';
 
 type PropsType = {
-    preview: string
-}
+  preview: string;
+};
 
-export function VideoPreview({preview}: PropsType) {
-    return <div className="video-preview-wrapper">
-        <div className="video-preview" style={{backgroundImage: `url(${preview})`}}>
-
-        </div>
+export function VideoPreview({ preview }: PropsType) {
+  return (
+    <div className="video-preview-wrapper">
+      <div className="video-preview" style={{ backgroundImage: `url(${preview})` }}></div>
     </div>
+  );
 }

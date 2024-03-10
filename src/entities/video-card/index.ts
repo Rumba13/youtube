@@ -1,1 +1,1 @@
-export {VideoCard} from "./ui/ui";
+export { VideoCard } from './ui/ui';

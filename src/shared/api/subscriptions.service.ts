@@ -11,13 +11,15 @@ export class SubscriptionsService {
     }
   }
 
-  public async loadChannel(channelId: string):Promise<SubscriptionType | null> {
+  public async loadChannel(channelId: string): Promise<SubscriptionType | null> {
     try {
-      return (await axiosServerConnection.get('/subscription', {
-        params: {
-          channelId,
-        },
-      })).data;
+      return (
+        await axiosServerConnection.get('/subscription', {
+          params: {
+            channelId,
+          },
+        })
+      ).data;
     } catch (err) {
       console.log(err);
       return null;

@@ -1,1 +1,1 @@
-export {VideoList} from "./ui/ui";
+export { VideoList } from './ui/ui';

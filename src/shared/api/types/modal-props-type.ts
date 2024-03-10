@@ -1,7 +1,7 @@
-import {FC, MouseEventHandler} from "react";
+import { FC, MouseEventHandler } from 'react';
 
 export type ModalPropsType = {
-    className?: string,
-    onClick?: MouseEventHandler,
-    isOpened:boolean
-}
+  className?: string;
+  onClick?: MouseEventHandler;
+  isOpened: boolean;
+};

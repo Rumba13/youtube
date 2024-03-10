@@ -1,1 +1,1 @@
-export {LoginForm, type LoginFormSlotType} from "./ui/ui";
+export { LoginForm, type LoginFormSlotType } from './ui/ui';

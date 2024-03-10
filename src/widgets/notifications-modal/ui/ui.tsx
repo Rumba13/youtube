@@ -1,41 +1,46 @@
-import "./styles.scss";
-import {FC, JSX, MouseEventHandler, useEffect} from "react";
-import {NotificationCard} from "../../../entities/notification";
-import {notificationsState} from "../../../entities/notification";
-import {useTranslation} from "react-i18next";
-import {observer} from "mobx-react";
-import {SettingsButton} from "../../header";
-import {NotificationsActionsModalSlotType} from "../../notifications-actions-modal";
+import './styles.scss';
+import { FC, MouseEventHandler, useEffect } from 'react';
+import { NotificationCard } from '../../../entities/notification';
+import { notificationsState } from '../../../entities/notification';
+import { useTranslation } from 'react-i18next';
+import { observer } from 'mobx-react';
+import { SettingsButton } from '../../header';
+import { NotificationsActionsModalSlotType } from '../../notifications-actions-modal';
 
-export type NotificationModalSlotType = FC<PropsType>
+export type NotificationModalSlotType = FC<PropsType>;
 
 type PropsType = {
-    isOpened: boolean,
-    onClick: MouseEventHandler,
-    NotificationsActionsModalSlot: NotificationsActionsModalSlotType
-}
+  isOpened: boolean;
+  onClick: MouseEventHandler;
+  NotificationsActionsModalSlot: NotificationsActionsModalSlotType;
+};
 
-export const NotificationsModal = observer(({isOpened, onClick, NotificationsActionsModalSlot}: PropsType) => {
-    const {t} = useTranslation();
+export const NotificationsModal = observer(({ isOpened, onClick, NotificationsActionsModalSlot }: PropsType) => {
+  const { t } = useTranslation();
 
-    useEffect(() => {
-        notificationsState.loadNotifications();
-    }, []);
+  useEffect(() => {
+    notificationsState.loadNotifications();
+  }, []);
 
-    if (notificationsState.isLoading) {
-        return <></>
-    }
+  if (notificationsState.isLoading) {
+    return <></>;
+  }
 
-    return <div className={`notifications${isOpened ? " opened" : ""}`} onClick={onClick}>
-        <div className="notifications-header">
-            <span className="header__title">{t("Notifications")}</span>
-            <SettingsButton/>
-        </div>
-        <div className="notifications-list">
-            {notificationsState.notifications.map(notification =>
-                <NotificationCard notification={notification} ModalSlot={NotificationsActionsModalSlot}
-                                  key={notification.id}/>)}
-        </div>
+  return (
+    <div className={`notifications${isOpened ? ' opened' : ''}`} onClick={onClick}>
+      <div className="notifications-header">
+        <span className="header__title">{t('Notifications')}</span>
+        <SettingsButton />
+      </div>
+      <div className="notifications-list">
+        {notificationsState.notifications.map(notification => (
+          <NotificationCard
+            notification={notification}
+            ModalSlot={NotificationsActionsModalSlot}
+            key={notification.id}
+          />
+        ))}
+      </div>
     </div>
-
-})
+  );
+});
