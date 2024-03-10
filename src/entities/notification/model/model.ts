@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import { NotificationsService } from '../../../shared/api/notifications-service';
 import { NotificationType } from '../../../shared/api/types/notification-type';
+import { userState } from '../../user';
 
 class NotificationsState {
   private notificationsService: NotificationsService;
@@ -18,22 +19,21 @@ class NotificationsState {
     return this.notifications?.length || this.notificationsCount;
   }
 
-  constructor(notificationsService: NotificationsService) {
+  constructor(notificationsService: NotificationsService, userJwt: string | null) {
     makeAutoObservable(this);
     this.notificationsService = notificationsService;
-    this.loadNotificationsCount();
+    this.loadNotificationsCount(userJwt);
   }
 
-  public async loadNotificationsCount() {
-    //TODO user id
-    this.setNotificationsCount(await this.notificationsService.loadNotificationsCount());
+  public async loadNotificationsCount(userJwt: string | null) {
+    this.setNotificationsCount(await this.notificationsService.loadNotificationsCount(userJwt));
   }
 
-  public async loadNotifications() {
+  public async loadNotifications(userJwt: string | null) {
     this.setIsLoading(true);
 
     try {
-      this.notifications = await this.notificationsService.loadNotifications();
+      this.notifications = await this.notificationsService.loadNotifications(userJwt);
     } catch (err) {
       this.setIsError(true);
     } finally {
@@ -43,4 +43,4 @@ class NotificationsState {
 }
 
 export { NotificationsState as NotificationsStateType };
-export const notificationsState = new NotificationsState(new NotificationsService());
+export const notificationsState = new NotificationsState(new NotificationsService(), userState.getUserJwt());

@@ -1,17 +1,14 @@
 import { VideoType } from './types/video-type';
 import { VideoTagType } from './types/video-tag-type';
-import { axiosServerConnection } from './axios-server-connection';
-import Cookies from 'universal-cookie';
+import { serverConnection } from './server-connection';
 
 export class VideoService {
-  public async loadRecommendedVideos(): Promise<VideoType[]> {
-    const cookies = new Cookies();
-
+  public async loadRecommendedVideos(userJwt: string | null): Promise<VideoType[]> {
     try {
       const videos: VideoType[] = (
-        await axiosServerConnection.get('/recommended-videos', {
+        await serverConnection.get('/recommended-videos', {
           headers: {
-            Authorization: cookies.get('UserJwt') || null,
+            Authorization: userJwt,
           },
         })
       ).data;
@@ -26,7 +23,7 @@ export class VideoService {
 
   public async loadVideoTags(): Promise<VideoTagType[]> {
     try {
-      return (await axiosServerConnection.get('/video-tags')).data;
+      return (await serverConnection.get('/video-tags')).data;
     } catch (err) {
       console.log(err);
       return [];

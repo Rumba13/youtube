@@ -1,7 +1,8 @@
 import './styles.scss';
 import { Field, Form, Formik } from 'formik';
 import { FC } from 'react';
-import { AuthService } from '../../../shared/api/auth.service';
+import { userState } from '../../../entities/user';
+import { observer } from 'mobx-react';
 
 export type LoginFormSlotType = FC;
 
@@ -9,15 +10,14 @@ type LoginFormValues = {
   login: string;
   password: string;
 };
-export function LoginForm() {
-  const authService = new AuthService();
+export const LoginForm = observer(() => {
   const initialFormValues: LoginFormValues = {
     login: '',
     password: '',
   };
 
   async function onSubmit(values: LoginFormValues) {
-    await authService.signIn(values.login, values.password);
+    await userState.signIn(values.login, values.password);
   }
 
   return (
@@ -35,4 +35,4 @@ export function LoginForm() {
       )}
     </Formik>
   );
-}
+});

@@ -13,8 +13,8 @@ export class SubscriptionsState {
     this.subscriptionsService = subscriptionsService;
   }
 
-  public async loadSubscriptions() {
-    this.setSubscriptions(await this.subscriptionsService.loadUserSubscriptions());
+  public async loadSubscriptions(userJwt: string | null) {
+    this.setSubscriptions(await this.subscriptionsService.loadUserSubscriptions(userJwt));
   }
 }
 

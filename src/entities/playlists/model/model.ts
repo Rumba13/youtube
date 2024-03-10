@@ -13,8 +13,8 @@ export class PlaylistsModel {
     this.playlistsService = playlistsService;
   }
 
-  public async loadPlaylists() {
-    this.setPlaylists(await this.playlistsService.loadUserPlaylists());
+  public async loadPlaylists(userJwt: string | null) {
+    this.setPlaylists(await this.playlistsService.loadUserPlaylists(userJwt));
   }
 }
 

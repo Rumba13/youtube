@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { observer } from 'mobx-react';
 import { SettingsButton } from '../../header';
 import { NotificationsActionsModalSlotType } from '../../notifications-actions-modal';
+import { userState } from '../../../entities/user';
 
 export type NotificationModalSlotType = FC<PropsType>;
 
@@ -17,10 +18,12 @@ type PropsType = {
 
 export const NotificationsModal = observer(({ isOpened, onClick, NotificationsActionsModalSlot }: PropsType) => {
   const { t } = useTranslation();
+  const { getUserJwt } = userState;
+  const userJwt = getUserJwt();
 
   useEffect(() => {
-    notificationsState.loadNotifications();
-  }, []);
+    notificationsState.loadNotifications(userJwt);
+  }, [userJwt]);
 
   if (notificationsState.isLoading) {
     return <></>;

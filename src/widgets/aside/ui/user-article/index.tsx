@@ -12,11 +12,18 @@ import { useTranslation } from 'react-i18next';
 import { observer } from 'mobx-react';
 import { ExpandButton } from '../expand-button';
 import { playlistsState } from '../../../../entities/playlists';
+import { userState } from '../../../../entities/user';
 
 export const UserArticle = observer(() => {
   const [isUserArticleExpanded, setIsUserArticleExpanded] = useState<boolean>(false);
   const { t } = useTranslation();
   const { playlists } = playlistsState;
+  const { getUserJwt } = userState;
+  const userJwt = getUserJwt();
+
+  useEffect(() => {
+    playlistsState.loadPlaylists(userJwt);
+  }, [userJwt]);
 
   const items: JSX.Element[] = [
     <li className="aside-item you-item" title={t('You')} key={1}>
@@ -44,10 +51,6 @@ export const UserArticle = observer(() => {
       <span className="aside-item__title">{t('Liked')}</span>
     </li>,
   ];
-
-  useEffect(() => {
-    playlistsState.loadPlaylists();
-  }, []);
 
   return (
     <ul className={`aside-article user-article${isUserArticleExpanded ? ' ' + 'expanded' : ''}`}>

@@ -1,10 +1,16 @@
 import { SubscriptionType } from './types/subscription-type';
-import { axiosServerConnection } from './axios-server-connection';
+import { serverConnection } from './server-connection';
 
 export class SubscriptionsService {
-  public async loadUserSubscriptions(): Promise<SubscriptionType[]> {
+  public async loadUserSubscriptions(userJwt: string | null): Promise<SubscriptionType[]> {
     try {
-      return (await axiosServerConnection.get('/subscriptions')).data;
+      return (
+        await serverConnection.get('/subscriptions', {
+          headers: {
+            Authorization: userJwt,
+          },
+        })
+      ).data;
     } catch (err) {
       console.log(err);
       return [];
@@ -14,7 +20,7 @@ export class SubscriptionsService {
   public async loadChannel(channelId: string): Promise<SubscriptionType | null> {
     try {
       return (
-        await axiosServerConnection.get('/subscription', {
+        await serverConnection.get('/subscription', {
           params: {
             channelId,
           },

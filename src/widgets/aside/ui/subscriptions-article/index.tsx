@@ -4,15 +4,18 @@ import { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 import { SubscriptionCard, subscriptionsState } from '../../../../entities/subscription';
 import { ExpandButton } from '../expand-button';
+import { userState } from '../../../../entities/user';
 
 export const SubscriptionsArticle = observer(() => {
   const { t } = useTranslation();
   const { subscriptions } = subscriptionsState;
   const [isSubscriptionArticleExpanded, setIsSubscriptionArticleExpanded] = useState<boolean>(false);
+  const { getUserJwt, user } = userState;
+  const userJwt = getUserJwt();
 
   useEffect(() => {
-    subscriptionsState.loadSubscriptions();
-  }, []);
+    user && subscriptionsState.loadSubscriptions(userJwt);
+  }, [userJwt]);
 
   if (subscriptions.length === 0) {
     return <></>;

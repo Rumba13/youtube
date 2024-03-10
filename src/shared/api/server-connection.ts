@@ -1,5 +1,5 @@
 import axios from 'axios';
 
-export const axiosServerConnection = axios.create({
+export const serverConnection = axios.create({
   baseURL: 'http://localhost:5000',
 });
