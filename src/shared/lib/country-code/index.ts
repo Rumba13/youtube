@@ -1,3 +1,3 @@
 export function getCountryCode(): string {
-  return 'BY';
+ return 'BY';
 }

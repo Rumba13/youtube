@@ -15,41 +15,41 @@ import { NotificationsActionsModalSlotType } from '../../notifications-actions-m
 import { NotificationModalSlotType } from '../../notifications-modal/ui/ui';
 
 type PropsType = {
-  NotificationsModalSlot: NotificationModalSlotType;
-  NotificationActionsModalSlot: NotificationsActionsModalSlotType;
-  UserActionsModalSlot: UserActionsModalSlotType;
-  VideoActionsModal: CreateVideoActionsModalSlotType;
-  VoiceSearchModalSlot: VoiceSearchModalSlotType;
+ NotificationsModalSlot: NotificationModalSlotType;
+ NotificationActionsModalSlot: NotificationsActionsModalSlotType;
+ UserActionsModalSlot: UserActionsModalSlotType;
+ VideoActionsModal: CreateVideoActionsModalSlotType;
+ VoiceSearchModalSlot: VoiceSearchModalSlotType;
 };
 
 export const Header = observer(
-  ({
-    NotificationsModalSlot,
-    NotificationActionsModalSlot,
-    UserActionsModalSlot,
-    VideoActionsModal,
-    VoiceSearchModalSlot,
-  }: PropsType) => {
-    const { isSearchOpened, setIsSearchOpened } = searchState;
+ ({
+  NotificationsModalSlot,
+  NotificationActionsModalSlot,
+  UserActionsModalSlot,
+  VideoActionsModal,
+  VoiceSearchModalSlot,
+ }: PropsType) => {
+  const { isSearchOpened, setIsSearchOpened } = searchState;
 
-    return (
-      <header className={`header${isSearchOpened ? ' opened-search' : ''}`}>
-        {!isSearchOpened && (
-          <>
-            <MenuButton />
-            <Logo />
-            <UserProfileIcon UserActionsModalSlot={UserActionsModalSlot} />
-            <NotificationsButton
-              ModalSlot={NotificationsModalSlot}
-              NotificationActionsModalSlot={NotificationActionsModalSlot}
-            />
-            <CreateVideoButton ModalSlot={VideoActionsModal} />
-          </>
-        )}
-        {isSearchOpened && <BackButton onClick={() => setIsSearchOpened(false)} />}
+  return (
+   <header className={`header${isSearchOpened ? ' opened-search' : ''}`}>
+    {!isSearchOpened && (
+     <>
+      <MenuButton />
+      <Logo />
+      <UserProfileIcon UserActionsModalSlot={UserActionsModalSlot} />
+      <NotificationsButton
+       ModalSlot={NotificationsModalSlot}
+       NotificationActionsModalSlot={NotificationActionsModalSlot}
+      />
+      <CreateVideoButton ModalSlot={VideoActionsModal} />
+     </>
+    )}
+    {isSearchOpened && <BackButton onClick={() => setIsSearchOpened(false)} />}
 
-        <Search VoiceSearchModalSlot={VoiceSearchModalSlot} />
-      </header>
-    );
-  },
+    <Search VoiceSearchModalSlot={VoiceSearchModalSlot} />
+   </header>
+  );
+ },
 );

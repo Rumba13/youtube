@@ -12,37 +12,37 @@ import { RegisterForm } from '../widgets/register-form';
 import { userState } from '../entities/user';
 
 export function App() {
-  const { i18n, t } = useTranslation();
-  const {
-    isModalOpened: isRegisterModalOpened,
-    toggleModal: toggleRegisterModal,
-    stopPropagationInModal: stopPropagationInRegisterModal,
-  } = useModal(false, { parentModalSelector: '.user-actions-modal' });
-  const {
-    isModalOpened: isLoginModalOpened,
-    toggleModal: toggleLoginModal,
-    stopPropagationInModal: stopPropagationInLoginModal,
-  } = useModal(false, { parentModalSelector: '.user-actions-modal' });
+ const { i18n, t } = useTranslation();
+ const {
+  isModalOpened: isRegisterModalOpened,
+  toggleModal: toggleRegisterModal,
+  stopPropagationInModal: stopPropagationInRegisterModal,
+ } = useModal(false, { parentModalSelector: '.user-actions-modal' });
+ const {
+  isModalOpened: isLoginModalOpened,
+  toggleModal: toggleLoginModal,
+  stopPropagationInModal: stopPropagationInLoginModal,
+ } = useModal(false, { parentModalSelector: '.user-actions-modal' });
 
-  useEffect(() => {
-    i18n.changeLanguage('ru');
-  }, []);
+ useEffect(() => {
+  i18n.changeLanguage('ru');
+ }, []);
 
-  return (
-    <div className="app">
-      <Overlay />
-      <RegisterModal
-        RegisterFormSlot={RegisterForm}
-        isOpened={isRegisterModalOpened}
-        onClick={stopPropagationInRegisterModal}
-      />
-      <LoginModal LoginFormSlot={LoginForm} isOpened={isLoginModalOpened} onClick={stopPropagationInLoginModal} />
+ return (
+  <div className="app">
+   <Overlay />
+   <RegisterModal
+    RegisterFormSlot={RegisterForm}
+    isOpened={isRegisterModalOpened}
+    onClick={stopPropagationInRegisterModal}
+   />
+   <LoginModal LoginFormSlot={LoginForm} isOpened={isLoginModalOpened} onClick={stopPropagationInLoginModal} />
 
-      <RegisterModalStateContext.Provider value={{ toggleModal: toggleRegisterModal }}>
-        <LoginModalStateContext.Provider value={{ toggleModal: toggleLoginModal }}>
-          <DesktopLayout />
-        </LoginModalStateContext.Provider>
-      </RegisterModalStateContext.Provider>
-    </div>
-  );
+   <RegisterModalStateContext.Provider value={{ toggleModal: toggleRegisterModal }}>
+    <LoginModalStateContext.Provider value={{ toggleModal: toggleLoginModal }}>
+     <DesktopLayout />
+    </LoginModalStateContext.Provider>
+   </RegisterModalStateContext.Provider>
+  </div>
+ );
 }

@@ -1,3 +1,3 @@
 export type SearchHistoryType = {
-  searchQuery: string;
+ searchQuery: string;
 };

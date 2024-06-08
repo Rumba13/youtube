@@ -7,23 +7,23 @@ import { VideoActionsModalSlotType } from '../../video-actions-modal';
 import { userState } from '../../../entities/user';
 
 type PropsType = {
-  VideoActionsModalSlot: VideoActionsModalSlotType;
+ VideoActionsModalSlot: VideoActionsModalSlotType;
 };
 
 export const VideoList = observer(({ VideoActionsModalSlot }: PropsType) => {
-  const { videos, loadVideos } = videoState;
-  const { getUserJwt, user } = userState;
-  const userJwt = getUserJwt();
+ const { videos, loadVideos } = videoState;
+ const { getUserJwt, user } = userState;
+ const userJwt = getUserJwt();
 
-  useEffect(() => {
-    loadVideos(userJwt);
-  }, [user]);
+ useEffect(() => {
+  loadVideos(userJwt);
+ }, [user]);
 
-  return (
-    <div className="video-list">
-      {videos.map(video => (
-        <VideoCard VideoActionsModalSlot={VideoActionsModalSlot} video={video} key={video.id} />
-      ))}
-    </div>
-  );
+ return (
+  <div className="video-list">
+   {videos.map(video => (
+    <VideoCard VideoActionsModalSlot={VideoActionsModalSlot} video={video} key={video.id} />
+   ))}
+  </div>
+ );
 });

@@ -12,30 +12,27 @@ import { NotificationsActionsModalSlotType } from '../../../notifications-action
 import { NotificationModalSlotType } from '../../../notifications-modal/ui/ui';
 
 type PropsType = {
-  ModalSlot: NotificationModalSlotType;
-  NotificationActionsModalSlot: NotificationsActionsModalSlotType;
+ ModalSlot: NotificationModalSlotType;
+ NotificationActionsModalSlot: NotificationsActionsModalSlotType;
 };
 
 export const NotificationsButton = observer(({ ModalSlot, NotificationActionsModalSlot }: PropsType) => {
-  const { isModalOpened, toggleModal } = useModal();
-  const { t } = useTranslation();
+ const { isModalOpened, toggleModal } = useModal();
+ const { t } = useTranslation();
 
-  return (
-    <Button className="notification-icon" onClick={toggleModal}>
-      <SvgIcon
-        className="notification-icon__icon"
-        Icon={isModalOpened ? NotificationsActiveIcon : NotificationsIconSvg}
-      />
+ return (
+  <Button className="notification-icon" onClick={toggleModal}>
+   <SvgIcon className="notification-icon__icon" Icon={isModalOpened ? NotificationsActiveIcon : NotificationsIconSvg} />
 
-      {!(notificationsState.unViewedNotificationsCount === 0) && (
-        <div className="notification-icon__count">{notificationsState.unViewedNotificationsCount}</div>
-      )}
-      <ModalSlot
-        isOpened={isModalOpened}
-        onClick={event => event.stopPropagation()}
-        NotificationsActionsModalSlot={NotificationActionsModalSlot}
-      />
-      <TextTip>{t('Notifications')}</TextTip>
-    </Button>
-  );
+   {!(notificationsState.unViewedNotificationsCount === 0) && (
+    <div className="notification-icon__count">{notificationsState.unViewedNotificationsCount}</div>
+   )}
+   <ModalSlot
+    isOpened={isModalOpened}
+    onClick={event => event.stopPropagation()}
+    NotificationsActionsModalSlot={NotificationActionsModalSlot}
+   />
+   <TextTip>{t('Notifications')}</TextTip>
+  </Button>
+ );
 });

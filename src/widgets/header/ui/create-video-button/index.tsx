@@ -9,18 +9,18 @@ import { useModal } from '../../../../shared/lib/use-modal';
 import { CreateVideoActionsModalSlotType } from '../../../create-video-actions-modal';
 
 type PropsType = {
-  ModalSlot: CreateVideoActionsModalSlotType;
+ ModalSlot: CreateVideoActionsModalSlotType;
 };
 
 export function CreateVideoButton({ ModalSlot }: PropsType) {
-  const { t } = useTranslation();
-  const { isModalOpened, toggleModal, stopPropagationInModal } = useModal();
+ const { t } = useTranslation();
+ const { isModalOpened, toggleModal, stopPropagationInModal } = useModal();
 
-  return (
-    <Button className="create-video-button" onClick={toggleModal}>
-      <SvgIcon className="create-video-button__icon" Icon={isModalOpened ? CreateVideoActiveIcon : CreateVideoIcon} />
-      <ModalSlot onClick={stopPropagationInModal} isOpened={isModalOpened} />
-      <TextTip>{t('Create')}</TextTip>
-    </Button>
-  );
+ return (
+  <Button className="create-video-button" onClick={toggleModal}>
+   <SvgIcon className="create-video-button__icon" Icon={isModalOpened ? CreateVideoActiveIcon : CreateVideoIcon} />
+   <ModalSlot onClick={stopPropagationInModal} isOpened={isModalOpened} />
+   <TextTip>{t('Create')}</TextTip>
+  </Button>
+ );
 }

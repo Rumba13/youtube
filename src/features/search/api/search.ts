@@ -1,3 +1,3 @@
 export async function search(query: string) {
-  /*searching for function body*/
+ /*searching for function body*/
 }

@@ -11,39 +11,35 @@ import { userState } from '../../../entities/user';
 export type NotificationModalSlotType = FC<PropsType>;
 
 type PropsType = {
-  isOpened: boolean;
-  onClick: MouseEventHandler;
-  NotificationsActionsModalSlot: NotificationsActionsModalSlotType;
+ isOpened: boolean;
+ onClick: MouseEventHandler;
+ NotificationsActionsModalSlot: NotificationsActionsModalSlotType;
 };
 
 export const NotificationsModal = observer(({ isOpened, onClick, NotificationsActionsModalSlot }: PropsType) => {
-  const { t } = useTranslation();
-  const { getUserJwt } = userState;
-  const userJwt = getUserJwt();
+ const { t } = useTranslation();
+ const { getUserJwt } = userState;
+ const userJwt = getUserJwt();
 
-  useEffect(() => {
-    notificationsState.loadNotifications(userJwt);
-  }, [userJwt]);
+ useEffect(() => {
+  notificationsState.loadNotifications(userJwt);
+ }, [userJwt]);
 
-  if (notificationsState.isLoading) {
-    return <></>;
-  }
+ if (notificationsState.isLoading) {
+  return <></>;
+ }
 
-  return (
-    <div className={`notifications${isOpened ? ' opened' : ''}`} onClick={onClick}>
-      <div className="notifications-header">
-        <span className="header__title">{t('Notifications')}</span>
-        <SettingsButton />
-      </div>
-      <div className="notifications-list">
-        {notificationsState.notifications.map(notification => (
-          <NotificationCard
-            notification={notification}
-            ModalSlot={NotificationsActionsModalSlot}
-            key={notification.id}
-          />
-        ))}
-      </div>
-    </div>
-  );
+ return (
+  <div className={`notifications${isOpened ? ' opened' : ''}`} onClick={onClick}>
+   <div className="notifications-header">
+    <span className="header__title">{t('Notifications')}</span>
+    <SettingsButton />
+   </div>
+   <div className="notifications-list">
+    {notificationsState.notifications.map(notification => (
+     <NotificationCard notification={notification} ModalSlot={NotificationsActionsModalSlot} key={notification.id} />
+    ))}
+   </div>
+  </div>
+ );
 });

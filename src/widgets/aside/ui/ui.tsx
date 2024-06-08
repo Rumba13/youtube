@@ -11,21 +11,21 @@ import { UserArticle } from './user-article';
 import { AsideMini } from './aside-mini';
 
 export const Aside = observer(() => {
-  const { isMinified } = asideState;
+ const { isMinified } = asideState;
 
-  if (isMinified) {
-    return <AsideMini />;
-  } else {
-    return (
-      <aside className="aside">
-        <MainArticle />
-        <UserArticle />
-        <SubscriptionsArticle />
-        <NavigationArticle />
-        <OtherArticle />
-        <ActionsArticle />
-        <AsideFooter />
-      </aside>
-    );
-  }
+ if (isMinified) {
+  return <AsideMini />;
+ } else {
+  return (
+   <aside className="aside">
+    <MainArticle />
+    <UserArticle />
+    <SubscriptionsArticle />
+    <NavigationArticle />
+    <OtherArticle />
+    <ActionsArticle />
+    <AsideFooter />
+   </aside>
+  );
+ }
 });

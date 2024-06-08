@@ -6,40 +6,40 @@ import { observer } from 'mobx-react';
 import { VideoTagsItem } from './video-tags-item';
 
 export const VideoTags = observer(() => {
-  const { activeTag, videoTags, setActiveTag, loadVideoTags, isLoading } = videoTagsState;
+ const { activeTag, videoTags, setActiveTag, loadVideoTags, isLoading } = videoTagsState;
 
-  useEffect(() => {
-    loadVideoTags();
-  }, []);
+ useEffect(() => {
+  loadVideoTags();
+ }, []);
 
-  function setActiveTagAndToggleOverlay(videoTagId: string | null) {
-    setActiveTag(videoTagId);
-    overlayState.setIsOverlayOpened(true);
+ function setActiveTagAndToggleOverlay(videoTagId: string | null) {
+  setActiveTag(videoTagId);
+  overlayState.setIsOverlayOpened(true);
 
-    setTimeout(() => {
-      //TODO FUTURE Replace setTimeout with video loading state
-      overlayState.setIsOverlayOpened(false);
-    }, 1000);
-  }
+  setTimeout(() => {
+   //TODO FUTURE Replace setTimeout with video loading state
+   overlayState.setIsOverlayOpened(false);
+  }, 1000);
+ }
 
-  if (isLoading) {
-    return <></>;
-  }
+ if (isLoading) {
+  return <></>;
+ }
 
-  return (
-    <ul className="video-tags">
-      <VideoTagsItem isActive={activeTag === null} onClick={() => setActiveTagAndToggleOverlay(null)} key={0}>
-        Все
-      </VideoTagsItem>
+ return (
+  <ul className="video-tags">
+   <VideoTagsItem isActive={activeTag === null} onClick={() => setActiveTagAndToggleOverlay(null)} key={0}>
+    Все
+   </VideoTagsItem>
 
-      {videoTags.map(videoTag => (
-        <VideoTagsItem
-          isActive={activeTag === videoTag.id}
-          onClick={() => setActiveTagAndToggleOverlay(videoTag.id)}
-          key={videoTag.id}>
-          {videoTag.title}
-        </VideoTagsItem>
-      ))}
-    </ul>
-  );
+   {videoTags.map(videoTag => (
+    <VideoTagsItem
+     isActive={activeTag === videoTag.id}
+     onClick={() => setActiveTagAndToggleOverlay(videoTag.id)}
+     key={videoTag.id}>
+     {videoTag.title}
+    </VideoTagsItem>
+   ))}
+  </ul>
+ );
 });
