@@ -1,23 +1,22 @@
 .menu-button {
-  margin: 0 16px;
-  user-select: none;
+ margin: 0 16px;
+ user-select: none;
 
-  & .button__interaction:hover {
-    & ~ .text-tip {
-      display: block;
-    }
+ & .button__interaction:hover {
+  & ~ .text-tip {
+   display: block;
   }
+ }
 
-  & .menu-button__icon {
-    position: relative;
-    z-index: 3;
-    fill: currentColor;
-    pointer-events: none;
-  }
+ & .menu-button__icon {
+  position: relative;
+  z-index: 3;
+  fill: currentColor;
+  pointer-events: none;
+ }
 
-  & .text-tip {
-    font-size: 7px;
-    font-family: 'Oswald', sans-serif;
-  }
+ & .text-tip {
+  font-size: 7px;
+  font-family: 'Oswald', sans-serif;
+ }
 }
-

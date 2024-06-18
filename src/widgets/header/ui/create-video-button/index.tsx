@@ -17,7 +17,7 @@ export function CreateVideoButton({ ModalSlot }: PropsType) {
  const { isModalOpened, toggleModal, stopPropagationInModal } = useModal();
 
  return (
-  <Button className="create-video-button" onClick={toggleModal}>
+  <Button className="create-video-button" onClick={toggleModal} ariaLabel={t('Open Create Video Menu')}>
    <SvgIcon className="create-video-button__icon" Icon={isModalOpened ? CreateVideoActiveIcon : CreateVideoIcon} />
    <ModalSlot onClick={stopPropagationInModal} isOpened={isModalOpened} />
    <TextTip>{t('Create')}</TextTip>

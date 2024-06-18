@@ -8,13 +8,13 @@ export function DisableNotificationsButton() {
  const channelName = 'Nostoro';
 
  return (
-  <div className="disable-notifications-button">
+  <button className="disable-notifications-button">
    <SvgIcon className="disable-notifications-button__icon" Icon={CrossedBellIcon} />
    <span className="disable-notifications-button__title">
     <Trans i18nKey={'Disable Notifications At Channel'} t={t} channelName={channelName}>
      {{ channelName }}
     </Trans>
    </span>
-  </div>
+  </button>
  );
 }

@@ -1,30 +1,29 @@
 .aside-footer {
-  & .guide-links {
-    padding: 15px 0 0 24px;
-    max-width: 100%;
-    display: block;
-    line-height: 17px;
+ & .guide-links {
+  padding: 15px 0 0 24px;
+  max-width: 100%;
+  display: block;
+  line-height: 17px;
 
-    & .guide-links__item {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--light-gray-color);
-      margin-right: 8px;
-      white-space: nowrap;
-    }
-
-    & .guide-links__space {
-      height: 12px;
-    }
+  & .guide-links__item {
+   display: inline-block;
+   font-size: 13px;
+   font-weight: 500;
+   color: var(--light-gray-color);
+   margin-right: 8px;
+   white-space: nowrap;
   }
 
-  & .copyright {
-    display: block;
-    padding: 19px 16px 18px 24px;
-    font-size: 12px;
-    color: var(--fade-gray-color);
-    white-space: nowrap;
+  & .guide-links__space {
+   height: 12px;
   }
+ }
+
+ & .copyright {
+  display: block;
+  padding: 19px 16px 18px 24px;
+  font-size: 12px;
+  color: var(--fade-gray-color);
+  white-space: nowrap;
+ }
 }
-

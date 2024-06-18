@@ -13,10 +13,10 @@ export function BackButton({ onClick }: PropsType) {
  const { t } = useTranslation();
 
  return (
-  <div className="back-button" onClick={onClick}>
+  <button className="back-button" onClick={onClick} aria-label={t('Back')}>
    <div className="back-button__interaction"></div>
    <SvgIcon className="back-button__icon" Icon={ArrowLeftIcon} />
    <TextTip>{t('Back')}</TextTip>
-  </div>
+  </button>
  );
 }

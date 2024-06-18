@@ -1,109 +1,108 @@
 .video {
-  position: relative;
-  display: grid;
-  grid-template:
-  "video-preview video-preview video-preview"
-  "channel-icon title title"
-  ". channel-name channel-name"
-  ". views released-ago";
-  grid-template-rows: min-content min-content min-content min-content;
-  grid-template-columns: auto auto 1fr;
-  height: 333px;
+ position: relative;
+ display: grid;
+ grid-template:
+  'video-preview video-preview video-preview'
+  'channel-icon title title'
+  '. channel-name channel-name'
+  '. views released-ago';
+ grid-template-rows: min-content min-content min-content min-content;
+ grid-template-columns: auto auto 1fr;
+ height: 333px;
 
-  &:hover {
-    & .dots-button {
-      display: flex;
-    }
-  }
-
+ &:hover {
   & .dots-button {
-    display: none;
-    position: absolute;
-    bottom: 80px;
-    right: 0;
-
-    &.opened {
-      display: flex;
-    }
+   display: flex;
   }
+ }
 
-  & > .video-preview-wrapper {
-    grid-area: video-preview;
-    margin-bottom: 13px;
-    pointer-events: none;
+ & .dots-button {
+  display: none;
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+
+  &.opened {
+   display: flex;
   }
+ }
 
-  & .video__channel-icon {
-    grid-area: channel-icon;
-    width: 36px;
-    border-radius: 50%;
-    margin-right: 10px;
+ & > .video-preview-wrapper {
+  grid-area: video-preview;
+  margin-bottom: 13px;
+  pointer-events: none;
+ }
+
+ & .video__channel-icon {
+  grid-area: channel-icon;
+  width: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+ }
+
+ & .video_title {
+  grid-area: title;
+  padding-right: 30px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+ }
+
+ & .video__channel-name,
+ & .video__views,
+ & .video__ago {
+  grid-area: channel-name;
+  font-size: 14px;
+  color: var(--light-gray-color);
+  margin-bottom: 3px;
+ }
+
+ & .video__channel-name {
+  grid-area: channel-name;
+  font-size: 14px;
+  color: var(--light-gray-color);
+  margin-top: -8px;
+ }
+
+ & .video__views {
+  grid-area: views;
+ }
+
+ & .video__ago {
+  grid-area: released-ago;
+
+  &:before {
+   content: '•';
+   margin-left: 5px;
+   margin-right: 5px;
   }
-
-  & .video_title {
-    grid-area: title;
-    padding-right: 30px;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 500;
-    margin-bottom: 10px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  & .video__channel-name,
-  & .video__views,
-  & .video__ago {
-
-    grid-area: channel-name;
-    font-size: 14px;
-    color: var(--light-gray-color);
-    margin-bottom: 3px;
-  }
-
-  & .video__channel-name {
-    grid-area: channel-name;
-    font-size: 14px;
-    color: var(--light-gray-color);
-    margin-top: -8px;
-  }
-
-  & .video__views {
-    grid-area: views;
-  }
-
-  & .video__ago {
-    grid-area: released-ago;
-
-    &:before {
-      content: "•";
-      margin-left: 5px;
-      margin-right: 5px;
-    }
-  }
+ }
 }
 //TODO Find more ease way to fix bug(video-actions-modal goes off screen on the right most column of video)
-@media(max-width: 1920px) {
-  .video:nth-child(5n) .dots-button .video-actions-list {
-    left: initial;
-    right: 0;
-  }
+@media (max-width: 1920px) {
+ .video:nth-child(5n) .dots-button .video-actions-list {
+  left: initial;
+  right: 0;
+ }
 }
-@media(max-width: 1704px) {
-  .video:nth-child(4) .dots-button .video-actions-list {
-    left: initial;
-    right: 0;
-  }
+@media (max-width: 1704px) {
+ .video:nth-child(4) .dots-button .video-actions-list {
+  left: initial;
+  right: 0;
+ }
 }
-@media(max-width: 1388px) {
-  .video:nth-child(3) .dots-button .video-actions-list {
-    left: initial;
-    right: 0;
-  }
+@media (max-width: 1388px) {
+ .video:nth-child(3) .dots-button .video-actions-list {
+  left: initial;
+  right: 0;
+ }
 }
-@media(max-width: 1072px) {
-  .video:nth-child(2) .dots-button .video-actions-list {
-    left: initial;
-    right: 0;
-  }
+@media (max-width: 1072px) {
+ .video:nth-child(2) .dots-button .video-actions-list {
+  left: initial;
+  right: 0;
+ }
 }

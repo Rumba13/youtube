@@ -9,7 +9,7 @@ import { NotificationsActionsModalSlotType } from '../../../widgets/notification
 
 export type PropsType = {
  notification: NotificationType;
- ModalSlot: NotificationsActionsModalSlotType;
+ ModalSlot: NotificationsActionsModalSlotType; //OLD was NotificationsActionsModalSlotType
 };
 
 export function NotificationCard({ notification, ModalSlot }: PropsType) {
@@ -30,19 +30,17 @@ export function NotificationCard({ notification, ModalSlot }: PropsType) {
 
  return (
   <div className="notification">
-   <img className="notification__image" src={icon} alt="" />
+   <img className="notification__image" src={icon} alt={t('Notification Image')} />
    <h2 className="notification__title">{FormatNotificationTitle(channelName, videoName, videoType, t)}</h2>
-   <img className="notification__preview-image" src={previewImage} alt="" />
+   <img className="notification__preview-image" src={previewImage} alt={t('Preview Image')} />
    <span className="notification__release-ago">{`${t('keyHour', { count: releasedHoursAgo })} ${t('Ago')}`}</span>
    <div className="notification__new-mark"></div>
    <div className="button-wrapper">
     <DotsButton
-     isModalOpened={isModalOpened}
      isOpened={isModalOpened}
      onClick={toggleModal}
-     ModalSlot={ModalSlot}
-     onModalClick={stopPropagationInModal}
     />
+    <ModalSlot isOpened={isModalOpened} onClick={stopPropagationInModal} />
    </div>
   </div>
  );

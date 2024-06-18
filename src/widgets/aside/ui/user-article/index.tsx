@@ -53,7 +53,7 @@ export const UserArticle = observer(() => {
  ];
 
  return (
-  <ul className={`aside-article user-article${isUserArticleExpanded ? ' ' + 'expanded' : ''}`}>
+  <ul className={`aside-article user-article${isUserArticleExpanded ? ' ' + 'expanded' : ''}`} aria-label={'UserArticle'}>
    {items.map(item => item)}
 
    {playlists.map(({ title, href }, index) => (

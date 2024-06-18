@@ -1,31 +1,31 @@
 .cross-icon {
+ position: relative;
+ box-sizing: content-box;
+ width: 24px;
+ height: 24px;
+ padding: 7px;
+
+ & .cross-icon__interaction {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 1;
+
+  &:hover {
+   background-color: var(-dark-gray-color);
+  }
+ }
+
+ & .cross-icon__icon {
   position: relative;
-  box-sizing: content-box;
-  width: 24px;
-  height: 24px;
-  padding: 7px;
-
-  & .cross-icon__interaction {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    z-index: 1;
-
-    &:hover {
-      background-color: var(-dark-gray-color);
-    }
-  }
-
-  & .cross-icon__icon {
-    position: relative;
-    pointer-events: none;
-    display: block;
-    z-index: 3;
-    fill: white;
-  }
+  pointer-events: none;
+  display: block;
+  z-index: 3;
+  fill: white;
+ }
 }

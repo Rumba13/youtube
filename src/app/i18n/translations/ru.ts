@@ -114,5 +114,21 @@ export const russianTranslation: ResourceLanguage = {
   'Test New Feature': 'Тестирование новых функций',
   'Register': 'Зарегистрироваться',
   'Login': 'Войти',
+
+  //Accessibility, like aria-label
+
+  'Open Menu': 'Открыть меню',
+  'Open User Menu': 'Открыть меню пользователя',
+  'Open Create Video Menu': 'Открыть меню создания видео',
+  'Actions With Notifications': 'Действия с уведомлениями',
+  'Actions With User': 'Действия с пользователем',
+  'Actions With Video': 'Действия с видео',
+  'Video Tags': 'Видео теги',
+  'Close': 'Закрыть',
+  'Show More': 'Показать ещё',
+  'Search': 'Искать',
+  'Notification Image': 'Иконка уведомления',
+  'Preview Image': 'Иконка превью',
+  'Video Preview': 'Превью видео',
  },
 };

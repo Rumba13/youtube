@@ -14,7 +14,7 @@ export function DesktopLayout() {
    <Header
     VideoActionsModal={CreateVideoActionsModal}
     UserActionsModalSlot={UserActionsModal}
-    NotificationsModalSlot={NotificationsModal}
+    NotificationsModalSlot={ NotificationsModal}
     NotificationActionsModalSlot={NotificationsActionsModal}
     VoiceSearchModalSlot={VoiceSearchModal}
    />

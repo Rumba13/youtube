@@ -21,18 +21,24 @@ export const NotificationsButton = observer(({ ModalSlot, NotificationActionsMod
  const { t } = useTranslation();
 
  return (
-  <Button className="notification-icon" onClick={toggleModal}>
-   <SvgIcon className="notification-icon__icon" Icon={isModalOpened ? NotificationsActiveIcon : NotificationsIconSvg} />
+  <div className="notification-icon-wrapper">
+   <Button className="notification-icon" onClick={toggleModal}>
+    <SvgIcon className="notification-icon__icon"
+             Icon={isModalOpened ? NotificationsActiveIcon : NotificationsIconSvg} />
 
-   {!(notificationsState.unViewedNotificationsCount === 0) && (
-    <div className="notification-icon__count">{notificationsState.unViewedNotificationsCount}</div>
-   )}
+    {!(notificationsState.unViewedNotificationsCount === 0) && (
+     <div className="notification-icon__count">{notificationsState.unViewedNotificationsCount}</div>
+    )}
+
+    <TextTip>{t('Notifications')}</TextTip>
+   </Button>
+
    <ModalSlot
     isOpened={isModalOpened}
     onClick={event => event.stopPropagation()}
     NotificationsActionsModalSlot={NotificationActionsModalSlot}
    />
-   <TextTip>{t('Notifications')}</TextTip>
-  </Button>
+  </div>
  );
+
 });

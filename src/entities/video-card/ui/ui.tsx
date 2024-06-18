@@ -28,7 +28,7 @@ export function VideoCard({ video, VideoActionsModalSlot }: PropsType) {
  return (
   <div className="video">
    <VideoPreview preview={video.preview} />
-   <img className="video__channel-icon" src={ahegao1} alt="" />
+   <img className="video__channel-icon" src={ahegao1} alt={t('Video Preview')} />
    <span className="video_title">{video.title}</span>
    <DotsButton
     onClick={toggleModal}

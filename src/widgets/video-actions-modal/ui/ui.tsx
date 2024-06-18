@@ -10,6 +10,7 @@ import { CrossedCircleIcon } from '../../../images/crossed-circle-icon';
 import { StopIcon } from '../../../images/stop-icon';
 import { FlagIcon } from '../../../images/flag-icon';
 import { ListItemSeparator } from '../../../shared/ui/list-item-separator';
+import { useTranslation } from 'react-i18next';
 
 type PropsType = {
  isOpened: boolean;
@@ -19,6 +20,8 @@ type PropsType = {
 export type VideoActionsModalSlotType = React.FC<PropsType>;
 
 export function VideoActionsList({ isOpened, onClick }: PropsType) {
+ const {t} = useTranslation();
+
  const items: JSX.Element[] = [
   <div className="item-wrapper" key={1}>
    <SvgIcon Icon={AddToOrderQueueIcon} />
@@ -56,12 +59,12 @@ export function VideoActionsList({ isOpened, onClick }: PropsType) {
  ];
 
  return (
-  <div className={'video-actions-list' + (isOpened ? ' opened' : '')} onClick={onClick}>
+  <ul className={'video-actions-list' + (isOpened ? ' opened' : '')} onClick={onClick} aria-label={t('Actions With User')}>
    {items.map((item, index) => (
     <li className="video-actions-list__item" key={index}>
      {item}
     </li>
    ))}
-  </div>
+  </ul>
  );
 }

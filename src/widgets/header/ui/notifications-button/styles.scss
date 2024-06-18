@@ -1,3 +1,7 @@
+.notification-icon-wrapper {
+  position: relative;
+}
+
 .notification-icon {
   margin-right: 7px;
 
@@ -6,7 +10,6 @@
       display: block;
     }
   }
-
 
   & .notification-icon__icon {
     position: relative;

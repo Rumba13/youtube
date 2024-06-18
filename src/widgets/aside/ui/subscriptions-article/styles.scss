@@ -1,17 +1,18 @@
 .aside-article {
-  &.subscriptions {
-    padding-top: 12px;
+ &.subscriptions {
+  padding-top: 12px;
 
-    &:not(.expanded) .aside-item:not(:last-child):nth-child(1n+9) { //collapse list;
-      display: none;
-    }
-
-    & .aside-item.subscription {
-      & .aside-item__icon {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-      }
-    }
+  &:not(.expanded) .aside-item:not(:last-child):nth-child(1n + 9) {
+   //collapse list;
+   display: none;
   }
+
+  & .aside-item.subscription {
+   & .aside-item__icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+   }
+  }
+ }
 }

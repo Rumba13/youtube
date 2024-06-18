@@ -1,32 +1,32 @@
 .back-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  border-radius: 50%;
+ position: relative;
+ display: flex;
+ align-items: center;
+ padding: 8px;
+ border-radius: 50%;
 
-  &:hover {
-    background-color: var(-dark-gray-color);
+ &:hover {
+  background-color: var(-dark-gray-color);
 
-    & .text-tip {
-      display: block;
-    }
+  & .text-tip {
+   display: block;
   }
+ }
 
-  .back-button__icon {
-    width: 24px;
-    height: 24px;
-    fill: white;
-  }
+ .back-button__icon {
+  width: 24px;
+  height: 24px;
+  fill: white;
+ }
 
-  .back-button__interaction {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-  }
+ .back-button__interaction {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+ }
 
-  .text-tip {
-  }
+ .text-tip {
+ }
 }

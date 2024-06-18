@@ -24,8 +24,8 @@ export function RegisterForm() {
    {() => (
     <Form className="register-form">
      <h2 className="register-form__title">sign up, bitch</h2>
-     <Field className="register-form__field" name="username" />
-     <Field className="register-form__field" name="password" type="password" />
+     <Field className="register-form__field" name="username" aria-label={'Логин'} />
+     <Field className="register-form__field" name="password" type="password" aria-label={'Пароль'} />
 
      <button className="register-form__submit-button" type="submit">
       Зарегаться

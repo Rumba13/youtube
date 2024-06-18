@@ -54,7 +54,7 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
      {t('View Channel')}
     </a>
    </div>
-   <ul className="list user-actions-list">
+   <ul className="list user-actions-list" aria-label={t('Actions With User')}>
     <li className="user-actions-list__item">
      <a
       key={1}
@@ -66,18 +66,18 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
     </li>
     <li className="user-actions-list__item"></li>
     <li className="user-actions-list__item">
-     <a className="item-link" key={2}>
+     <span className="item-link" key={2}>
       <SvgIcon className="item-icon" Icon={AccountChangeIcon} />
       {t('Change Account')}
       <SvgIcon className="arrow" Icon={ArrowIcon} />
-     </a>
+     </span>
     </li>
     {user !== null && (
      <li className="user-actions-list__item">
-      <a className="item-link" key={3} onClick={() => userState.signOut()}>
+      <span className="item-link" key={3} onClick={() => userState.signOut()}>
        <SvgIcon className="item-icon" Icon={ExitIcon} />
        {t('Exit')}
-      </a>
+      </span>
      </li>
     )}
 
@@ -103,42 +103,42 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
      </a>
     </li>
     <li className="user-actions-list__item">
-     <a className="item-link" key={7}>
+     <span className="item-link" key={7}>
       <SvgIcon className="item-icon" Icon={MoonIcon} />
       <Trans i18nKey="Theme">{{ theme }}</Trans>
 
       <SvgIcon className="arrow" Icon={ArrowIcon} />
-     </a>
+     </span>
     </li>
     <li className="user-actions-list__item">
-     <a className="item-link" key={8}>
+     <span className="item-link" key={8}>
       <SvgIcon className="item-icon" Icon={LanguageIcon} />
       <Trans i18nKey="Language">{{ language }}</Trans>
       <SvgIcon className="arrow" Icon={ArrowIcon} />
-     </a>
+     </span>
     </li>
     <li className="user-actions-list__item">
-     <a className="item-link" key={9}>
+     <span className="item-link" key={9}>
       <SvgIcon className="item-icon" Icon={ShieldIcon} />
       <Trans i18nKey="Safe Mode">
        {{ mode: t(isRestrictedModeEnable ? 'restricted_mode_on' : 'restricted_mode_off') }}
       </Trans>
       <SvgIcon className="arrow" Icon={ArrowIcon} />
-     </a>
+     </span>
     </li>
     <li className="user-actions-list__item">
-     <a className="item-link" key={10}>
+     <span className="item-link" key={10}>
       <SvgIcon className="item-icon" Icon={WorldIcon} />
 
       <Trans i18nKey={'Country'}>{{ location: t(location) }}</Trans>
       <SvgIcon className="arrow" Icon={ArrowIcon} />
-     </a>
+     </span>
     </li>
     <li className="user-actions-list__item">
-     <a className="item-link" key={11}>
+     <span className="item-link" key={11}>
       <SvgIcon className="item-icon" Icon={KeyboardIcon} />
       {t('Fast Keyboard')}
-     </a>
+     </span>
     </li>
     <li className="user-actions-list__item">
      <ListItemSeparator />,
@@ -156,31 +156,31 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
     {user === null && (
      <>
       <li className="user-actions-list__item">
-       <a className="item-link" onClick={toggleRegisterModal} key={15}>
+       <span className="item-link" onClick={toggleRegisterModal} key={15}>
         <SvgIcon className="item-icon" Icon={AccountChangeIcon} />
         {t('Register')}
-       </a>
+       </span>
       </li>
       <li className="user-actions-list__item">
-       <a className="item-link" onClick={toggleLoginModal} key={16}>
+       <span className="item-link" onClick={toggleLoginModal} key={16}>
         <SvgIcon className="item-icon" Icon={AccountIcon} />
         {t('Login')}
-       </a>
+       </span>
       </li>
      </>
     )}
 
     <li className="user-actions-list__item">
-     <a className="item-link" key={17}>
+     <span className="item-link" key={17}>
       <SvgIcon className="item-icon" Icon={QuestionIcon} />
       {t('Inquiry')}
-     </a>
+     </span>
     </li>
     <li className="user-actions-list__item">
-     <a className="item-link" key={18}>
+     <span className="item-link" key={18}>
       <SvgIcon className="item-icon" Icon={DialogIcon} />
       {t('Send Review')}
-     </a>
+     </span>
     </li>
    </ul>
   </div>

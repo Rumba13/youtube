@@ -4,10 +4,11 @@ import { overlayState } from '../../../app/overlay';
 import { videoTagsState } from '../model/model';
 import { observer } from 'mobx-react';
 import { VideoTagsItem } from './video-tags-item';
+import { useTranslation } from 'react-i18next';
 
 export const VideoTags = observer(() => {
  const { activeTag, videoTags, setActiveTag, loadVideoTags, isLoading } = videoTagsState;
-
+ const { t } = useTranslation();
  useEffect(() => {
   loadVideoTags();
  }, []);
@@ -27,7 +28,7 @@ export const VideoTags = observer(() => {
  }
 
  return (
-  <ul className="video-tags">
+  <ul className="video-tags" aria-label={t('Video Tags')}>
    <VideoTagsItem isActive={activeTag === null} onClick={() => setActiveTagAndToggleOverlay(null)} key={0}>
     Все
    </VideoTagsItem>

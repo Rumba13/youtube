@@ -1,60 +1,60 @@
 .voice-search-modal {
-  position: absolute;
-  left: 50%;
-  z-index: 900;
-  transform: translateX(-50%);
-  display: none;
-  width: 592px;
-  height: 464px;
-  padding: 20px;
-  background-color: var(--light-dark-color);
-  opacity: 1;
+ position: absolute;
+ left: 50%;
+ z-index: 900;
+ transform: translateX(-50%);
+ display: none;
+ width: 592px;
+ height: 464px;
+ padding: 20px;
+ background-color: var(--light-dark-color);
+ opacity: 1;
 
-  &.opened {
-    display: block;
+ &.opened {
+  display: block;
+ }
+
+ & .voice-search-modal-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  & .voice-search-modal__cross {
+   position: absolute;
+   top: -10px;
+   right: -10px;
   }
 
-  & .voice-search-modal-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-
-    & .voice-search-modal__cross {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-    }
-
-    & .voice-search-modal__title {
-      font-size: 28px;
-    }
-
-    & .voice-search-modal__content {
-      margin-top: 20px;
-      font-size: 14px;
-      line-height: 18px;
-      color: var(--light-gray-color);
-    }
-
-    & .voice-search-button {
-      position: absolute;
-      bottom: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 68px;
-      height: 68px;
-      background-color: rgba(255, 255, 255, 0.2);
-      cursor: pointer;
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-
-      & .voice-search-button__icon {
-        width: 40px;
-        height: 40px;
-      }
-    }
+  & .voice-search-modal__title {
+   font-size: 28px;
   }
+
+  & .voice-search-modal__content {
+   margin-top: 20px;
+   font-size: 14px;
+   line-height: 18px;
+   color: var(--light-gray-color);
+  }
+
+  & .voice-search-button {
+   position: absolute;
+   bottom: 50px;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 68px;
+   height: 68px;
+   background-color: rgba(255, 255, 255, 0.2);
+   cursor: pointer;
+
+   &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+   }
+
+   & .voice-search-button__icon {
+    width: 40px;
+    height: 40px;
+   }
+  }
+ }
 }

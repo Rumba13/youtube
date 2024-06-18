@@ -9,7 +9,7 @@ export function SettingsButton() {
  const { t } = useTranslation();
 
  return (
-  <Button className="gear-button">
+  <Button className="gear-button" ariaLabel={t('Settings')}>
    <SvgIcon className="gear-button__icon" Icon={GearIcon} />
    <TextTip>{t('Settings')}</TextTip>
   </Button>

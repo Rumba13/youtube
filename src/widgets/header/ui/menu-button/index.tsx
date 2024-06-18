@@ -12,7 +12,7 @@ export const MenuButton = observer(() => {
  const { isMinified, setIsMinified } = asideState;
 
  return (
-  <Button className="menu-button" onClick={() => setIsMinified(!isMinified)}>
+  <Button className="menu-button" onClick={() => setIsMinified(!isMinified)} ariaLabel={t('Open Menu')}>
    <SvgIcon className="menu-button__icon" Icon={MenuIcon} />
    <TextTip>{t('VladIsAssHole')}</TextTip>
   </Button>

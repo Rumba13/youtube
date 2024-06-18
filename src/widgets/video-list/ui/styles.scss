@@ -1,8 +1,8 @@
 .video-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: min-content;
-  grid-gap: 16px;
-  margin: 26px;
-  margin-top: 25px;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ grid-auto-rows: min-content;
+ grid-gap: 16px;
+ margin: 26px;
+ margin-top: 25px;
 }

@@ -25,8 +25,8 @@ export const LoginForm = observer(() => {
    {() => (
     <Form className="login-form">
      <h2 className="login-form__title">login</h2>
-     <Field className="login-form__field" name="login" />
-     <Field className="login-form__field" name="password" type="password" />
+     <Field className="login-form__field" name="login" aria-label={'Логин'}/>
+     <Field className="login-form__field" name="password" type="password"  aria-label={'Пароль'}/>
 
      <button className="login-form__submit-button" type="submit">
       Войти

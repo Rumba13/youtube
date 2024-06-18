@@ -1,80 +1,81 @@
 .notification {
-  position: relative;
-  display: grid;
-  grid-template-areas:
-          "new-mark image title preview"
-          ". . title ."
-          ". . date .";
-  min-height: 138px;
-  padding: 16px 16px 16px 0;
+ position: relative;
+ display: grid;
+ grid-template-areas:
+  'new-mark image title preview'
+  '. . title .'
+  '. . date .';
+ min-height: 138px;
+ padding: 16px 16px 16px 0;
 
-  &:hover {
-    background-color: var(--dark-gray-color);
-
-    & .dots-button {
-      display: flex;
-    }
-  }
-
-  &:has(.dots-button .list:hover) { //TODO FUTURE IF HIGH SEMANTIC; add .modal instead of .list
-    background-color: initial;
-  }
-
-  & .button-wrapper {
-    position: absolute;
-    right: 0;
-    top: 10px;
-  }
+ &:hover {
+  background-color: var(--dark-gray-color);
 
   & .dots-button {
-    display: none;
-    fill: white;
-
-    &.opened {
-      display: flex;
-    }
+   display: flex;
   }
+ }
 
-  & .notification__image {
-    grid-area: image;
-    width: 48px;
-    height: 48px;
-    margin-right: 16px;
-    border-radius: 50%;
-  }
+ &:has(.dots-button .list:hover) {
+  //TODO FUTURE IF HIGH SEMANTIC; add .modal instead of .list
+  background-color: initial;
+ }
 
-  & .notification__title {
-    grid-area: title;
-    width: 234px;
-    margin-bottom: 7px;
-    font-size: 14px;
-    line-height: 20px;
-    white-space: normal;
-    text-overflow: ellipsis;
-  }
+ & .button-wrapper {
+  position: absolute;
+  right: 0;
+  top: 10px;
+ }
 
-  .notification__preview-image {
-    grid-area: preview;
-    width: 86px;
-    height: 48px;
-    margin: 0 40px 0 16px;
-    border-radius: 4px;
-    overflow: hidden;
-    object-fit: cover;
-  }
+ & .dots-button {
+  display: none;
+  fill: white;
 
-  .notification__release-ago {
-    grid-area: date;
-    font-size: 12px;
-    color: var(--light-gray-color);
+  &.opened {
+   display: flex;
   }
+ }
 
-  .notification__new-mark {
-    grid-area: new-mark;
-    width: 4px;
-    height: 4px;
-    margin: 22px 6px 0;
-    border-radius: 2px;
-    background-color: var(--blue-color);
-  }
+ & .notification__image {
+  grid-area: image;
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+  border-radius: 50%;
+ }
+
+ & .notification__title {
+  grid-area: title;
+  width: 234px;
+  margin-bottom: 7px;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: normal;
+  text-overflow: ellipsis;
+ }
+
+ .notification__preview-image {
+  grid-area: preview;
+  width: 86px;
+  height: 48px;
+  margin: 0 40px 0 16px;
+  border-radius: 4px;
+  overflow: hidden;
+  object-fit: cover;
+ }
+
+ .notification__release-ago {
+  grid-area: date;
+  font-size: 12px;
+  color: var(--light-gray-color);
+ }
+
+ .notification__new-mark {
+  grid-area: new-mark;
+  width: 4px;
+  height: 4px;
+  margin: 22px 6px 0;
+  border-radius: 2px;
+  background-color: var(--blue-color);
+ }
 }

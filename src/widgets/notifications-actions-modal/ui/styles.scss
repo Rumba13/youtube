@@ -1,11 +1,11 @@
 .notifications-actions-list {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  display: none;
-  z-index: 400;
+ position: absolute;
+ top: 100%;
+ right: 0;
+ display: none;
+ z-index: 400;
 
-  &.opened {
-    display: flex;
-  }
+ &.opened {
+  display: flex;
+ }
 }

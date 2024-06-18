@@ -89,6 +89,7 @@ export const Search = observer(({ VoiceSearchModalSlot }: PropsType) => {
           name="query"
           id="query"
           placeholder={t('Enter Query')}
+          aria-label={t('Enter Query')}
           onFocus={() => setIsSearchFocused(true)}
           onBlur={() => setIsSearchFocused(false)}
          />

@@ -6,15 +6,18 @@ type PropsType = {
  children: ReactNode;
  onClick?: MouseEventHandler;
  withAnimation?: boolean;
+ ariaLabel?: string;
 };
 
-export function Button({ className, children, onClick, withAnimation = true }: PropsType) {
+//TODO add tag button to all places where it needs
+export function Button({ className, children, onClick, withAnimation = true, ariaLabel }: PropsType) {
  return (
-  <div
+  <button
    className={`button${className ? ' ' + className : ''}${withAnimation ? ' with-animation' : ''}`}
-   onClick={onClick}>
-   <div className="button__interaction"></div>
+   onClick={onClick}
+   aria-label={ariaLabel}>
+   <div className="button__interaction" aria-hidden></div>
    {children}
-  </div>
+  </button>
  );
 }

@@ -7,7 +7,8 @@ type PropsType = {
 };
 
 export function SubscriptionCard({ subscription: { title, icon, isNewVideo, isStream } }: PropsType) {
- //TODO separate aside__item class to aside
+ //TODO !!! separate aside__item class to aside
+ //TODO Add accessibility if needs
  return (
   <li className="aside-item subscription" title={title}>
    <Icon className="aside-item__icon" icon={icon} />

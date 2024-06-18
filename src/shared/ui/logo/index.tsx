@@ -7,7 +7,7 @@ export function Logo() {
  const { i18n, t } = useTranslation();
 
  return (
-  <div className="logo" title={t('YouTube Main Page')}>
+  <div className="logo" title={t('YouTube Main Page')} aria-label={t('YouTube Main Page')}>
    <SvgIcon Icon={LogoIcon} />
    <span className="country-code">{i18n.language.toUpperCase()}</span>
   </div>

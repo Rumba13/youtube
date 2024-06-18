@@ -1,17 +1,17 @@
 .create-video-button {
-  margin-right: 8px;
+ margin-right: 8px;
+ position: relative;
+
+ & .button__interaction:hover {
+  & ~ .text-tip {
+   display: block;
+  }
+ }
+
+ & .create-video-button__icon {
   position: relative;
-
-  & .button__interaction:hover {
-    & ~ .text-tip {
-      display: block;
-    }
-  }
-
-  & .create-video-button__icon {
-    position: relative;
-    z-index: 3;
-    fill: currentColor;
-    pointer-events: none;
-  }
+  z-index: 3;
+  fill: currentColor;
+  pointer-events: none;
+ }
 }
