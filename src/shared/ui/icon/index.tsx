@@ -4,6 +4,8 @@ type PropsType = {
  className?: string;
  icon: string;
  alt?: string;
+ width?: number;
+ height?: number;
 };
 
 export function Icon({ icon, alt = '', className = '' }: PropsType) {

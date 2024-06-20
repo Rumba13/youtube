@@ -1,12 +1,15 @@
 import './styles.scss';
+import { lazy, Suspense } from 'react';
 import { VideoType } from '../../../shared/api/types/video-type';
-import { VideoPreview } from './video-preview';
+
+const VideoPreview = lazy(() => import('./video-preview').then(({ VideoPreview }) => ({ default: VideoPreview })));
 import { useTranslation } from 'react-i18next';
 import { formatReleasedDate } from './format-released-date';
 import { formatViews } from './format-views';
 import { DotsButton } from '../../../shared/ui/dots-menu-icon';
 import { useModal } from '../../../shared/lib/use-modal';
 import { VideoActionsModalSlotType } from '../../../widgets/video-actions-modal';
+import NoPreviewImage from '../../../images/img.webp';
 
 type PropsType = {
  video: VideoType;
@@ -19,8 +22,10 @@ export function VideoCard({ video, VideoActionsModalSlot }: PropsType) {
 
  return (
   <div className="video">
-   <VideoPreview preview={video.preview} />
-   <img className="video__channel-icon" src={video.channelIcon} alt={t('Video Preview')} />
+   <Suspense fallback={<img src={NoPreviewImage} alt="No preview" />}>
+    <VideoPreview preview={video.preview} />
+   </Suspense>
+   <img className="video__channel-icon" src={video.channelIcon} alt={t('Video Preview')} width={26} height={26} />
    <span className="video_title">{video.title}</span>
    <DotsButton
     onClick={toggleModal}

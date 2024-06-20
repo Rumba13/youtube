@@ -93,7 +93,7 @@ export const Search = observer(({ VoiceSearchModalSlot }: PropsType) => {
           onFocus={() => setIsSearchFocused(true)}
           onBlur={() => setIsSearchFocused(false)}
          />
-         <Icon className="search-form__virtual-keyboard-icon dark-theme" icon={keyboardIcon} />
+         <Icon className="search-form__virtual-keyboard-icon dark-theme" icon={keyboardIcon} width={19} height={11} />
          {values.query && <CrossIcon onClick={() => setFieldValue('query', '')} />}
         </label>
         <SearchButton type="normal" buttonType="submit" disabled={isSubmitting} />
