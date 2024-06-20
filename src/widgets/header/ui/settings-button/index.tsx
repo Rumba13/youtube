@@ -1,7 +1,7 @@
 import './styles.scss';
 import { TextTip } from '../../../../shared/ui/text-tip';
 import { Button } from '../../../../shared/ui/button';
-import { GearIcon } from '../../../../images/gear-icon';
+import { GearIcon } from '../../../../images/svg/gear-icon';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
 import { useTranslation } from 'react-i18next';
 

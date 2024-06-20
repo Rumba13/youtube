@@ -1,6 +1,6 @@
 import './styles.scss';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
-import { ArrowIcon } from '../../../../images/arrow-icon';
+import { ArrowIcon } from '../../../../images/svg/arrow-icon';
 import { MouseEventHandler } from 'react';
 
 type PropsType = {

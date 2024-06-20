@@ -1,9 +1,9 @@
 import './styles.scss';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
-import { HomeIcon } from '../../../../images/home-icon';
-import { ShortsIcon } from '../../../../images/shorts-icon';
-import { SubscriptionsIcon } from '../../../../images/subscriptions-icon';
-import { YouIcon } from '../../../../images/you-icon';
+import { HomeIcon } from '../../../../images/svg/home-icon';
+import { ShortsIcon } from '../../../../images/svg/shorts-icon';
+import { SubscriptionsIcon } from '../../../../images/svg/subscriptions-icon';
+import { YouIcon } from '../../../../images/svg/you-icon';
 import { useTranslation } from 'react-i18next';
 
 export function AsideMini() {

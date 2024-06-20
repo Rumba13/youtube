@@ -1,9 +1,9 @@
 import './styles.scss';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
-import { GearIcon } from '../../../../images/gear-icon';
-import { FlagIcon } from '../../../../images/flag-icon';
-import { QuestionIcon } from '../../../../images/question-icon';
-import { DialogIcon } from '../../../../images/dialog-icon';
+import { GearIcon } from '../../../../images/svg/gear-icon';
+import { FlagIcon } from '../../../../images/svg/flag-icon';
+import { QuestionIcon } from '../../../../images/svg/question-icon';
+import { DialogIcon } from '../../../../images/svg/dialog-icon';
 import { useTranslation } from 'react-i18next';
 
 export function ActionsArticle() {

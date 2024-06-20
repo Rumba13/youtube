@@ -1,5 +1,5 @@
 import './styles.scss';
-import { CrossedBellIcon } from '../../../../images/crossed-bell-icon';
+import { CrossedBellIcon } from '../../../../images/svg/crossed-bell-icon';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
 import { Trans, useTranslation } from 'react-i18next';
 

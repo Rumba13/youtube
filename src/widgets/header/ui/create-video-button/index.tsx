@@ -1,8 +1,8 @@
 import './styles.scss';
 import { TextTip } from '../../../../shared/ui/text-tip';
-import { CreateVideoActiveIcon } from '../../../../images/create-video-active-icon';
+import { CreateVideoActiveIcon } from '../../../../images/svg/create-video-active-icon';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
-import { CreateVideoIcon } from '../../../../images/create-video-icon';
+import { CreateVideoIcon } from '../../../../images/svg/create-video-icon';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../../../shared/ui/button';
 import { useModal } from '../../../../shared/lib/use-modal';

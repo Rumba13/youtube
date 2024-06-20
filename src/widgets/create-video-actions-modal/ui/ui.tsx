@@ -1,8 +1,8 @@
 import './styles.scss';
 import React, { FC, MouseEventHandler } from 'react';
 import { SvgIcon } from '../../../shared/ui/svg-icon';
-import { PlayVideoIcon } from '../../../images/play-video-icon';
-import { StreamIcon } from '../../../images/stream-icon';
+import { PlayVideoIcon } from '../../../images/svg/play-video-icon';
+import { StreamIcon } from '../../../images/svg/stream-icon';
 import { useTranslation } from 'react-i18next';
 
 type PropsType = {

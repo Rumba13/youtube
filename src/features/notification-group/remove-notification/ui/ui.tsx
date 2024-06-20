@@ -1,5 +1,5 @@
 import './styles.scss';
-import { CrossedEyeIcon } from '../../../../images/crossed-eye-icon';
+import { CrossedEyeIcon } from '../../../../images/svg/crossed-eye-icon';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
 import { useTranslation } from 'react-i18next';
 

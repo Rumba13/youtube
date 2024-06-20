@@ -9,7 +9,6 @@ import { RegisterModalStateContext } from '../widgets/register-modal';
 import { LoginModal, LoginModalStateContext } from '../widgets/login-modal';
 import { LoginForm } from '../widgets/login-form';
 import { RegisterForm } from '../widgets/register-form';
-import { userState } from '../entities/user';
 
 export function App() {
  const { i18n, t } = useTranslation();

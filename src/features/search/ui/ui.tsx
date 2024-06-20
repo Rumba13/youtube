@@ -1,5 +1,5 @@
 import './styles.scss';
-import keyboardIcon from '../../../images/keyboard-icon.png';
+import keyboardIcon from '../../../images/keyboard-icon.webp'; //TODO add .png image for old browsers
 import { SvgIcon } from '../../../shared/ui/svg-icon';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
@@ -7,7 +7,7 @@ import { useScreenWidth } from '../../../shared/lib/use-screen-width';
 import { observer } from 'mobx-react';
 import { Field, Form, Formik } from 'formik';
 import { Icon } from '../../../shared/ui/icon';
-import { SearchIcon } from '../../../images/search-icon';
+import { SearchIcon } from '../../../images/svg/search-icon';
 import { CrossIcon } from './cross-icon';
 import { VoiceSearchButton } from './voice-search-icon';
 import { SearchButton } from './search-button';

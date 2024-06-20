@@ -1,5 +1,5 @@
 import './styles.scss';
-import { SearchIcon } from '../../../../images/search-icon';
+import { SearchIcon } from '../../../../images/svg/search-icon';
 import { TextTip } from '../../../../shared/ui/text-tip';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
 import React from 'react';

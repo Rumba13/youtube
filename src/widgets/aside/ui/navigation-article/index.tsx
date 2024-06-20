@@ -1,9 +1,9 @@
 import './styles.scss';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
-import { TrendingIcon } from '../../../../images/trending-icon';
-import { MusicIcon } from '../../../../images/music-icon';
-import { GamingIcon } from '../../../../images/gaming-icon';
-import { SportIcon } from '../../../../images/sport-icon';
+import { TrendingIcon } from '../../../../images/svg/trending-icon';
+import { MusicIcon } from '../../../../images/svg/music-icon';
+import { GamingIcon } from '../../../../images/svg/gaming-icon';
+import { SportIcon } from '../../../../images/svg/sport-icon';
 import { useTranslation } from 'react-i18next';
 
 export function NavigationArticle() {

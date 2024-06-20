@@ -1,6 +1,6 @@
 import './styles.scss';
 import { useTranslation } from 'react-i18next';
-import { LogoIcon } from '../../../images/logo-icon';
+import { LogoIcon } from '../../../images/svg/logo-icon';
 import { SvgIcon } from '../svg-icon';
 
 export function Logo() {
