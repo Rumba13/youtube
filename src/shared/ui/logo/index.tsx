@@ -1,6 +1,6 @@
 import './styles.scss';
 import { useTranslation } from 'react-i18next';
-import LogoIcon from '../../../images/logo-icon.svg';
+import LogoIcon from '../../../assets/images/logo-icon.svg';
 import { SvgIcon } from '../svg-icon';
 
 export function Logo() { //TODO move to entities

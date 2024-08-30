@@ -1,9 +1,9 @@
 import './styles.scss';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
-import YoutubeIcon from '../../../../images/youtube-icon.svg';
-import YoutubeCreatorStudioIcon from '../../../../images/youtube-creator-studio-icon.svg';
-import YoutubeMusicIcon from '../../../../images/youtube-music-icon.svg';
-import YoutubeForKids from '../../../../images/youtube-for-kids.svg';
+import YoutubeIcon from '../../../../assets/images/youtube-icon.svg';
+import YoutubeCreatorStudioIcon from '../../../../assets/images/youtube-creator-studio-icon.svg';
+import YoutubeMusicIcon from '../../../../assets/images/youtube-music-icon.svg';
+import YoutubeForKids from '../../../../assets/images/youtube-for-kids.svg';
 import { useTranslation } from 'react-i18next';
 
 export function OtherArticle() {

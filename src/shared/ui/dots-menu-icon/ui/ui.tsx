@@ -3,6 +3,7 @@ import React, { MouseEventHandler } from 'react';
 import { Button } from '../../button';
 import { ModalSlotType } from '../../../api/types/modal-slot-type';
 import { useTranslation } from 'react-i18next';
+import clsx from 'clsx';
 
 type PropsType = {
  ModalSlot?: ModalSlotType;
@@ -16,7 +17,7 @@ export function DotsButton({ ModalSlot, isOpened = false, onClick, onModalClick,
  const { t } = useTranslation();
 
  return (
-  <Button className={`dots-button${isOpened ? ' opened' : ''}`} onClick={onClick} withAnimation={false}
+  <Button className={clsx('dots-button', isOpened && 'opened')} onClick={onClick} withAnimation={false}
           ariaLabel={t('Show More')}>
    <svg
     className="dots-button__icon"

@@ -1,5 +1,5 @@
 import './styles.scss';
-import keyboardIcon from '../../../images/keyboard-icon.webp'; //TODO add .png image for old browsers
+import keyboardIcon from '../../../assets/images/keyboard-icon.webp'; //TODO add .png image for old browsers
 import { SvgIcon } from '../../../shared/ui/svg-icon';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
@@ -7,7 +7,7 @@ import { useScreenWidth } from '../../../shared/lib/use-screen-width';
 import { observer } from 'mobx-react';
 import { Field, Form, Formik } from 'formik';
 import { Icon } from '../../../shared/ui/icon';
-import SearchIcon from '../../../images/search-icon.svg';
+import SearchIcon from '../../../assets/images/search-icon.svg';
 import { CrossIcon } from './cross-icon';
 import { VoiceSearchButton } from './voice-search-icon';
 import { SearchButton } from './search-button';
@@ -15,6 +15,7 @@ import { search } from '../api/search';
 import { overlayState } from '../../../app/overlay';
 import { searchState } from '../model/model';
 import { VoiceSearchModalSlotType } from '../../../widgets/voice-search-modal/ui/ui';
+import clsx from 'clsx';
 
 type PropsType = {
  VoiceSearchModalSlot: VoiceSearchModalSlotType;
@@ -71,7 +72,7 @@ export const Search = observer(({ VoiceSearchModalSlot }: PropsType) => {
 
    {(!isSearchMinified || isSearchOpened) && (
     <div
-     className={`search ${isSearchFocused ? 'focused' : ''}`}
+     className={clsx('search', isSearchFocused && 'focused')}
      onClick={event => (isSearchOpened ? event.stopPropagation() : void 0)}>
      <Formik
       initialValues={{ query: '' }}

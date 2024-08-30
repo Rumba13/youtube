@@ -1,9 +1,10 @@
 import './styles.scss';
 import React, { FC, MouseEventHandler } from 'react';
 import { SvgIcon } from '../../../shared/ui/svg-icon';
-import PlayVideoIcon from '../../../images/play-video-icon.svg';
-import StreamIcon from '../../../images/stream-icon.svg';
+import PlayVideoIcon from '../../../assets/images/play-video-icon.svg';
+import StreamIcon from '../../../assets/images/stream-icon.svg';
 import { useTranslation } from 'react-i18next';
+import clsx from 'clsx';
 
 type PropsType = {
  isOpened: boolean;
@@ -32,7 +33,7 @@ export function CreateVideoActionsModal({ isOpened, onClick }: PropsType) {
  ];
 
  return (
-  <ul className={`create-video-actions-modal${isOpened ? ' opened' : ''}`} onClick={onClick}>
+  <ul className={clsx('create-video-actions-modal', isOpened && 'opened')} onClick={onClick}>
    {items.map((item, index) => (
     <li className="create-video-actions-modal__item" key={index}>
      {item}

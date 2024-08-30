@@ -3,7 +3,7 @@ import { TextTip } from '../../../../shared/ui/text-tip';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../../../shared/ui/button';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
-import MenuIcon from '../../../../images/menu-icon.svg';
+import MenuIcon from '../../../../assets/images/menu-icon.svg';
 import { asideState } from '../../../aside';
 import { observer } from 'mobx-react';
 

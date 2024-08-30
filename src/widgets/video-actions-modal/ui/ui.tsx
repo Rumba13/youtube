@@ -1,14 +1,14 @@
 import './styles.scss';
 import React, { MouseEventHandler } from 'react';
 import { SvgIcon } from '../../../shared/ui/svg-icon';
-import ClocksIcon from '../../../images/clocks-icon.svg';
-import AddToOrderQueueIcon from '../../../images/add-to-order-queue-icon.svg';
-import AddToPlaylistIcon from '../../../images/add-to-playlist-icon.svg';
-import DownloadIcon from '../../../images/download-icon.svg';
-import ShareIcon from '../../../images/share-icon.svg';
-import CrossedCircleIcon from '../../../images/crossed-circle-icon.svg';
-import StopIcon from '../../../images/stop-icon.svg';
-import FlagIcon from '../../../images/flag-icon.svg';
+import ClocksIcon from '../../../assets/images/clocks-icon.svg';
+import AddToOrderQueueIcon from '../../../assets/images/add-to-order-queue-icon.svg';
+import AddToPlaylistIcon from '../../../assets/images/add-to-playlist-icon.svg';
+import DownloadIcon from '../../../assets/images/download-icon.svg';
+import ShareIcon from '../../../assets/images/share-icon.svg';
+import CrossedCircleIcon from '../../../assets/images/crossed-circle-icon.svg';
+import StopIcon from '../../../assets/images/stop-icon.svg';
+import FlagIcon from '../../../assets/images/flag-icon.svg';
 import { ListItemSeparator } from '../../../shared/ui/list-item-separator';
 import { useTranslation } from 'react-i18next';
 

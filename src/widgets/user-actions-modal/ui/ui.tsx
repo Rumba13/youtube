@@ -1,28 +1,29 @@
 import './styles.scss';
 import React, { FC, MouseEventHandler, useContext } from 'react';
-import GoogleIcon from '../../../images/google-icon.svg';
+import GoogleIcon from '../../../assets/images/google-icon.svg';
 import { SvgIcon } from '../../../shared/ui/svg-icon';
-import AccountChangeIcon from '../../../images/account-change-icon.svg';
-import ExitIcon from '../../../images/exit-icon.svg';
-import CreatorStudioIcon from '../../../images/creator-studio-icon.svg';
-import MoneyIcon from '../../../images/money-icon.svg';
-import AccountIcon from '../../../images/account-icon.svg';
-import MoonIcon from '../../../images/moon-icon.svg';
-import LanguageIcon from '../../../images/language-icon.svg';
-import ShieldIcon from '../../../images/shield-icon.svg';
-import WorldIcon from '../../../images/world-icon.svg';
-import KeyboardIcon from '../../../images/keyboard-icon.svg';
-import QuestionIcon from '../../../images/question-icon.svg';
-import DialogIcon from '../../../images/dialog-icon.svg';
-import GearIcon from '../../../images/gear-icon.svg';
-import ArrowIcon from '../../../images/arrow-icon.svg';
+import AccountChangeIcon from '../../../assets/images/account-change-icon.svg';
+import ExitIcon from '../../../assets/images/exit-icon.svg';
+import CreatorStudioIcon from '../../../assets/images/creator-studio-icon.svg';
+import MoneyIcon from '../../../assets/images/money-icon.svg';
+import AccountIcon from '../../../assets/images/account-icon.svg';
+import MoonIcon from '../../../assets/images/moon-icon.svg';
+import LanguageIcon from '../../../assets/images/language-icon.svg';
+import ShieldIcon from '../../../assets/images/shield-icon.svg';
+import WorldIcon from '../../../assets/images/world-icon.svg';
+import KeyboardIcon from '../../../assets/images/keyboard-icon.svg';
+import QuestionIcon from '../../../assets/images/question-icon.svg';
+import DialogIcon from '../../../assets/images/dialog-icon.svg';
+import GearIcon from '../../../assets/images/gear-icon.svg';
+import ArrowIcon from '../../../assets/images/arrow-icon.svg';
 import { Trans, useTranslation } from 'react-i18next';
 import { ListItemSeparator } from '../../../shared/ui/list-item-separator';
 import { RegisterModalStateContext } from '../../register-modal';
 import { LoginModalStateContext } from '../../login-modal';
 import { userState } from '../../../entities/user';
 import { observer } from 'mobx-react';
-import noUserProfileIcon from '../../../images/no-user-profile-icon.webp';
+import noUserProfileIcon from '../../../assets/images/no-user-profile-icon.webp';
+import clsx from 'clsx';
 
 type PropsType = {
  className?: string;
@@ -44,7 +45,7 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
 
  return (
   <div
-   className={`user-actions-modal${className ? ' ' + className : ''}${isOpened ? ' opened' : ''}`}
+   className={clsx('user-actions-modal', className, isOpened && 'opened')}
    onClick={onClick}>
    <div className="user-actions-modal-header">
     <img className="header-icon" src={user?.icon || noUserProfileIcon} alt="user-icon" />

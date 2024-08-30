@@ -1,5 +1,6 @@
 import './styles.scss';
 import { ReactNode } from 'react';
+import clsx from 'clsx';
 
 type PropsType = {
  className?: string;
@@ -7,5 +8,5 @@ type PropsType = {
 };
 
 export function TextTip({ className, children }: PropsType) {
- return <div className={`text-tip${className ? ' ' + className : ''}`}>{children}</div>;
+ return <div className={clsx('text-tip', className)}>{children}</div>;
 }

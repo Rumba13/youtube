@@ -1,5 +1,6 @@
 import './styles.scss';
 import { MouseEventHandler } from 'react';
+import clsx from 'clsx';
 
 type PropsType = {
  children: string;
@@ -9,7 +10,7 @@ type PropsType = {
 
 export function VideoTagsItem({ children, isActive, onClick }: PropsType) {
  return (
-  <li className={`video-tags-item${isActive ? ' active' : ''}`} onClick={onClick}>
+  <li className={clsx('video-tags-item', isActive && 'active')} onClick={onClick}>
    {children}
   </li>
  );

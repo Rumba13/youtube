@@ -3,6 +3,7 @@ import { DisableNotificationsButton } from '../../../features/notification-group
 import { RemoveNotificationButton } from '../../../features/notification-group/remove-notification';
 import { FC, MouseEventHandler } from 'react';
 import { useTranslation } from 'react-i18next';
+import clsx from 'clsx';
 
 export type NotificationsActionsModalSlotType = FC<PropsType & { className?: string }>;
 
@@ -16,7 +17,7 @@ export function NotificationsActionsModal({ isOpened, onClick }: PropsType) { //
  const { t } = useTranslation();
 
  return (
-  <ul className={`list notifications-actions-list${isOpened ? ' opened' : ''}`}
+  <ul className={clsx('list', 'notifications-actions-list', isOpened && 'opened')}
       aria-label={t('Actions With Notifications')}
       onClick={onClick}>
    {items.map((item, index) => (

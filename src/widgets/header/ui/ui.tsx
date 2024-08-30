@@ -13,6 +13,7 @@ import { MenuButton } from './menu-button';
 import { CreateVideoActionsModalSlotType } from '../../create-video-actions-modal';
 import { NotificationsActionsModalSlotType } from '../../notifications-actions-modal';
 import { NotificationModalSlotType } from '../../notifications-modal/ui/ui';
+import clsx from 'clsx';
 
 type PropsType = {
  NotificationsModalSlot: NotificationModalSlotType;
@@ -24,16 +25,16 @@ type PropsType = {
 
 export const Header = observer(
  ({
-  NotificationsModalSlot,
-  NotificationActionsModalSlot,
-  UserActionsModalSlot,
-  VideoActionsModal,
-  VoiceSearchModalSlot,
- }: PropsType) => {
+   NotificationsModalSlot,
+   NotificationActionsModalSlot,
+   UserActionsModalSlot,
+   VideoActionsModal,
+   VoiceSearchModalSlot,
+  }: PropsType) => {
   const { isSearchOpened, setIsSearchOpened } = searchState;
 
   return (
-   <header className={`header${isSearchOpened ? ' opened-search' : ''}`}>
+   <header className={clsx('header', isSearchOpened && 'opened-search')}>
     {!isSearchOpened && (
      <>
       <MenuButton />

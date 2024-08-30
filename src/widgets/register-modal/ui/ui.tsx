@@ -1,6 +1,7 @@
 import './styles.scss';
 import { MouseEventHandler } from 'react';
 import { RegisterFormSlotType } from '../../register-form/ui/ui';
+import clsx from 'clsx';
 
 type PropsType = {
  isOpened: boolean;
@@ -10,7 +11,7 @@ type PropsType = {
 
 export function RegisterModal({ isOpened, onClick, RegisterFormSlot }: PropsType) {
  return (
-  <div className={`register-modal ${isOpened ? ' opened' : ''}`} onClick={onClick}>
+  <div className={clsx('register-modal', isOpened && 'opened')} onClick={onClick}>
    <RegisterFormSlot />
   </div>
  );

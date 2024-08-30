@@ -2,7 +2,7 @@ import './styles.scss';
 import { TextTip } from '../../../../shared/ui/text-tip';
 import React from 'react';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
-import ArrowLeftIcon from '../../../../images/arrow-left-icon.svg';
+import ArrowLeftIcon from '../../../../assets/images/arrow-left-icon.svg';
 import { useTranslation } from 'react-i18next';
 
 type PropsType = {

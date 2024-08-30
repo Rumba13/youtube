@@ -7,6 +7,7 @@ import { observer } from 'mobx-react';
 import { SettingsButton } from '../../header';
 import { NotificationsActionsModalSlotType } from '../../notifications-actions-modal';
 import { userState } from '../../../entities/user';
+import clsx from 'clsx';
 
 export type NotificationModalSlotType = FC<PropsType>;
 
@@ -30,7 +31,7 @@ export const NotificationsModal = observer(({ isOpened, onClick, NotificationsAc
  }
 
  return (
-  <div className={`notifications${isOpened ? ' opened' : ''}`} onClick={onClick}>
+  <div className={clsx('notifications', isOpened && 'opened')} onClick={onClick}>
    <div className="notifications-header">
     <span className="header__title">{t('Notifications')}</span>
     <SettingsButton />

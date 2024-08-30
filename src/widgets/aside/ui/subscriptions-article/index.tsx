@@ -5,6 +5,7 @@ import { observer } from 'mobx-react';
 import { SubscriptionCard, subscriptionsState } from '../../../../entities/subscription';
 import { ExpandButton } from '../expand-button';
 import { userState } from '../../../../entities/user';
+import clsx from 'clsx';
 
 export const SubscriptionsArticle = observer(() => {
  const { t } = useTranslation();
@@ -22,7 +23,7 @@ export const SubscriptionsArticle = observer(() => {
  }
 
  return (
-  <ul className={`aside-article subscriptions${isSubscriptionArticleExpanded ? ' ' + 'expanded' : ''}`}>
+  <ul className={clsx('aside-article', 'subscriptions', isSubscriptionArticleExpanded && 'expanded')}>
    <span className="aside-item__title article-title" title={t('Subscriptions')}>
     {t('Subscriptions')}
    </span>

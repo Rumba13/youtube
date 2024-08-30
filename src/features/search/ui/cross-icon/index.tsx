@@ -1,6 +1,7 @@
 import './styles.scss';
 import { MouseEventHandler } from 'react';
 import { useTranslation } from 'react-i18next';
+import clsx from 'clsx';
 
 type PropsType = {
  onClick?: MouseEventHandler<HTMLDivElement>;
@@ -11,7 +12,10 @@ export function CrossIcon({ className, onClick }: PropsType) {
  const { t } = useTranslation();
 
  return (
-  <div className={`cross-icon ${className ? className : ''}`} aria-label={t('Close')}>
+  <div
+   className={clsx('cross-icon', className)}
+   aria-label={t('Close')}>
+
    <div onClick={onClick} className="cross-icon__interaction"></div>
    <svg
     className="cross-icon__icon"

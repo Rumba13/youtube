@@ -1,4 +1,5 @@
 import './styles.scss';
+import clsx from 'clsx';
 
 type PropsType = {
  className?: string;
@@ -8,6 +9,6 @@ type PropsType = {
  height?: number;
 };
 
-export function Icon({ icon, alt = '', className = '' }: PropsType) {
- return <img className={`icon${className ? ' ' + className : ''}`} src={icon} alt={alt} />;
+export function Icon({ icon, alt = '', className }: PropsType) {
+ return <img className={clsx('icon', className)} src={icon} alt={alt} />;
 }

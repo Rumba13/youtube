@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { UserActionsModalSlotType } from '../../../user-actions-modal';
 import { useModal } from '../../../../shared/lib/use-modal';
 import { userState } from '../../../../entities/user';
-import noUserProfileIcon from '../../../../images/no-user-profile-icon.webp';
+import noUserProfileIcon from '../../../../assets/images/no-user-profile-icon.webp';
 import { observer } from 'mobx-react';
 import { useTranslation } from 'react-i18next';
 

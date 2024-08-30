@@ -1,4 +1,5 @@
 import './styles.scss';
+import clsx from 'clsx';
 
 type PropsType = {
  className?: string;
@@ -10,14 +11,14 @@ export function SvgIcon({ icon, className, asImage = false }: PropsType) {
 
  if (asImage) {
   return (
-   <img className={`svg-icon${className ? ' ' + className : ''}`} src={icon} style={{ backgroundColor: 'transparent' }}
+   <img className={clsx('svg-icon', className)} src={icon} style={{ backgroundColor: 'transparent' }}
         alt="" />
   );
  }
 
  return (
   <div
-   className={`svg-icon${className ? ' ' + className : ''}`}
+   className={clsx('svg-icon', className)}
    style={{ maskImage: `url(${icon})`, WebkitMaskImage: `url(${icon})` }}
   />
  );

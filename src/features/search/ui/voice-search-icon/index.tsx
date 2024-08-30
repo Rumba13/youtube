@@ -3,6 +3,7 @@ import { TextTip } from '../../../../shared/ui/text-tip';
 import { MouseEventHandler } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../../../shared/ui/button';
+import clsx from 'clsx';
 
 type PropsType = {
  onClick?: MouseEventHandler;
@@ -19,7 +20,7 @@ export function VoiceSearchButton({ onClick, toolTip = false, className, type = 
 
  return (
   <Button
-   className={`voice-search-button${type === 'mini' ? ' mini' : ''}${className ? ' ' + className : ''}`}
+   className={clsx('voice-search-button', type, className)}
    onClick={onClick}
    ariaLabel={t('Voice Search')}>
    <svg
