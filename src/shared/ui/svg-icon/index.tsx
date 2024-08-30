@@ -1,15 +1,24 @@
 import './styles.scss';
-import { FC } from 'react';
 
 type PropsType = {
  className?: string;
- Icon: FC;
+ icon: any;
+ asImage?: boolean
 };
 
-export function SvgIcon({ Icon, className }: PropsType) {
+export function SvgIcon({ icon, className, asImage = false }: PropsType) {
+
+ if (asImage) {
+  return (
+   <img className={`svg-icon${className ? ' ' + className : ''}`} src={icon} style={{ backgroundColor: 'transparent' }}
+        alt="" />
+  );
+ }
+
  return (
-  <div className={`svg-icon${className ? ' ' + className : ''}`}>
-   <Icon />
-  </div>
+  <div
+   className={`svg-icon${className ? ' ' + className : ''}`}
+   style={{ maskImage: `url(${icon})`, WebkitMaskImage: `url(${icon})` }}
+  />
  );
 }

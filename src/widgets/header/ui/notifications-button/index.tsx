@@ -5,8 +5,8 @@ import { notificationsState } from '../../../notifications-modal';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../../../shared/ui/button';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
-import { NotificationsActiveIcon } from '../../../../images/svg/notifications-active-icon';
-import { NotificationsIcon as NotificationsIconSvg } from '../../../../images/svg/notifications-icon';
+import  NotificationsActiveIcon  from '../../../../images/notifications-active-icon.svg';
+import NotificationsIconSvg from '../../../../images/notifications-icon.svg';
 import { useModal } from '../../../../shared/lib/use-modal';
 import { NotificationsActionsModalSlotType } from '../../../notifications-actions-modal';
 import { NotificationModalSlotType } from '../../../notifications-modal/ui/ui';
@@ -24,7 +24,7 @@ export const NotificationsButton = observer(({ ModalSlot, NotificationActionsMod
   <div className="notification-icon-wrapper">
    <Button className="notification-icon" onClick={toggleModal}>
     <SvgIcon className="notification-icon__icon"
-             Icon={isModalOpened ? NotificationsActiveIcon : NotificationsIconSvg} />
+             icon={isModalOpened ? NotificationsActiveIcon : NotificationsIconSvg} />
 
     {!(notificationsState.unViewedNotificationsCount === 0) && (
      <div className="notification-icon__count">{notificationsState.unViewedNotificationsCount}</div>

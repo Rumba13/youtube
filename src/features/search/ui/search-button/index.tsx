@@ -1,5 +1,5 @@
 import './styles.scss';
-import { SearchIcon } from '../../../../images/svg/search-icon';
+import  SearchIcon  from '../../../../images/search-icon.svg';
 import { TextTip } from '../../../../shared/ui/text-tip';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
 import React from 'react';
@@ -24,14 +24,14 @@ export function SearchButton({ buttonType, type, disabled = false, onClick }: Pr
     disabled={disabled}
     onClick={onClick}
     type={buttonType}>
-    <SvgIcon className="search-icon-button__icon" Icon={SearchIcon} />
+    <SvgIcon className="search-icon-button__icon" icon={SearchIcon} />
     <TextTip>{t('Enter Search')}</TextTip>
    </button>
   );
  } else {
   return (
    <Button className="search-button-mini" onClick={onClick}>
-    <SvgIcon className="search-button-mini__icon" Icon={SearchIcon} />
+    <SvgIcon className="search-button-mini__icon" icon={SearchIcon} />
     <TextTip>{t('Enter Search')}</TextTip>
    </Button>
   );

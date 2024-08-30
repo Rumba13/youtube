@@ -11,7 +11,8 @@ import { LoginForm } from '../widgets/login-form';
 import { RegisterForm } from '../widgets/register-form';
 
 export function App() {
- const { i18n, t } = useTranslation();
+ const { i18n } = useTranslation();
+
  const {
   isModalOpened: isRegisterModalOpened,
   toggleModal: toggleRegisterModal,

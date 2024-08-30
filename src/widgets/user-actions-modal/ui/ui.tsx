@@ -1,21 +1,21 @@
 import './styles.scss';
 import React, { FC, MouseEventHandler, useContext } from 'react';
-import { GoogleIcon } from '../../../images/svg/google-icon';
+import GoogleIcon from '../../../images/google-icon.svg';
 import { SvgIcon } from '../../../shared/ui/svg-icon';
-import { AccountChangeIcon } from '../../../images/svg/account-change-icon';
-import { ExitIcon } from '../../../images/svg/exit-icon';
-import { CreatorStudioIcon } from '../../../images/svg/creator-studio-icon';
-import { MoneyIcon } from '../../../images/svg/money-icon';
-import { AccountIcon } from '../../../images/svg/account-icon';
-import { MoonIcon } from '../../../images/svg/moon-icon';
-import { LanguageIcon } from '../../../images/svg/language-icon';
-import { ShieldIcon } from '../../../images/svg/shield-icon';
-import { WorldIcon } from '../../../images/svg/world-icon';
-import { KeyboardIcon } from '../../../images/svg/keyboard-icon';
-import { QuestionIcon } from '../../../images/svg/question-icon';
-import { DialogIcon } from '../../../images/svg/dialog-icon';
-import { GearIcon } from '../../../images/svg/gear-icon';
-import { ArrowIcon } from '../../../images/svg/arrow-icon';
+import AccountChangeIcon from '../../../images/account-change-icon.svg';
+import ExitIcon from '../../../images/exit-icon.svg';
+import CreatorStudioIcon from '../../../images/creator-studio-icon.svg';
+import MoneyIcon from '../../../images/money-icon.svg';
+import AccountIcon from '../../../images/account-icon.svg';
+import MoonIcon from '../../../images/moon-icon.svg';
+import LanguageIcon from '../../../images/language-icon.svg';
+import ShieldIcon from '../../../images/shield-icon.svg';
+import WorldIcon from '../../../images/world-icon.svg';
+import KeyboardIcon from '../../../images/keyboard-icon.svg';
+import QuestionIcon from '../../../images/question-icon.svg';
+import DialogIcon from '../../../images/dialog-icon.svg';
+import GearIcon from '../../../images/gear-icon.svg';
+import ArrowIcon from '../../../images/arrow-icon.svg';
 import { Trans, useTranslation } from 'react-i18next';
 import { ListItemSeparator } from '../../../shared/ui/list-item-separator';
 import { RegisterModalStateContext } from '../../register-modal';
@@ -60,22 +60,22 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
       key={1}
       className="item-link"
       href="https://myaccount.google.com/u/1/?utm_source=YouTubeWeb&tab=rk&utm_medium=act&tab=rk&hl=ru">
-      <SvgIcon className="item-icon" Icon={GoogleIcon} />
+      <SvgIcon className="item-icon" icon={GoogleIcon} />
       {t('Google Account')}
      </a>
     </li>
     <li className="user-actions-list__item"></li>
     <li className="user-actions-list__item">
      <span className="item-link" key={2}>
-      <SvgIcon className="item-icon" Icon={AccountChangeIcon} />
+      <SvgIcon className="item-icon" icon={AccountChangeIcon} />
       {t('Change Account')}
-      <SvgIcon className="arrow" Icon={ArrowIcon} />
+      <SvgIcon className="arrow" icon={ArrowIcon} />
      </span>
     </li>
     {user !== null && (
      <li className="user-actions-list__item">
       <span className="item-link" key={3} onClick={() => userState.signOut()}>
-       <SvgIcon className="item-icon" Icon={ExitIcon} />
+       <SvgIcon className="item-icon" icon={ExitIcon} />
        {t('Exit')}
       </span>
      </li>
@@ -86,57 +86,57 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
     </li>
     <li className="user-actions-list__item">
      <a className="item-link" href="https://studio.youtube.com/channel/UC6Kav4lZ1H0SNIUidzfXwdA" key={5}>
-      <SvgIcon className="item-icon" Icon={CreatorStudioIcon} />
+      <SvgIcon className="item-icon" icon={CreatorStudioIcon} />
       {t('Creator Studio Youtube')}
      </a>
     </li>
     <li className="user-actions-list__item">
      <a className="item-link" href="https://www.youtube.com/paid_memberships?ybp=mAEK" key={6}>
-      <SvgIcon className="item-icon" Icon={MoneyIcon} />
+      <SvgIcon className="item-icon" icon={MoneyIcon} />
       {t('Purchases And Paid Subscriptions')}
      </a>
     </li>
     <li className="user-actions-list__item">
      <a className="item-link" href="https://myaccount.google.com/u/1/yourdata/youtube?hl=ru" key={6}>
-      <SvgIcon className="item-icon" Icon={AccountIcon} />
+      <SvgIcon className="item-icon" icon={AccountIcon} />
       {t('Your Data on Youtube')}
      </a>
     </li>
     <li className="user-actions-list__item">
      <span className="item-link" key={7}>
-      <SvgIcon className="item-icon" Icon={MoonIcon} />
+      <SvgIcon className="item-icon" icon={MoonIcon} />
       <Trans i18nKey="Theme">{{ theme }}</Trans>
 
-      <SvgIcon className="arrow" Icon={ArrowIcon} />
+      <SvgIcon className="arrow" icon={ArrowIcon} />
      </span>
     </li>
     <li className="user-actions-list__item">
      <span className="item-link" key={8}>
-      <SvgIcon className="item-icon" Icon={LanguageIcon} />
+      <SvgIcon className="item-icon" icon={LanguageIcon} />
       <Trans i18nKey="Language">{{ language }}</Trans>
-      <SvgIcon className="arrow" Icon={ArrowIcon} />
+      <SvgIcon className="arrow" icon={ArrowIcon} />
      </span>
     </li>
     <li className="user-actions-list__item">
      <span className="item-link" key={9}>
-      <SvgIcon className="item-icon" Icon={ShieldIcon} />
+      <SvgIcon className="item-icon" icon={ShieldIcon} />
       <Trans i18nKey="Safe Mode">
        {{ mode: t(isRestrictedModeEnable ? 'restricted_mode_on' : 'restricted_mode_off') }}
       </Trans>
-      <SvgIcon className="arrow" Icon={ArrowIcon} />
+      <SvgIcon className="arrow" icon={ArrowIcon} />
      </span>
     </li>
     <li className="user-actions-list__item">
      <span className="item-link" key={10}>
-      <SvgIcon className="item-icon" Icon={WorldIcon} />
+      <SvgIcon className="item-icon" icon={WorldIcon} />
 
       <Trans i18nKey={'Country'}>{{ location: t(location) }}</Trans>
-      <SvgIcon className="arrow" Icon={ArrowIcon} />
+      <SvgIcon className="arrow" icon={ArrowIcon} />
      </span>
     </li>
     <li className="user-actions-list__item">
      <span className="item-link" key={11}>
-      <SvgIcon className="item-icon" Icon={KeyboardIcon} />
+      <SvgIcon className="item-icon" icon={KeyboardIcon} />
       {t('Fast Keyboard')}
      </span>
     </li>
@@ -145,7 +145,7 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
     </li>
     <li className="user-actions-list__item">
      <a className="item-link" href="https://www.youtube.com/account" key={13}>
-      <SvgIcon className="item-icon" Icon={GearIcon} />
+      <SvgIcon className="item-icon" icon={GearIcon} />
       {t('Options')}
      </a>
     </li>
@@ -157,13 +157,13 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
      <>
       <li className="user-actions-list__item">
        <span className="item-link" onClick={toggleRegisterModal} key={15}>
-        <SvgIcon className="item-icon" Icon={AccountChangeIcon} />
+        <SvgIcon className="item-icon" icon={AccountChangeIcon} />
         {t('Register')}
        </span>
       </li>
       <li className="user-actions-list__item">
        <span className="item-link" onClick={toggleLoginModal} key={16}>
-        <SvgIcon className="item-icon" Icon={AccountIcon} />
+        <SvgIcon className="item-icon" icon={AccountIcon} />
         {t('Login')}
        </span>
       </li>
@@ -172,13 +172,13 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
 
     <li className="user-actions-list__item">
      <span className="item-link" key={17}>
-      <SvgIcon className="item-icon" Icon={QuestionIcon} />
+      <SvgIcon className="item-icon" icon={QuestionIcon} />
       {t('Inquiry')}
      </span>
     </li>
     <li className="user-actions-list__item">
      <span className="item-link" key={18}>
-      <SvgIcon className="item-icon" Icon={DialogIcon} />
+      <SvgIcon className="item-icon" icon={DialogIcon} />
       {t('Send Review')}
      </span>
     </li>

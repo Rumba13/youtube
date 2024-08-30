@@ -1,9 +1,9 @@
 import './styles.scss';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
-import { YoutubeIcon } from '../../../../images/svg/youtube-icon';
-import { YoutubeCreatorStudioIcon } from '../../../../images/svg/youtube-creator-studio-icon';
-import { YoutubeMusicIcon } from '../../../../images/svg/youtube-music-icon';
-import { YoutubeForKids } from '../../../../images/svg/youtube-for-kids';
+import YoutubeIcon from '../../../../images/youtube-icon.svg';
+import YoutubeCreatorStudioIcon from '../../../../images/youtube-creator-studio-icon.svg';
+import YoutubeMusicIcon from '../../../../images/youtube-music-icon.svg';
+import YoutubeForKids from '../../../../images/youtube-for-kids.svg';
 import { useTranslation } from 'react-i18next';
 
 export function OtherArticle() {
@@ -11,19 +11,19 @@ export function OtherArticle() {
 
  const items: JSX.Element[] = [
   <li className="aside-item" title={t('YouTube Premium')} key={1}>
-   <SvgIcon className="aside-item__icon" Icon={YoutubeIcon} />
+   <SvgIcon className="aside-item__icon" icon={YoutubeIcon} asImage />
    <span className="aside-item__title">{t('YouTube Premium')}</span>
   </li>,
   <li className="aside-item" title={t('YouTube Studio')} key={2}>
-   <SvgIcon className="aside-item__icon" Icon={YoutubeCreatorStudioIcon} />
+   <SvgIcon className="aside-item__icon" icon={YoutubeCreatorStudioIcon} asImage />
    <span className="aside-item__title">{t('YouTube Studio')}</span>
   </li>,
   <li className="aside-item" title={t('YouTube Music')} key={3}>
-   <SvgIcon className="aside-item__icon" Icon={YoutubeMusicIcon} />
+   <SvgIcon className="aside-item__icon" icon={YoutubeMusicIcon} asImage />
    <span className="aside-item__title">{t('YouTube Music')}</span>
   </li>,
   <li className="aside-item" title={t('YouTube Kids')} key={4}>
-   <SvgIcon className="aside-item__icon" Icon={YoutubeForKids} />
+   <SvgIcon className="aside-item__icon" icon={YoutubeForKids} asImage />
    <span className="aside-item__title">{t('YouTube Kids')}</span>
   </li>,
  ];

@@ -1,8 +1,8 @@
 import './styles.scss';
 import React, { FC, MouseEventHandler } from 'react';
 import { SvgIcon } from '../../../shared/ui/svg-icon';
-import { PlayVideoIcon } from '../../../images/svg/play-video-icon';
-import { StreamIcon } from '../../../images/svg/stream-icon';
+import PlayVideoIcon from '../../../images/play-video-icon.svg';
+import StreamIcon from '../../../images/stream-icon.svg';
 import { useTranslation } from 'react-i18next';
 
 type PropsType = {
@@ -18,13 +18,13 @@ export function CreateVideoActionsModal({ isOpened, onClick }: PropsType) {
 
  const items: JSX.Element[] = [
   <>
-   <SvgIcon Icon={PlayVideoIcon} />
+   <SvgIcon icon={PlayVideoIcon} />
    <a className="item-title" href="https://studio.youtube.com/channel/1/videos">
     {t('Add Video')}
    </a>
   </>,
   <>
-   <SvgIcon Icon={StreamIcon} />
+   <SvgIcon icon={StreamIcon} />
    <a className="item-title" href="https://studio.youtube.com/channel/1/livestreaming">
     {t('Start Stream')}
    </a>

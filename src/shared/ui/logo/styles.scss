@@ -1,23 +1,21 @@
 .logo {
- position: relative;
- display: flex;
- align-items: center;
- height: 100%;
- padding-right: 20px;
- fill: white;
- cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-right: 20px;
+  cursor: pointer;
+  --svg-width: 90px;
 
- --svg-width: 90px;
+  & .svg-icon {
+    width: var(--svg-width);
+  }
 
- & .svg-icon > svg {
-  width: var(--svg-width);
- }
-
- & .country-code {
-  position: absolute;
-  top: 12px;
-  left: calc(var(--svg-width) + 4px);
-  font-size: 10px;
-  color: var(--light-gray-color);
- }
+  & .country-code {
+    position: absolute;
+    top: 12px;
+    left: calc(var(--svg-width) + 4px);
+    font-size: 10px;
+    color: var(--light-gray-color);
+  }
 }

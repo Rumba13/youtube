@@ -9,7 +9,7 @@ import { formatViews } from './format-views';
 import { DotsButton } from '../../../shared/ui/dots-menu-icon';
 import { useModal } from '../../../shared/lib/use-modal';
 import { VideoActionsModalSlotType } from '../../../widgets/video-actions-modal';
-import NoPreviewImage from '../../../images/img.webp';
+import NoPreviewImage from '../../../images/no-img.webp';
 
 type PropsType = {
  video: VideoType;

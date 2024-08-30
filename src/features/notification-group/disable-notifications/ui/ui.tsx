@@ -1,5 +1,5 @@
 import './styles.scss';
-import { CrossedBellIcon } from '../../../../images/svg/crossed-bell-icon';
+import CrossedBellIcon from '../../../../images/crossed-bell-icon.svg';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
 import { Trans, useTranslation } from 'react-i18next';
 
@@ -9,7 +9,7 @@ export function DisableNotificationsButton() {
 
  return (
   <button className="disable-notifications-button">
-   <SvgIcon className="disable-notifications-button__icon" Icon={CrossedBellIcon} />
+   <SvgIcon className="disable-notifications-button__icon" icon={CrossedBellIcon} />
    <span className="disable-notifications-button__title">
     <Trans i18nKey={'Disable Notifications At Channel'} t={t} channelName={channelName}>
      {{ channelName }}

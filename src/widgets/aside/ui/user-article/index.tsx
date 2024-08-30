@@ -1,12 +1,12 @@
 import './styles.scss';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
-import { ArrowIcon } from '../../../../images/svg/arrow-icon';
-import { ChannelIcon } from '../../../../images/svg/channel-icon';
-import { HistoryIcon } from '../../../../images/svg/history-icon';
-import { PlayVideoIcon } from '../../../../images/svg/play-video-icon';
-import { ClocksIcon } from '../../../../images/svg/clocks-icon';
-import { LikeIcon } from '../../../../images/svg/like-icon';
-import { PlaylistIcon } from '../../../../images/svg/playlist-icon';
+import ArrowIcon from '../../../../images/arrow-icon.svg';
+import ChannelIcon from '../../../../images/channel-icon.svg';
+import HistoryIcon from '../../../../images/history-icon.svg';
+import PlayVideoIcon from '../../../../images/play-video-icon.svg';
+import ClocksIcon from '../../../../images/clocks-icon.svg';
+import LikeIcon from '../../../../images/like-icon.svg';
+import PlaylistIcon from '../../../../images/playlist-icon.svg';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { observer } from 'mobx-react';
@@ -28,38 +28,39 @@ export const UserArticle = observer(() => {
  const items: JSX.Element[] = [
   <li className="aside-item you-item" title={t('You')} key={1}>
    <span className="aside-item__title">{t('You')}</span>
-   <SvgIcon className="aside-item__icon" Icon={ArrowIcon} />
+   <SvgIcon className="aside-item__icon" icon={ArrowIcon} />
   </li>,
   <li className="aside-item" title={t('My Channel')} key={2}>
-   <SvgIcon className="aside-item__icon" Icon={ChannelIcon} />
+   <SvgIcon className="aside-item__icon" icon={ChannelIcon} />
    <span className="aside-item__title">{t('My Channel')}</span>
   </li>,
   <li className="aside-item" title={t('History')} key={3}>
-   <SvgIcon className="aside-item__icon" Icon={HistoryIcon} />
+   <SvgIcon className="aside-item__icon" icon={HistoryIcon} />
    <span className="aside-item__title">{t('History')}</span>
   </li>,
   <li className="aside-item" title={t('Your Videos')} key={4}>
-   <SvgIcon className="aside-item__icon" Icon={PlayVideoIcon} />
+   <SvgIcon className="aside-item__icon" icon={PlayVideoIcon} />
    <span className="aside-item__title">{t('Your Videos')}</span>
   </li>,
   <li className="aside-item" title={t('Watch Later')} key={5}>
-   <SvgIcon className="aside-item__icon" Icon={ClocksIcon} />
+   <SvgIcon className="aside-item__icon" icon={ClocksIcon} />
    <span className="aside-item__title">{t('Watch Later')}</span>
   </li>,
   <li className="aside-item" title={t('Liked')} key={6}>
-   <SvgIcon className="aside-item__icon" Icon={LikeIcon} />
+   <SvgIcon className="aside-item__icon" icon={LikeIcon} />
    <span className="aside-item__title">{t('Liked')}</span>
   </li>,
  ];
 
  return (
-  <ul className={`aside-article user-article${isUserArticleExpanded ? ' ' + 'expanded' : ''}`} aria-label={'UserArticle'}>
+  <ul className={`aside-article user-article${isUserArticleExpanded ? ' ' + 'expanded' : ''}`}
+      aria-label={'UserArticle'}>
    {items.map(item => item)}
 
    {playlists.map(({ title, href }, index) => (
     <li className="aside-item" title={title} key={index}>
      <a href={href}>
-      <SvgIcon className="aside-item__icon" Icon={PlaylistIcon} />
+      <SvgIcon className="aside-item__icon" icon={PlaylistIcon} />
       <span className="aside-item__title">{title}</span>
      </a>
     </li>

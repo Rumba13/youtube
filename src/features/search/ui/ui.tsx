@@ -7,7 +7,7 @@ import { useScreenWidth } from '../../../shared/lib/use-screen-width';
 import { observer } from 'mobx-react';
 import { Field, Form, Formik } from 'formik';
 import { Icon } from '../../../shared/ui/icon';
-import { SearchIcon } from '../../../images/svg/search-icon';
+import SearchIcon from '../../../images/search-icon.svg';
 import { CrossIcon } from './cross-icon';
 import { VoiceSearchButton } from './voice-search-icon';
 import { SearchButton } from './search-button';
@@ -82,7 +82,7 @@ export const Search = observer(({ VoiceSearchModalSlot }: PropsType) => {
       {({ values, isSubmitting, setFieldValue }) => (
        <Form className="search-form">
         <label className="search-form-container" htmlFor="query">
-         <SvgIcon className="search-icon" Icon={SearchIcon} />
+         <SvgIcon className="search-icon" icon={SearchIcon} />
          <Field
           className="search-form__field"
           type="text"
