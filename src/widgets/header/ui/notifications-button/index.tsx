@@ -1,7 +1,7 @@
 import './styles.scss';
 import { TextTip } from '../../../../shared/ui/text-tip';
 import { observer } from 'mobx-react';
-import { notificationsState } from '../../../notifications-modal';
+import { notificationsStore } from '../../../notifications-modal';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../../../shared/ui/button';
 import { SvgIcon } from '../../../../shared/ui/svg-icon';
@@ -26,8 +26,8 @@ export const NotificationsButton = observer(({ ModalSlot, NotificationActionsMod
     <SvgIcon className="notification-icon__icon"
              icon={isModalOpened ? NotificationsActiveIcon : NotificationsIconSvg} />
 
-    {!(notificationsState.unViewedNotificationsCount === 0) && (
-     <div className="notification-icon__count">{notificationsState.unViewedNotificationsCount}</div>
+    {!(notificationsStore.unViewedNotificationsCount === 0) && (
+     <div className="notification-icon__count">{notificationsStore.unViewedNotificationsCount}</div>
     )}
 
     <TextTip>{t('Notifications')}</TextTip>

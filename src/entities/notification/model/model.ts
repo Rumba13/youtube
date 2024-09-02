@@ -1,11 +1,11 @@
 import { makeAutoObservable } from 'mobx';
 import { NotificationsService } from '../../../shared/api/notifications-service';
-import { NotificationType } from '../../../shared/api/types/notification-type';
-import { userState } from '../../user';
+import { Notification } from '../../../shared/api/types/notification';
+import { userStore } from '../../user';
 
-class NotificationsState {
+class NotificationsStore {
  private notificationsService: NotificationsService;
- public notifications: NotificationType[] = [];
+ public notifications: Notification[] = [];
  private notificationsCount = 0;
  public isLoading = false;
  public isError = false;
@@ -42,5 +42,5 @@ class NotificationsState {
  }
 }
 
-export { NotificationsState as NotificationsStateType };
-export const notificationsState = new NotificationsState(new NotificationsService(), userState.getUserJwt());
+export { NotificationsStore as NotificationsStoreType };
+export const notificationsStore = new NotificationsStore(new NotificationsService(), userStore.getUserJwt());

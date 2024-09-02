@@ -1,84 +1,97 @@
+@import "../../../app/styles/hide-scrollbar";
+
 .aside {
- grid-area: aside;
- width: 240px;
+  position: fixed;
+  z-index: 1;
+  grid-area: aside;
+  width: 224px;
+  background-color: inherit;
+  margin-top: 56px;
+  height: 100%;
+  overflow-y: scroll;
+  @include hide-scrollbar;
 
- & .aside-article {
-  padding: 12px 8px 12px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  & .aside-article {
+    padding: 12px 8px 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-  &:nth-child(1) {
-   margin-left: 12px;
+    &:nth-child(1) {
+      margin-left: 12px;
 
-   & .aside-item {
-    margin-left: 0;
-   }
-  }
-
-  & .article-title {
-   font-weight: 500;
-   font-size: 16px;
-   margin-top: 1px;
-   padding: 6px 12px 0;
-   height: 32px;
-   margin-left: 12px;
-   margin-bottom: -1px;
-  }
-
-  & .aside-item {
-   display: flex;
-   align-items: center;
-   height: 40px;
-   margin-left: 12px;
-   padding: 0 12px;
-   border-radius: 10px;
-
-   &:hover {
-    background-color: var(--light-dark-color);
-
-    &.active {
-     background-color: var(-dark-gray-color);
-    }
-   }
-
-   &.active {
-    background-color: var(--light-dark-color);
-    font-weight: 500;
-   }
-
-   & .aside-item__icon {
-    margin-right: 24px;
-
-    &.expand-icon {
-     transform: rotate(90deg);
+      & .aside-item {
+        margin-left: 0;
+      }
     }
 
-    &.collapse-icon {
-     transform: rotate(-90deg);
+    & .article-title {
+      font-weight: 500;
+      font-size: 16px;
+      margin-top: 1px;
+      padding: 6px 12px 0;
+      height: 32px;
+      margin-left: 12px;
+      margin-bottom: -1px;
     }
-   }
 
-   & .aside-item__title {
-    font-size: 14px;
-    line-height: 40px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 132px;
-   }
+    & .aside-item {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      margin-left: 12px;
+      padding: 0 12px;
+      border-radius: 10px;
 
-   & > a {
-    display: flex;
-    align-items: center;
-   }
+      &:hover {
+        background-color: var(--light-dark-color);
+
+        &.active {
+          background-color: var(-dark-gray-color);
+        }
+      }
+
+      &.active {
+        background-color: var(--light-dark-color);
+        font-weight: 500;
+      }
+
+      & .aside-item__icon {
+        margin-right: 24px;
+
+        &.expand-icon {
+          transform: rotate(90deg);
+        }
+
+        &.collapse-icon {
+          transform: rotate(-90deg);
+        }
+      }
+
+      & .aside-item__title {
+        font-size: 14px;
+        line-height: 40px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 132px;
+      }
+
+      & > a {
+        display: flex;
+        align-items: center;
+      }
+    }
   }
- }
 }
 
 .aside,
 .aside-mini {
- &.vertical-list {
-  background-color: transparent;
-  padding: 0;
-  box-shadow: none;
- }
+  &.vertical-list {
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+.aside-mini {
+ margin-top: 56px;
 }

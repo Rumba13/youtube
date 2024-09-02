@@ -1,87 +1,100 @@
 .header {
- display: grid;
- grid-area: header;
- align-items: center;
- padding-right: 28px;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  background-color: inherit;
+  display: grid;
+  grid-area: header;
+  align-items: center;
+  padding-right: 45px;
+  padding-top: 8px;
 
- grid-template: 'menu-icon logo search create-video-icon notifications-icon user-profile-icon' auto / auto auto 1fr auto auto auto auto;
+  grid-template:
+         'menu-icon logo search create-video-icon notifications-icon user-profile-icon' auto / auto auto 1fr auto auto auto auto;
 
- & > .logo {
-  grid-area: logo;
- }
+  & > .logo {
+    grid-area: logo;
+  }
 
- & > .search {
-  grid-area: search;
-  justify-self: center;
- }
+  & > .search {
+    grid-area: search;
+    justify-self: center;
+    margin-left: -5px;
+  }
 
- & > .create-video-button {
-  grid-area: create-video-icon;
- }
+  & .video-tags {
+    grid-area: video-tags;
+    margin-top: 36px;
+    margin-left: 3.5%;
+  }
 
- & > .notification-icon-wrapper {
-  grid-area: notifications-icon;
- }
+  & > .create-video-button {
+    grid-area: create-video-icon;
+  }
 
- & > .user-profile-icon {
-  grid-area: user-profile-icon;
- }
-
- & > .menu-button {
-  grid-area: menu-icon;
- }
-
- & > .search-icon-button.mini {
-  grid-area: search-button;
- }
-
- & > .voice-search-button.mini {
-  grid-area: voice-search-button;
- }
-
- & > .back-button {
-  grid-area: back-button;
-  margin-left: 8px;
- }
-}
-
-@media (max-width: 750px) {
- .header {
-  grid-template: 'menu-icon logo search-button voice-search-button create-video-icon notifications-icon user-profile-icon' auto / min-content 1fr auto auto auto auto auto;
-  padding-right: 35px;
-
-  & > .menu-button {
-   //TODO ???
-   margin-right: 20px;
-   margin-left: 8px;
+  & > .notification-icon-wrapper {
+    grid-area: notifications-icon;
   }
 
   & > .user-profile-icon {
-   margin-left: 15px;
+    grid-area: user-profile-icon;
   }
 
-  & > .notification-icon-wrapper,
-  & > .voice-search-button.mini,
-  & > .create-video-button,
+  & > .menu-button {
+    grid-area: menu-icon;
+  }
+
   & > .search-icon-button.mini {
-   margin: 0;
+    grid-area: search-button;
   }
 
-  &.opened-search {
-   grid-template: 'back-button search' auto / auto 1fr;
-   padding-right: 0;
-
-   & > .search {
-   }
+  & > .voice-search-button.mini {
+    grid-area: voice-search-button;
   }
- }
+
+  & > .back-button {
+    grid-area: back-button;
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 750px) {
+  .header {
+    grid-template: 'menu-icon logo search-button voice-search-button create-video-icon notifications-icon user-profile-icon' auto / min-content 1fr auto auto auto auto auto;
+    padding-right: 35px;
+
+    & > .menu-button {
+      //TODO ???
+      margin-right: 20px;
+      margin-left: 8px;
+    }
+
+    & > .user-profile-icon {
+      margin-left: 15px;
+    }
+
+    & > .notification-icon-wrapper,
+    & > .voice-search-button.mini,
+    & > .create-video-button,
+    & > .search-icon-button.mini {
+      margin: 0;
+    }
+
+    &.opened-search {
+      grid-template: 'back-button search' auto / auto 1fr;
+      padding-right: 0;
+
+      & > .search {
+      }
+    }
+  }
 }
 
 @media (max-width: 450px) {
- .header {
-  & > .create-video-button,
-  & > .notification-icon-wrapper {
-   display: none;
+  .header {
+    & > .create-video-button,
+    & > .notification-icon-wrapper {
+      display: none;
+    }
   }
- }
 }

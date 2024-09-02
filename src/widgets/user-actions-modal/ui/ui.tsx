@@ -18,12 +18,12 @@ import GearIcon from '../../../assets/images/gear-icon.svg';
 import ArrowIcon from '../../../assets/images/arrow-icon.svg';
 import { Trans, useTranslation } from 'react-i18next';
 import { ListItemSeparator } from '../../../shared/ui/list-item-separator';
-import { RegisterModalStateContext } from '../../register-modal';
-import { LoginModalStateContext } from '../../login-modal';
-import { userState } from '../../../entities/user';
+import { userStore } from '../../../entities/user';
 import { observer } from 'mobx-react';
 import noUserProfileIcon from '../../../assets/images/no-user-profile-icon.webp';
 import clsx from 'clsx';
+import { SignInModalStoreContext } from '../../sign-in-modal';
+import { SignUpModalStoreContext } from '../../sign-up-modal';
 
 type PropsType = {
  className?: string;
@@ -39,9 +39,9 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
  const theme = t('theme_' + 'sync');
  const location = t('by');
  const isRestrictedModeEnable = false;
- const { toggleModal: toggleRegisterModal } = useContext(RegisterModalStateContext);
- const { toggleModal: toggleLoginModal } = useContext(LoginModalStateContext);
- const user = userState.user;
+ const { toggleModal: toggleRegisterModal } = useContext(SignUpModalStoreContext);
+ const { toggleModal: toggleLoginModal } = useContext(SignInModalStoreContext);
+ const user = userStore.user;
 
  return (
   <div
@@ -75,7 +75,7 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
     </li>
     {user !== null && (
      <li className="user-actions-list__item">
-      <span className="item-link" key={3} onClick={() => userState.signOut()}>
+      <span className="item-link" key={3} onClick={() => userStore.signOut()}>
        <SvgIcon className="item-icon" icon={ExitIcon} />
        {t('Exit')}
       </span>
@@ -159,7 +159,7 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
       <li className="user-actions-list__item">
        <span className="item-link" onClick={toggleRegisterModal} key={15}>
         <SvgIcon className="item-icon" icon={AccountChangeIcon} />
-        {t('Register')}
+        {t('Sign Up')}
        </span>
       </li>
       <li className="user-actions-list__item">

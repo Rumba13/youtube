@@ -1,5 +1,5 @@
 import './styles.scss';
-import { asideState } from '../model/model';
+import { asideStore } from '../model/model';
 import { observer } from 'mobx-react';
 import { AsideFooter } from './aside-footer';
 import { OtherArticle } from './other-article';
@@ -11,21 +11,18 @@ import { UserArticle } from './user-article';
 import { AsideMini } from './aside-mini';
 
 export const Aside = observer(() => {
- const { isMinified } = asideState;
-
- if (isMinified) {
+ if (asideStore.isMinified) {
   return <AsideMini />;
- } else {
-  return (
-   <aside className="aside">
-    <MainArticle />
-    <UserArticle />
-    <SubscriptionsArticle />
-    <NavigationArticle />
-    <OtherArticle />
-    <ActionsArticle />
-    <AsideFooter />
-   </aside>
-  );
  }
+ return (
+  <aside className="aside">
+   <MainArticle />
+   <UserArticle />
+   <SubscriptionsArticle />
+   <NavigationArticle />
+   <OtherArticle />
+   <ActionsArticle />
+   <AsideFooter />
+  </aside>
+ );
 });

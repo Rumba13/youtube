@@ -1,26 +1,43 @@
-.video-tags {
- display: flex;
- padding: 0 24px;
+@import "../../../app/styles/hide-scrollbar";
 
- & > .video-tags-item {
-  height: 32px;
-  margin: 12px 12px 12px 0;
-  padding: 0 12px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 32px;
-  background-color: var(--lighter-dark-color);
-  cursor: pointer;
-  transition: 0.3s background-color;
+.video-tags-wrapper {
+  position: fixed;
+  z-index: 1;
+  background-color: var(--primary-color);
+  width: 100%;
+  margin-top: -8px;
+  padding-top: 8px;
 
-  &:hover {
-   background-color: var(--gray-color);
+  & .video-tags {
+    display: flex;
+    padding: 0 24px;
+    overflow-x: scroll;
+    box-sizing: content-box;
+    @include hide-scrollbar;
+
+    & > .video-tags-item {
+      height: 32px;
+      margin: 12px 12px 12px 0;
+      padding: 0 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 32px;
+      background-color: var(--lighter-dark-color);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: 0.3s background-color;
+
+      &:hover {
+        background-color: var(--gray-color);
+      }
+
+      &.active {
+        color: var(--dark-color);
+        background-color: var(--white-color);
+      }
+    }
   }
 
-  &.active {
-   color: var(--dark-color);
-   background-color: var(--white-color);
-  }
- }
 }
+

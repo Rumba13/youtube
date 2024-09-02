@@ -1,14 +1,15 @@
 .home-page {
- display: grid;
- grid-template:
+  display: grid;
+  grid-template:
   'video-tags' min-content
   'video-list' auto / auto;
+  margin-left: 240px;
 
- & > .video-tags {
-  grid-area: video-tags;
- }
+  & > .video-tags {
+    grid-area: video-tags;
+  }
 
- & > .video-list {
-  grid-area: video-list;
- }
+  & > .video-list {
+    grid-area: video-list;
+  }
 }

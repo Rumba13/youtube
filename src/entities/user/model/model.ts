@@ -1,16 +1,16 @@
 import { makeAutoObservable } from 'mobx';
-import { UserType } from '../../../shared/api/types/user-type';
+import { User } from '../../../shared/api/types/user';
 import Cookies from 'universal-cookie';
 import { CONSTANTS } from '../../../shared/lib/constants';
 import { jwtDecode } from 'jwt-decode';
 import { serverConnection } from '../../../shared/api/server-connection';
-import { JwtPayloadType } from '../../../shared/api/types/jwt-payload.type';
+import { JwtPayload } from '../../../shared/api/types/jwt-payload';
 
-export class UserState {
- public user: UserType | null = null;
+export class UserStore {
+ public user: User | null = null;
  public cookiesService: Cookies;
 
- public setUser = (user: UserType | null) => {
+ public setUser = (user: User | null) => {
   this.user = user;
  };
 
@@ -27,8 +27,8 @@ export class UserState {
   }
  };
 
- public jwtToUser(jwt: string): UserType {
-  const payload: JwtPayloadType = jwtDecode(jwt);
+ public jwtToUser(jwt: string): User {
+  const payload: JwtPayload = jwtDecode(jwt);
   return {
    name: payload.username,
    id: payload.sub,
@@ -60,7 +60,7 @@ export class UserState {
    console.log(err);
   }
 
-  const user: UserType = this.jwtToUser(jwt);
+  const user: User = this.jwtToUser(jwt);
   this.setUser(user);
   this.setUserJwt(jwt);
  }
@@ -73,7 +73,7 @@ export class UserState {
    console.log(err);
   }
 
-  const user: UserType = this.jwtToUser(jwt);
+  const user: User = this.jwtToUser(jwt);
   this.setUser(user);
   this.setUserJwt(jwt);
  }
@@ -83,4 +83,4 @@ export class UserState {
  }
 }
 
-export const userState = new UserState(new Cookies());
+export const userStore = new UserStore(new Cookies());

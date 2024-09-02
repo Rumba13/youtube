@@ -1,10 +1,10 @@
 import { makeAutoObservable } from 'mobx';
-import { VideoTagType } from '../../../shared/api/types/video-tag-type';
+import { VideoTag } from '../../../shared/api/types/video-tag';
 import { VideoService } from '../../../shared/api/video-service';
 
 export type VideoTagIdType = string;
 
-class VideoTagsState {
+class VideoTagsStore {
  private videoService: VideoService;
 
  public isLoading = false;
@@ -12,10 +12,10 @@ class VideoTagsState {
  public setIsLoading = (isLoading: boolean) => (this.isLoading = isLoading);
  public setIsError = (isError: boolean) => (this.isError = isError);
 
- public videoTags: VideoTagType[] = [];
+ public videoTags: VideoTag[] = [];
  public activeTag: VideoTagIdType | null = null;
 
- public setVideoTags = (videoTags: VideoTagType[]) => (this.videoTags = videoTags);
+ public setVideoTags = (videoTags: VideoTag[]) => (this.videoTags = videoTags);
  public setActiveTag = (activeTag: VideoTagIdType | null) => (this.activeTag = activeTag);
 
  constructor(videoService: VideoService) {
@@ -36,4 +36,4 @@ class VideoTagsState {
  };
 }
 
-export const videoTagsState = new VideoTagsState(new VideoService());
+export const videoTagsStore = new VideoTagsStore(new VideoService());

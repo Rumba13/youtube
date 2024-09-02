@@ -8,7 +8,6 @@
   '. views released-ago';
  grid-template-rows: min-content min-content min-content min-content;
  grid-template-columns: auto auto 1fr;
- height: 333px;
 
  &:hover {
   & .dots-button {
@@ -19,7 +18,7 @@
  & .dots-button {
   display: none;
   position: absolute;
-  bottom: 80px;
+  bottom: 20%;
   right: 0;
 
   &.opened {

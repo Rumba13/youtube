@@ -1,2 +1,2 @@
 export { Aside } from './ui/ui';
-export { asideState, type AsideStateType } from './model/model';
+export { asideStore, type AsideStoreType } from './model/model';

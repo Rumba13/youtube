@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
-class AsideState {
+class AsideStore {
  public isMinified = true;
  public isUserArticleExpanded = false;
  public isSubscriptionArticleExpanded = false;
@@ -15,5 +15,5 @@ class AsideState {
  }
 }
 
-export type { AsideState as AsideStateType };
-export const asideState = new AsideState();
+export type { AsideStore as AsideStoreType };
+export const asideStore = new AsideStore();

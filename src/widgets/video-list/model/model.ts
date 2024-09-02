@@ -1,12 +1,12 @@
 import { makeAutoObservable } from 'mobx';
-import { VideoType } from '../../../shared/api/types/video-type';
+import { Video } from '../../../shared/api/types/video';
 import { VideoService } from '../../../shared/api/video-service';
 
-class VideoState {
+class VideoStore {
  private videoService: VideoService;
- public videos: VideoType[] = [];
+ public videos: Video[] = [];
 
- public setVideos = (videos: VideoType[]) => (this.videos = videos);
+ public setVideos = (videos: Video[]) => (this.videos = videos);
 
  constructor(videoService: VideoService) {
   makeAutoObservable(this);
@@ -18,4 +18,4 @@ class VideoState {
  };
 }
 
-export const videoState = new VideoState(new VideoService());
+export const videoStore = new VideoStore(new VideoService());

@@ -1,18 +1,19 @@
 import './styles.scss';
 import { useEffect } from 'react';
-import { videoState } from '../model/model';
+import { videoStore } from '../model/model';
 import { observer } from 'mobx-react';
 import { VideoCard } from '../../../entities/video-card';
 import { VideoActionsModalSlotType } from '../../video-actions-modal';
-import { userState } from '../../../entities/user';
+import { userStore } from '../../../entities/user';
+import { VideoTags } from '../../video-tags';
 
 type PropsType = {
  VideoActionsModalSlot: VideoActionsModalSlotType;
 };
 
 export const VideoList = observer(({ VideoActionsModalSlot }: PropsType) => {
- const { videos, loadVideos } = videoState;
- const { getUserJwt, user } = userState;
+ const { videos, loadVideos } = videoStore;
+ const { getUserJwt, user } = userStore;
  const userJwt = getUserJwt();
 
  useEffect(() => {

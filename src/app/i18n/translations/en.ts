@@ -99,7 +99,7 @@ export const englishTranslation: ResourceLanguage = {
   'keyView_few': 'просмотра',
   'keyView_many': 'просмотров',
 
-  'Register': 'Register',
+  'Sign Up': 'Sign Up',
   'Login': 'Login',
  },
 };

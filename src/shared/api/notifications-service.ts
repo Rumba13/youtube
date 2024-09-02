@@ -1,4 +1,4 @@
-import { NotificationType } from './types/notification-type';
+import { Notification } from './types/notification';
 import { serverConnection } from './server-connection';
 
 export class NotificationsService {
@@ -17,7 +17,7 @@ export class NotificationsService {
   }
  }
 
- public async loadNotifications(userJwt: string | null): Promise<NotificationType[]> {
+ public async loadNotifications(userJwt: string | null): Promise<Notification[]> {
   try {
    return (
     await serverConnection.get('/notifications', {

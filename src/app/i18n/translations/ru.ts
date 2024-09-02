@@ -112,7 +112,7 @@ export const russianTranslation: ResourceLanguage = {
   'Policy And Safety': 'Правила и безопасность',
   'How YouTube Works': 'Как работает YouTube',
   'Test New Feature': 'Тестирование новых функций',
-  'Register': 'Зарегистрироваться',
+  'Sign Up': 'Зарегистрироваться',
   'Login': 'Войти',
 
   //Accessibility, like aria-label

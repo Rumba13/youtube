@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
-class SearchState {
+class SearchStore {
  constructor() {
   makeAutoObservable(this);
  }
@@ -20,6 +20,6 @@ class SearchState {
  };
 }
 
-export type { SearchState as SearchStateType };
+export type { SearchStore as SearchStoreType };
 
-export const searchState = new SearchState();
+export const searchStore = new SearchStore();

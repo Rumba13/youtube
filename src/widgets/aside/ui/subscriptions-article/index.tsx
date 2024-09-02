@@ -2,20 +2,20 @@ import './styles.scss';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
-import { SubscriptionCard, subscriptionsState } from '../../../../entities/subscription';
+import { SubscriptionCard, subscriptionsStore } from '../../../../entities/subscription';
 import { ExpandButton } from '../expand-button';
-import { userState } from '../../../../entities/user';
+import { userStore } from '../../../../entities/user';
 import clsx from 'clsx';
 
 export const SubscriptionsArticle = observer(() => {
  const { t } = useTranslation();
- const { subscriptions } = subscriptionsState;
+ const { subscriptions } = subscriptionsStore;
  const [isSubscriptionArticleExpanded, setIsSubscriptionArticleExpanded] = useState<boolean>(false);
- const { getUserJwt, user } = userState;
+ const { getUserJwt, user } = userStore;
  const userJwt = getUserJwt();
 
  useEffect(() => {
-  user && subscriptionsState.loadSubscriptions(userJwt);
+  user && subscriptionsStore.loadSubscriptions(userJwt);
  }, [userJwt]);
 
  if (subscriptions.length === 0) {

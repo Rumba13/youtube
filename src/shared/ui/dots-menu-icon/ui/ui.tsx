@@ -1,12 +1,12 @@
 import './styles.scss';
 import React, { MouseEventHandler } from 'react';
 import { Button } from '../../button';
-import { ModalSlotType } from '../../../api/types/modal-slot-type';
+import { ModalSlot } from '../../../api/types/modal-slot';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 
 type PropsType = {
- ModalSlot?: ModalSlotType;
+ ModalSlot?: ModalSlot;
  isOpened?: boolean;
  isModalOpened?: boolean;
  onClick?: MouseEventHandler;

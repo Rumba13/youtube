@@ -1,12 +1,12 @@
 import './styles.scss';
 import { FC, MouseEventHandler, useEffect } from 'react';
 import { NotificationCard } from '../../../entities/notification';
-import { notificationsState } from '../../../entities/notification';
+import { notificationsStore } from '../../../entities/notification';
 import { useTranslation } from 'react-i18next';
 import { observer } from 'mobx-react';
 import { SettingsButton } from '../../header';
 import { NotificationsActionsModalSlotType } from '../../notifications-actions-modal';
-import { userState } from '../../../entities/user';
+import { userStore } from '../../../entities/user';
 import clsx from 'clsx';
 
 export type NotificationModalSlotType = FC<PropsType>;
@@ -19,14 +19,14 @@ type PropsType = {
 
 export const NotificationsModal = observer(({ isOpened, onClick, NotificationsActionsModalSlot }: PropsType) => {
  const { t } = useTranslation();
- const { getUserJwt } = userState;
+ const { getUserJwt } = userStore;
  const userJwt = getUserJwt();
 
  useEffect(() => {
-  notificationsState.loadNotifications(userJwt);
+  notificationsStore.loadNotifications(userJwt);
  }, [userJwt]);
 
- if (notificationsState.isLoading) {
+ if (notificationsStore.isLoading) {
   return <></>;
  }
 
@@ -37,7 +37,7 @@ export const NotificationsModal = observer(({ isOpened, onClick, NotificationsAc
     <SettingsButton />
    </div>
    <div className="notifications-list">
-    {notificationsState.notifications.map(notification => (
+    {notificationsStore.notifications.map(notification => (
      <NotificationCard notification={notification} ModalSlot={NotificationsActionsModalSlot} key={notification.id} />
     ))}
    </div>

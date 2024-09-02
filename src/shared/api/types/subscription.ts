@@ -1,4 +1,4 @@
-export type SubscriptionType = {
+export type Subscription = {
  icon: string;
  title: string;
  isNewVideo: boolean;

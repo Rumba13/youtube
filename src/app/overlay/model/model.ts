@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
-class OverlayState {
+class OverlayStore {
  public isOverlayOpened = false;
 
  constructor() {
@@ -11,5 +11,5 @@ class OverlayState {
  }
 }
 
-export type { OverlayState as OverlayStateType };
-export const overlayState = new OverlayState();
+export type { OverlayStore as OverlayStoreType };
+export const overlayStore = new OverlayStore();

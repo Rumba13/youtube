@@ -1,4 +1,4 @@
-export type VideoType = {
+export type Video = {
  id: string;
  channelId: string;
  channelIcon: string;

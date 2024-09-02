@@ -31,7 +31,7 @@ export function useModal(isOpenedByDefault = false, options: UseModalOptionsType
 
  function toggleModal(event: React.MouseEvent) {
   console.log(
-   `toggling modal to ${isModalOpened ? 'close' : 'open'} state ${options.parentModalSelector ? 'in ' + options.parentModalSelector : ''}`,
+   `toggling modal to ${isModalOpened ? 'close' : 'open'} Store ${options.parentModalSelector ? 'in ' + options.parentModalSelector : ''}`,
   );
 
   if (isModalOpened) {
@@ -43,7 +43,7 @@ export function useModal(isOpenedByDefault = false, options: UseModalOptionsType
  }
 
  function stopPropagationInModal(event: React.MouseEvent) {
-  console.log(`toggling modal to ${isModalOpened ? 'close' : 'open'} state`);
+  console.log(`toggling modal to ${isModalOpened ? 'close' : 'open'} Store`);
 
   if (isModalOpened) {
    event.stopPropagation();

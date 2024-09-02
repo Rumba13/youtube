@@ -1,5 +1,5 @@
 import './styles.scss';
-import { NotificationType } from '../../../shared/api/types/notification-type';
+import { Notification } from '../../../shared/api/types/notification';
 import { DotsButton } from '../../../shared/ui/dots-menu-icon';
 import { Trans, useTranslation } from 'react-i18next';
 import { FormatNotificationTitle } from './format-notification-title';
@@ -8,12 +8,12 @@ import React from 'react';
 import { NotificationsActionsModalSlotType } from '../../../widgets/notifications-actions-modal';
 
 export type PropsType = {
- notification: NotificationType;
+ notification: Notification;
  ModalSlot: NotificationsActionsModalSlotType; //OLD was NotificationsActionsModalSlotType
 };
 
 export function NotificationCard({ notification, ModalSlot }: PropsType) {
- const { title, previewImage, icon, releasedAgo } = notification; //TODO FUTURE refactor all when add state
+ const { title, previewImage, icon, releasedAgo } = notification; //TODO FUTURE refactor all when add Store
  const { t, i18n } = useTranslation();
  const releasedHoursAgo = 6;
  const channelName = 'Nostoro';

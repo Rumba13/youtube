@@ -1,8 +1,8 @@
-import { SubscriptionType } from './types/subscription-type';
+import { Subscription } from './types/subscription';
 import { serverConnection } from './server-connection';
 
 export class SubscriptionsService {
- public async loadUserSubscriptions(userJwt: string | null): Promise<SubscriptionType[]> {
+ public async loadUserSubscriptions(userJwt: string | null): Promise<Subscription[]> {
   try {
    return (
     await serverConnection.get('/subscriptions', {
@@ -17,7 +17,7 @@ export class SubscriptionsService {
   }
  }
 
- public async loadChannel(channelId: string): Promise<SubscriptionType | null> {
+ public async loadChannel(channelId: string): Promise<Subscription | null> {
   try {
    return (
     await serverConnection.get('/subscription', {

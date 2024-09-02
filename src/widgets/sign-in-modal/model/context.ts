@@ -1,10 +1,10 @@
 import React, { MouseEventHandler } from 'react';
 
-type LoginModalStateContextType = {
+type LoginModalStoreContextType = {
  toggleModal: MouseEventHandler;
 };
 
-export const LoginModalStateContext = React.createContext<LoginModalStateContextType>({
+export const SignInModalStoreContext = React.createContext<LoginModalStoreContextType>({
  toggleModal: () => {
   /*never called*/
  },

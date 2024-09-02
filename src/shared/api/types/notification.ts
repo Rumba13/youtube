@@ -1,4 +1,4 @@
-export type NotificationType = {
+export type Notification = {
  title: string;
  icon: string;
  previewImage: string;

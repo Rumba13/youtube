@@ -1,8 +1,8 @@
-import { SearchHistoryType } from './types/search-history-type';
+import { SearchHistory } from './types/search-history';
 import { serverConnection } from './server-connection';
 
 class SearchHistoryService {
- public async loadRecentSearchHistory(userJwt: string | null): Promise<SearchHistoryType[]> {
+ public async loadRecentSearchHistory(userJwt: string | null): Promise<SearchHistory[]> {
   try {
    return (
     await serverConnection.get('/recent-search-history', {

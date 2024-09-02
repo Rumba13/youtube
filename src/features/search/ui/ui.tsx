@@ -12,8 +12,8 @@ import { CrossIcon } from './cross-icon';
 import { VoiceSearchButton } from './voice-search-icon';
 import { SearchButton } from './search-button';
 import { search } from '../api/search';
-import { overlayState } from '../../../app/overlay';
-import { searchState } from '../model/model';
+import { overlayStore } from '../../../app/overlay';
+import { searchStore } from '../model/model';
 import { VoiceSearchModalSlotType } from '../../../widgets/voice-search-modal/ui/ui';
 import clsx from 'clsx';
 
@@ -33,14 +33,14 @@ export const Search = observer(({ VoiceSearchModalSlot }: PropsType) => {
   setIsSearchMinified,
   setIsSearchOpened,
   setIsSearchFocused,
- } = searchState;
+ } = searchStore;
 
  if (isSearchMinified && isSearchOpened) {
   document.addEventListener('click', () => setIsSearchOpened(false));
  }
 
  useEffect(() => {
-  overlayState.setIsOverlayOpened(isModalOpened);
+  overlayStore.setIsOverlayOpened(isModalOpened);
   setIsSearchMinified(screenWidth <= 750);
 
   if (screenWidth >= 750) {
@@ -77,7 +77,7 @@ export const Search = observer(({ VoiceSearchModalSlot }: PropsType) => {
      <Formik
       initialValues={{ query: '' }}
       onSubmit={(values, { setSubmitting }) => {
-       search(values.query); //TODO add returning to state
+       search(values.query); //TODO add returning to Store
        setSubmitting(false);
       }}>
       {({ values, isSubmitting, setFieldValue }) => (

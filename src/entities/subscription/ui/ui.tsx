@@ -1,9 +1,9 @@
 import './styles.scss';
 import { Icon } from '../../../shared/ui/icon';
-import { SubscriptionType } from '../../../shared/api/types/subscription-type';
+import { Subscription } from '../../../shared/api/types/subscription';
 
 type PropsType = {
- subscription: SubscriptionType;
+ subscription: Subscription;
 };
 
 export function SubscriptionCard({ subscription: { title, icon, isNewVideo, isStream } }: PropsType) {

@@ -1,4 +1,4 @@
-export type VideoTagType = {
+export type VideoTag = {
  title: string;
  id: string;
 };

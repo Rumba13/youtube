@@ -1,1 +1,1 @@
-export { playlistsState, PlaylistsModel } from './model/model';
+export { playlistsStore, PlaylistsModel } from './model/model';

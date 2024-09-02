@@ -1,12 +1,12 @@
-import { PlaylistType } from '../../../shared/api/types/playlist-type';
+import { Playlist } from '../../../shared/api/types/playlist';
 import { makeAutoObservable } from 'mobx';
 import { PlaylistsService } from '../../../shared/api/playlists-service';
 
 export class PlaylistsModel {
- public playlists: PlaylistType[] = [];
+ public playlists: Playlist[] = [];
  public playlistsService: PlaylistsService;
 
- public setPlaylists = (playlists: PlaylistType[]) => (this.playlists = playlists);
+ public setPlaylists = (playlists: Playlist[]) => (this.playlists = playlists);
 
  constructor(playlistsService: PlaylistsService) {
   makeAutoObservable(this);
@@ -18,4 +18,4 @@ export class PlaylistsModel {
  }
 }
 
-export const playlistsState = new PlaylistsModel(new PlaylistsService());
+export const playlistsStore = new PlaylistsModel(new PlaylistsService());

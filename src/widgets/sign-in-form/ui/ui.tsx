@@ -1,23 +1,23 @@
 import './styles.scss';
 import { Field, Form, Formik } from 'formik';
 import { FC } from 'react';
-import { userState } from '../../../entities/user';
+import { userStore } from '../../../entities/user';
 import { observer } from 'mobx-react';
 
-export type LoginFormSlotType = FC;
+export type SignInFormSlot = FC;
 
 type LoginFormValues = {
  login: string;
  password: string;
 };
-export const LoginForm = observer(() => {
+export const SignInForm = observer(() => {
  const initialFormValues: LoginFormValues = {
   login: '',
   password: '',
  };
 
  async function onSubmit(values: LoginFormValues) {
-  await userState.signIn(values.login, values.password);
+  await userStore.signIn(values.login, values.password);
  }
 
  return (

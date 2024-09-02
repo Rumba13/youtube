@@ -1,22 +1,22 @@
 import './styles.scss';
 import { Field, Form, Formik } from 'formik';
 import { FC } from 'react';
-import { userState } from '../../../entities/user';
+import { userStore } from '../../../entities/user';
 
 type FormValues = {
  username: string;
  password: string;
 };
 
-export type RegisterFormSlotType = FC;
+export type SignUpFormSlotType = FC;
 
-export function RegisterForm() {
+export function SignUpForm() {
  const initialFormValues: FormValues = {
   username: '',
   password: '',
  };
  async function onSubmit(values: FormValues) {
-  await userState.signUp(values.username, values.password);
+  await userStore.signUp(values.username, values.password);
  }
 
  return (

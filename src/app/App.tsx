@@ -3,25 +3,24 @@ import { Overlay } from './overlay';
 import {} from './i18n/index';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect } from 'react';
-import { RegisterModal } from '../widgets/register-modal';
 import { useModal } from '../shared/lib/use-modal';
-import { RegisterModalStateContext } from '../widgets/register-modal';
-import { LoginModal, LoginModalStateContext } from '../widgets/login-modal';
-import { LoginForm } from '../widgets/login-form';
-import { RegisterForm } from '../widgets/register-form';
+import { SignUpForm } from '../widgets/sign-up-form';
+import { SignUpModal, SignUpModalStoreContext } from '../widgets/sign-up-modal';
+import { SignInModal, SignInModalStoreContext } from '../widgets/sign-in-modal';
+import { SignInForm } from '../widgets/sign-in-form';
 
 export function App() {
  const { i18n } = useTranslation();
 
  const {
-  isModalOpened: isRegisterModalOpened,
-  toggleModal: toggleRegisterModal,
+  isModalOpened: isSignUpModalOpened,
+  toggleModal: toggleSignUpModal,
   stopPropagationInModal: stopPropagationInRegisterModal,
  } = useModal(false, { parentModalSelector: '.user-actions-modal' });
  const {
-  isModalOpened: isLoginModalOpened,
-  toggleModal: toggleLoginModal,
-  stopPropagationInModal: stopPropagationInLoginModal,
+  isModalOpened: isSignInModalOpened,
+  toggleModal: toggleSignInModal,
+  stopPropagationInModal: stopPropagationInSignInModal,
  } = useModal(false, { parentModalSelector: '.user-actions-modal' });
 
  useEffect(() => {
@@ -31,18 +30,18 @@ export function App() {
  return (
   <div className="app">
    <Overlay />
-   <RegisterModal
-    RegisterFormSlot={RegisterForm}
-    isOpened={isRegisterModalOpened}
+   <SignUpModal
+    SignUpFormSlot={SignUpForm}
+    isOpened={isSignUpModalOpened}
     onClick={stopPropagationInRegisterModal}
    />
-   <LoginModal LoginFormSlot={LoginForm} isOpened={isLoginModalOpened} onClick={stopPropagationInLoginModal} />
+   <SignInModal SignInFormSlot={SignInForm} isOpened={isSignInModalOpened} onClick={stopPropagationInSignInModal} />
 
-   <RegisterModalStateContext.Provider value={{ toggleModal: toggleRegisterModal }}>
-    <LoginModalStateContext.Provider value={{ toggleModal: toggleLoginModal }}>
+   <SignUpModalStoreContext.Provider value={{ toggleModal: toggleSignUpModal }}>
+    <SignInModalStoreContext.Provider value={{ toggleModal: toggleSignInModal }}>
      <DesktopLayout />
-    </LoginModalStateContext.Provider>
-   </RegisterModalStateContext.Provider>
+    </SignInModalStoreContext.Provider>
+   </SignUpModalStoreContext.Provider>
   </div>
  );
 }

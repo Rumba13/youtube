@@ -1,18 +1,17 @@
 import './styles.scss';
 import { lazy, Suspense } from 'react';
-import { VideoType } from '../../../shared/api/types/video-type';
-
-const VideoPreview = lazy(() => import('./video-preview').then(({ VideoPreview }) => ({ default: VideoPreview })));
+import { Video } from '../../../shared/api/types/video';
 import { useTranslation } from 'react-i18next';
 import { formatReleasedDate } from './format-released-date';
 import { formatViews } from './format-views';
 import { DotsButton } from '../../../shared/ui/dots-menu-icon';
 import { useModal } from '../../../shared/lib/use-modal';
 import { VideoActionsModalSlotType } from '../../../widgets/video-actions-modal';
+const VideoPreview = lazy(() => import('./video-preview').then(({ VideoPreview }) => ({ default: VideoPreview })));
 import NoPreviewImage from '../../../assets/images/no-img.webp';
 
 type PropsType = {
- video: VideoType;
+ video: Video;
  VideoActionsModalSlot: VideoActionsModalSlotType;
 };
 

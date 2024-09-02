@@ -1,12 +1,12 @@
 import { makeAutoObservable } from 'mobx';
-import { SubscriptionType } from '../../../shared/api/types/subscription-type';
+import { Subscription } from '../../../shared/api/types/subscription';
 import { SubscriptionsService } from '../../../shared/api/subscriptions.service';
 
-export class SubscriptionsState {
- public subscriptions: SubscriptionType[] = [];
+export class SubscriptionsStore {
+ public subscriptions: Subscription[] = [];
  private subscriptionsService: SubscriptionsService;
 
- public setSubscriptions = (subscriptions: SubscriptionType[]) => (this.subscriptions = subscriptions);
+ public setSubscriptions = (subscriptions: Subscription[]) => (this.subscriptions = subscriptions);
 
  constructor(subscriptionsService: SubscriptionsService) {
   makeAutoObservable(this);
@@ -18,4 +18,4 @@ export class SubscriptionsState {
  }
 }
 
-export const subscriptionsState = new SubscriptionsState(new SubscriptionsService());
+export const subscriptionsStore = new SubscriptionsStore(new SubscriptionsService());

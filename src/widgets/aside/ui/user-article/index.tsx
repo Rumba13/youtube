@@ -11,18 +11,18 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { observer } from 'mobx-react';
 import { ExpandButton } from '../expand-button';
-import { playlistsState } from '../../../../entities/playlists';
-import { userState } from '../../../../entities/user';
+import { playlistsStore } from '../../../../entities/playlists';
+import { userStore } from '../../../../entities/user';
 
 export const UserArticle = observer(() => {
  const [isUserArticleExpanded, setIsUserArticleExpanded] = useState<boolean>(false);
  const { t } = useTranslation();
- const { playlists } = playlistsState;
- const { getUserJwt } = userState;
+ const { playlists } = playlistsStore;
+ const { getUserJwt } = userStore;
  const userJwt = getUserJwt();
 
  useEffect(() => {
-  playlistsState.loadPlaylists(userJwt);
+  playlistsStore.loadPlaylists(userJwt);
  }, [userJwt]);
 
  const items: JSX.Element[] = [

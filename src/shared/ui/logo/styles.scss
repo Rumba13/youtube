@@ -2,10 +2,10 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 100%;
   padding-right: 20px;
   cursor: pointer;
   --svg-width: 90px;
+
 
   & .svg-icon {
     width: var(--svg-width);
@@ -13,7 +13,7 @@
 
   & .country-code {
     position: absolute;
-    top: 12px;
+    top: -15%;
     left: calc(var(--svg-width) + 4px);
     font-size: 10px;
     color: var(--light-gray-color);
