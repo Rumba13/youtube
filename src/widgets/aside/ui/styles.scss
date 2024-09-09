@@ -5,10 +5,10 @@
   z-index: 1;
   grid-area: aside;
   width: 224px;
-  background-color: inherit;
-  margin-top: 56px;
   height: 100%;
+  padding-top: 56px;
   overflow-y: scroll;
+  background-color: inherit;
   @include hide-scrollbar;
 
   & .aside-article {
@@ -24,13 +24,12 @@
     }
 
     & .article-title {
+      display: block;
       font-weight: 500;
       font-size: 16px;
-      margin-top: 1px;
       padding: 6px 12px 0;
-      height: 32px;
-      margin-left: 12px;
-      margin-bottom: -1px;
+      margin-left: 14px;
+      margin-bottom: 4px;
     }
 
     & .aside-item {
@@ -40,7 +39,6 @@
       margin-left: 12px;
       padding: 0 12px;
       border-radius: 10px;
-
       &:hover {
         background-color: var(--light-dark-color);
 
@@ -93,5 +91,5 @@
 }
 
 .aside-mini {
- margin-top: 56px;
+  margin-top: 56px;
 }
