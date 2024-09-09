@@ -1,25 +1,25 @@
 .user-profile-icon {
- position: relative;
- margin-left: 15px;
- width: 34px;
+  position: relative;
+  margin-left: 15px;
+  width: 34px;
 
- & .user-profile-icon__icon {
-  width: 32px;
-  height: 32px;
-  box-sizing: content-box;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  overflow: hidden;
-  cursor: pointer;
+  & .user-profile-icon__icon {
+    width: 32px;
+    height: 32px;
+    box-sizing: content-box;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
 
-  &:active {
-   border-color: var(--dark-blue-color);
+    &:active {
+      border-color: var(--dark-blue-color);
+    }
   }
- }
 
- & .user-actions-modal {
-  position: absolute;
-  top: 100%;
-  right: -12px;
- }
+  & .user-actions-modal {
+    position: absolute;
+    top: 100%;
+    right: -12px;
+  }
 }

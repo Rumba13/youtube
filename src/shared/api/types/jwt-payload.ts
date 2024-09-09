@@ -1,6 +1,6 @@
 export type JwtPayload = {
- username: string;
- sub: string;
- icon: string;
- [key: string]: unknown;
+  username: string;
+  sub: string;
+  icon: string;
+  [key: string]: unknown;
 };

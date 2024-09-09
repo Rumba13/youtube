@@ -6,20 +6,18 @@ import { signUpStore } from '../model/sign-up-store';
 import { observer } from 'mobx-react';
 
 type PropsType = {
- SignUpFormSlot: SignUpFormSlotType;
+  SignUpFormSlot: SignUpFormSlotType;
 };
 
 export const SignUpModal = observer(({ SignUpFormSlot }: PropsType) => {
- const {
-  isModalOpened,
-  toggleModal,
-  stopPropagationInModal,
- } = useModal(false, { parentModalSelector: '.user-actions-modal' });
- signUpStore.setToggleModal(toggleModal);
+  const { isModalOpened, toggleModal, stopPropagationInModal } = useModal(false, {
+    parentModalSelector: '.user-actions-modal',
+  });
+  signUpStore.setToggleModal(toggleModal);
 
- return (
-  <div className={clsx('sign-up-modal', isModalOpened && 'opened')} onClick={stopPropagationInModal}>
-   <SignUpFormSlot />
-  </div>
- );
+  return (
+    <div className={clsx('sign-up-modal', isModalOpened && 'opened')} onClick={stopPropagationInModal}>
+      <SignUpFormSlot />
+    </div>
+  );
 });

@@ -1,27 +1,27 @@
 .aside-mini {
- width: 72px;
- padding: 4px 4px 0 4px;
+  width: 72px;
+  padding: 4px 4px 0 4px;
 
- & .aside-item {
-  display: flex;
-  flex-direction: column;
-  font-size: 10px;
-  padding: 16px 0 15px;
-  align-items: center;
-  text-align: center;
-  border-radius: 10px;
-  cursor: pointer;
+  & .aside-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    padding: 16px 0 15px;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
 
-  &:hover {
-   background-color: var(--light-dark-color);
+    &:hover {
+      background-color: var(--light-dark-color);
+    }
+
+    & .aside-item__title {
+      align-self: center;
+    }
+
+    & .aside-item__icon {
+      margin-bottom: 6px;
+    }
   }
-
-  & .aside-item__title {
-   align-self: center;
-  }
-
-  & .aside-item__icon {
-   margin-bottom: 6px;
-  }
- }
 }

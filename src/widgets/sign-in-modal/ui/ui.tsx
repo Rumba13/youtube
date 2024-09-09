@@ -9,21 +9,19 @@ import { observer } from 'mobx-react';
 export type LoginModalSlotType = FC<PropsType>;
 
 type PropsType = {
- SignInFormSlot: SignInFormSlot;
+  SignInFormSlot: SignInFormSlot;
 };
 
-export const SignInModal = observer(({  SignInFormSlot }: PropsType) => {
- const {
-  isModalOpened,
-  toggleModal,
-  stopPropagationInModal
- } = useModal(false, { parentModalSelector: '.user-actions-modal' });
+export const SignInModal = observer(({ SignInFormSlot }: PropsType) => {
+  const { isModalOpened, toggleModal, stopPropagationInModal } = useModal(false, {
+    parentModalSelector: '.user-actions-modal',
+  });
 
- signInStore.setToggleModal(toggleModal);
+  signInStore.setToggleModal(toggleModal);
 
- return (
-  <div className={clsx('login-modal', isModalOpened && 'opened')} onClick={stopPropagationInModal}>
-   <SignInFormSlot />
-  </div>
- );
+  return (
+    <div className={clsx('login-modal', isModalOpened && 'opened')} onClick={stopPropagationInModal}>
+      <SignInFormSlot />
+    </div>
+  );
 });

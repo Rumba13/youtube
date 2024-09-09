@@ -4,5 +4,5 @@ import { overlayStore } from '../model/model';
 import clsx from 'clsx';
 
 export const Overlay = observer(() => {
- return <div className={clsx('overlay', overlayStore.isOverlayOpened && 'opened')}></div>;
+  return <div className={clsx('overlay', overlayStore.isOverlayOpened && 'opened')}></div>;
 });

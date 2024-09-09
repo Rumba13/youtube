@@ -1,19 +1,19 @@
 .aside-article.user-article {
- &:not(.expanded) .aside-item:not(:last-child):nth-child(1n + 7) {
-  //collapse list;
-  display: none;
- }
-
- & .aside-item.you-item {
-  & .aside-item__icon {
-   width: 20px;
-   height: 20px;
+  &:not(.expanded) .aside-item:not(:last-child):nth-child(1n + 7) {
+    //collapse list;
+    display: none;
   }
 
-  & .aside-item__title {
-   font-size: 16px;
-   margin-right: 6px;
-   font-weight: 500;
+  & .aside-item.you-item {
+    & .aside-item__icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    & .aside-item__title {
+      font-size: 16px;
+      margin-right: 6px;
+      font-weight: 500;
+    }
   }
- }
 }

@@ -18,95 +18,104 @@ import { VoiceSearchModalSlotType } from '../../../widgets/voice-search-modal/ui
 import clsx from 'clsx';
 
 type PropsType = {
- VoiceSearchModalSlot: VoiceSearchModalSlotType;
+  VoiceSearchModalSlot: VoiceSearchModalSlotType;
 };
 
 export const Search = observer(({ VoiceSearchModalSlot }: PropsType) => {
- const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
- const screenWidth = useScreenWidth();
- const { t } = useTranslation();
+  const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
+  const screenWidth = useScreenWidth();
+  const { t } = useTranslation();
 
- const {
-  isSearchFocused,
-  isSearchOpened,
-  isSearchMinified,
-  setIsSearchMinified,
-  setIsSearchOpened,
-  setIsSearchFocused,
- } = searchStore;
+  const {
+    isSearchFocused,
+    isSearchOpened,
+    isSearchMinified,
+    setIsSearchMinified,
+    setIsSearchOpened,
+    setIsSearchFocused,
+  } = searchStore;
 
- if (isSearchMinified && isSearchOpened) {
-  document.addEventListener('click', () => setIsSearchOpened(false));
- }
-
- useEffect(() => {
-  overlayStore.setIsOverlayOpened(isModalOpened);
-  setIsSearchMinified(screenWidth <= 750);
-
-  if (screenWidth >= 750) {
-   setIsSearchOpened(false);
+  if (isSearchMinified && isSearchOpened) {
+    document.addEventListener('click', () => setIsSearchOpened(false));
   }
- }, [screenWidth, isModalOpened]);
- //TODO write adaptive on css
- return (
-  <>
-   {isSearchMinified && (
+
+  useEffect(() => {
+    overlayStore.setIsOverlayOpened(isModalOpened);
+    setIsSearchMinified(screenWidth <= 750);
+
+    if (screenWidth >= 750) {
+      setIsSearchOpened(false);
+    }
+  }, [screenWidth, isModalOpened]);
+  //TODO write adaptive on css
+  return (
     <>
-     {!isSearchOpened && (
-      <>
-       {' '}
-       <SearchButton
-        type="mini"
-        buttonType="button"
-        onClick={event => {
-         setIsSearchOpened(true);
-         setIsSearchFocused(true);
-         event.stopPropagation();
-        }}
-       />
-       <VoiceSearchButton type="mini" />
-      </>
-     )}
-    </>
-   )}
-
-   {(!isSearchMinified || isSearchOpened) && (
-    <div
-     className={clsx('search', isSearchFocused && 'focused')}
-     onClick={event => (isSearchOpened ? event.stopPropagation() : void 0)}>
-     <Formik
-      initialValues={{ query: '' }}
-      onSubmit={(values, { setSubmitting }) => {
-       search(values.query); //TODO add returning to Store
-       setSubmitting(false);
-      }}>
-      {({ values, isSubmitting, setFieldValue }) => (
-       <Form className="search-form">
-        <label className="search-form-container" htmlFor="query">
-         <SvgIcon className="search-icon" icon={SearchIcon} />
-         <Field
-          className="search-form__field"
-          type="text"
-          name="query"
-          id="query"
-          placeholder={t('Enter Query')}
-          aria-label={t('Enter Query')}
-          onFocus={() => setIsSearchFocused(true)}
-          onBlur={() => setIsSearchFocused(false)}
-         />
-         <Icon className="search-form__virtual-keyboard-icon dark-theme" icon={keyboardIcon} width={19} height={11} />
-         {values.query && <CrossIcon onClick={() => setFieldValue('query', '')} />}
-        </label>
-        <SearchButton type="normal" buttonType="submit" disabled={isSubmitting} />
-
-        <VoiceSearchButton type={isSearchMinified ? 'mini' : 'normal'} toolTip onClick={() => setIsModalOpened(true)} />
-
-        <VoiceSearchModalSlot isOpened={isModalOpened} setIsOpened={setIsModalOpened} />
-       </Form>
+      {isSearchMinified && (
+        <>
+          {!isSearchOpened && (
+            <>
+              {' '}
+              <SearchButton
+                type="mini"
+                buttonType="button"
+                onClick={event => {
+                  setIsSearchOpened(true);
+                  setIsSearchFocused(true);
+                  event.stopPropagation();
+                }}
+              />
+              <VoiceSearchButton type="mini" />
+            </>
+          )}
+        </>
       )}
-     </Formik>
-    </div>
-   )}
-  </>
- );
+
+      {(!isSearchMinified || isSearchOpened) && (
+        <div
+          className={clsx('search', isSearchFocused && 'focused')}
+          onClick={event => (isSearchOpened ? event.stopPropagation() : void 0)}>
+          <Formik
+            initialValues={{ query: '' }}
+            onSubmit={(values, { setSubmitting }) => {
+              search(values.query); //TODO add returning to Store
+              setSubmitting(false);
+            }}>
+            {({ values, isSubmitting, setFieldValue }) => (
+              <Form className="search-form">
+                <label className="search-form-container" htmlFor="query">
+                  <SvgIcon className="search-icon" icon={SearchIcon} />
+                  <Field
+                    className="search-form__field"
+                    type="text"
+                    name="query"
+                    id="query"
+                    placeholder={t('Enter Query')}
+                    aria-label={t('Enter Query')}
+                    onFocus={() => setIsSearchFocused(true)}
+                    onBlur={() => setIsSearchFocused(false)}
+                  />
+                  <Icon
+                    className="search-form__virtual-keyboard-icon dark-theme"
+                    icon={keyboardIcon}
+                    width={19}
+                    height={11}
+                  />
+                  {values.query && <CrossIcon onClick={() => setFieldValue('query', '')} />}
+                </label>
+                <SearchButton type="normal" buttonType="submit" disabled={isSubmitting} />
+
+                <VoiceSearchButton
+                  type={isSearchMinified ? 'mini' : 'normal'}
+                  toolTip
+                  onClick={() => setIsModalOpened(true)}
+                />
+
+                <VoiceSearchModalSlot isOpened={isModalOpened} setIsOpened={setIsModalOpened} />
+              </Form>
+            )}
+          </Formik>
+        </div>
+      )}
+    </>
+  );
 });

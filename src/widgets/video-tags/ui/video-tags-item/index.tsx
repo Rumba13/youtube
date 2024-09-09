@@ -3,15 +3,15 @@ import { MouseEventHandler } from 'react';
 import clsx from 'clsx';
 
 type PropsType = {
- children: string;
- isActive: boolean;
- onClick?: MouseEventHandler;
+  children: string;
+  isActive: boolean;
+  onClick?: MouseEventHandler;
 };
 
 export function VideoTagsItem({ children, isActive, onClick }: PropsType) {
- return (
-  <li className={clsx('video-tags-item', isActive && 'active')} onClick={onClick}>
-   {children}
-  </li>
- );
+  return (
+    <li className={clsx('video-tags-item', isActive && 'active')} onClick={onClick}>
+      {children}
+    </li>
+  );
 }

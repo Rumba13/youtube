@@ -1,23 +1,23 @@
 .remove-notification-button {
- display: flex;
- align-items: center;
- height: 36px;
- padding: 0 12px 0 16px;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 12px 0 16px;
 
- &:hover {
-  background-color: var(--gray-color);
- }
+  &:hover {
+    background-color: var(--gray-color);
+  }
 
- & .remove-notification-button__icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 16px;
-  fill: white;
- }
+  & .remove-notification-button__icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    fill: white;
+  }
 
- & .remove-notification-button__title {
-  margin-right: 24px;
-  font-size: 14px;
-  color: var(--white-color);
- }
+  & .remove-notification-button__title {
+    margin-right: 24px;
+    font-size: 14px;
+    color: var(--white-color);
+  }
 }

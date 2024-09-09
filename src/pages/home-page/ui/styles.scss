@@ -1,8 +1,8 @@
 .home-page {
   display: grid;
   grid-template:
-  'video-tags' min-content
-  'video-list' auto / auto;
+    'video-tags' min-content
+    'video-list' auto / auto;
   margin-left: 240px;
 
   & > .video-tags {

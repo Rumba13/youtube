@@ -1,15 +1,15 @@
 .video-preview {
- height: 100%;
- position: relative;
- background-repeat: no-repeat;
- background-size: cover;
- background-position: center;
- object-fit: contain;
+  height: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: contain;
 }
 .video-preview-wrapper {
- width: 100%;
- aspect-ratio: 16 / 9;
- max-height: 100%;
- border-radius: 8px;
- overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
 }

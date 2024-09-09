@@ -6,11 +6,10 @@ import { asideStore } from '../../../widgets/aside';
 import { observer } from 'mobx-react';
 
 export const HomePage = observer(() => {
-
- return (
-  <div className="home-page" style={{ marginLeft: asideStore.isMinified ? '0px' : '240px' }}>
-   <VideoTags />
-   <VideoList VideoActionsModalSlot={VideoActionsList} />
-  </div>
- );
-})
+  return (
+    <div className="home-page" style={{ marginLeft: asideStore.isMinified ? '0px' : '240px' }}>
+      <VideoTags />
+      <VideoList VideoActionsModalSlot={VideoActionsList} />
+    </div>
+  );
+});

@@ -2,7 +2,8 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 
-  &::-webkit-scrollbar { /* Hide scrollbar for IE, Edge*/
+  &::-webkit-scrollbar {
+    /* Hide scrollbar for IE, Edge*/
     display: none;
   }
 }

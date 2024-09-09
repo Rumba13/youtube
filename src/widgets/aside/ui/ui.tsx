@@ -11,18 +11,18 @@ import { UserArticle } from './user-article';
 import { AsideMini } from './aside-mini';
 
 export const Aside = observer(() => {
- if (asideStore.isMinified) {
-  return <AsideMini />;
- }
- return (
-  <aside className="aside">
-   <MainArticle />
-   <UserArticle />
-   <SubscriptionsArticle />
-   <NavigationArticle />
-   <OtherArticle />
-   <ActionsArticle />
-   <AsideFooter />
-  </aside>
- );
+  if (asideStore.isMinified) {
+    return <AsideMini />;
+  }
+  return (
+    <aside className="aside">
+      <MainArticle />
+      <UserArticle />
+      <SubscriptionsArticle />
+      <NavigationArticle />
+      <OtherArticle />
+      <ActionsArticle />
+      <AsideFooter />
+    </aside>
+  );
 });

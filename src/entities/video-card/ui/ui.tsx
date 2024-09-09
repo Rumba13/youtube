@@ -11,31 +11,31 @@ const VideoPreview = lazy(() => import('./video-preview').then(({ VideoPreview }
 import NoPreviewImage from '../../../assets/images/no-img.webp';
 
 type PropsType = {
- video: Video;
- VideoActionsModalSlot: VideoActionsModalSlotType;
+  video: Video;
+  VideoActionsModalSlot: VideoActionsModalSlotType;
 };
 
 export function VideoCard({ video, VideoActionsModalSlot }: PropsType) {
- const { t } = useTranslation();
- const { isModalOpened, toggleModal, stopPropagationInModal } = useModal(false);
+  const { t } = useTranslation();
+  const { isModalOpened, toggleModal, stopPropagationInModal } = useModal(false);
 
- return (
-  <div className="video">
-   <Suspense fallback={<img src={NoPreviewImage} alt="No preview" />}>
-    <VideoPreview preview={video.preview} />
-   </Suspense>
-   <img className="video__channel-icon" src={video.channelIcon} alt={t('Video Preview')} width={26} height={26} />
-   <span className="video_title">{video.title}</span>
-   <DotsButton
-    onClick={toggleModal}
-    onModalClick={stopPropagationInModal}
-    ModalSlot={VideoActionsModalSlot}
-    isModalOpened={isModalOpened}
-    isOpened={isModalOpened}
-   />
-   <span className="video__channel-name">{video.channelName}</span>
-   <span className="video__views">{formatViews(video.views, t)}</span>
-   <span className="video__ago">{formatReleasedDate(video.releaseDate, t)}</span>
-  </div>
- );
+  return (
+    <div className="video">
+      <Suspense fallback={<img src={NoPreviewImage} alt="No preview" />}>
+        <VideoPreview preview={video.preview} />
+      </Suspense>
+      <img className="video__channel-icon" src={video.channelIcon} alt={t('Video Preview')} width={26} height={26} />
+      <span className="video__title">{video.title}</span>
+      <DotsButton
+        onClick={toggleModal}
+        onModalClick={stopPropagationInModal}
+        ModalSlot={VideoActionsModalSlot}
+        isModalOpened={isModalOpened}
+        isOpened={isModalOpened}
+      />
+      <span className="video__channel-name">{video.channelName}</span>
+      <span className="video__views">{formatViews(video.views, t)}</span>
+      <span className="video__ago">{formatReleasedDate(video.releaseDate, t)}</span>
+    </div>
+  );
 }

@@ -1,4 +1,4 @@
 export type VideoTag = {
- title: string;
- id: string;
+  title: string;
+  id: string;
 };

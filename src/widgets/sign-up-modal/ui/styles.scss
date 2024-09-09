@@ -1,37 +1,37 @@
 .sign-up-modal {
- position: absolute;
- top: 50%;
- right: 50%;
- transform: translate(50%, -50%);
- z-index: 300;
- display: none;
- padding: 10px;
- background-color: var(--light-dark-color);
- box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
- border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  z-index: 300;
+  display: none;
+  padding: 10px;
+  background-color: var(--light-dark-color);
+  box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 
- &.opened {
-  display: block;
- }
-
- & .register-form {
-  display: flex;
-  flex-direction: column;
-
-  & .register-form__title {
-   font-size: 18px;
-   margin-bottom: 10px;
-   text-align: center;
+  &.opened {
+    display: block;
   }
 
-  & .register-form__field {
-   padding: 7px;
-   margin: 5px;
-  }
+  & .register-form {
+    display: flex;
+    flex-direction: column;
 
-  & .register-form__submit-button {
-   padding: 4px 0;
-   margin: 5px;
+    & .register-form__title {
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    & .register-form__field {
+      padding: 7px;
+      margin: 5px;
+    }
+
+    & .register-form__submit-button {
+      padding: 4px 0;
+      margin: 5px;
+    }
   }
- }
 }

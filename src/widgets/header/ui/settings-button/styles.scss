@@ -1,21 +1,21 @@
 .gear-button {
- position: relative;
- align-items: center;
- padding: 8px;
-
- & .button__interaction:hover {
-  background-color: var(--gray-color);
-
-  & ~ .text-tip {
-   display: block;
-  }
- }
-
- & .gear-button__icon {
   position: relative;
-  z-index: 3;
-  fill: currentColor;
-  pointer-events: none;
-  cursor: pointer;
- }
+  align-items: center;
+  padding: 8px;
+
+  & .button__interaction:hover {
+    background-color: var(--gray-color);
+
+    & ~ .text-tip {
+      display: block;
+    }
+  }
+
+  & .gear-button__icon {
+    position: relative;
+    z-index: 3;
+    fill: currentColor;
+    pointer-events: none;
+    cursor: pointer;
+  }
 }

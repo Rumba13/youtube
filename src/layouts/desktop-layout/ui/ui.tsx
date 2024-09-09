@@ -9,17 +9,17 @@ import { VoiceSearchModal } from '../../../widgets/voice-search-modal';
 import { CreateVideoActionsModal } from '../../../widgets/create-video-actions-modal';
 
 export function DesktopLayout() {
- return (
-  <>
-   <Header
-    VideoActionsModal={CreateVideoActionsModal}
-    UserActionsModalSlot={UserActionsModal}
-    NotificationsModalSlot={ NotificationsModal}
-    NotificationActionsModalSlot={NotificationsActionsModal}
-    VoiceSearchModalSlot={VoiceSearchModal}
-   />
-   <Aside />
-   <Routes />
-  </>
- );
+  return (
+    <>
+      <Header
+        VideoActionsModal={CreateVideoActionsModal}
+        UserActionsModalSlot={UserActionsModal}
+        NotificationsModalSlot={NotificationsModal}
+        NotificationActionsModalSlot={NotificationsActionsModal}
+        VoiceSearchModalSlot={VoiceSearchModal}
+      />
+      <Aside />
+      <Routes />
+    </>
+  );
 }

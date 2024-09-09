@@ -7,18 +7,18 @@ import { englishTranslation } from './translations/en';
 
 //TODO fix options translate(in user-actions)
 i18next
- .use(XHR)
- .use(initReactI18next)
- .use(LanguageDetector)
- .init({
-  resources: {
-   en: englishTranslation,
-   ru: russianTranslation,
-  },
-  detection: { order: ['path', 'navigator'] },
-  fallbackLng: 'en',
+  .use(XHR)
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .init({
+    resources: {
+      en: englishTranslation,
+      ru: russianTranslation,
+    },
+    detection: { order: ['path', 'navigator'] },
+    fallbackLng: 'en',
 
-  interpolation: {
-   escapeValue: false,
-  },
- });
+    interpolation: {
+      escapeValue: false,
+    },
+  });

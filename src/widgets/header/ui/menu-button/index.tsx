@@ -8,13 +8,13 @@ import { asideStore } from '../../../aside';
 import { observer } from 'mobx-react';
 
 export const MenuButton = observer(() => {
- const { t } = useTranslation();
- const { isMinified, setIsMinified } = asideStore;
+  const { t } = useTranslation();
+  const { isMinified, setIsMinified } = asideStore;
 
- return (
-  <Button className="menu-button" onClick={() => setIsMinified(!isMinified)} ariaLabel={t('Open Menu')}>
-   <SvgIcon className="menu-button__icon" icon={MenuIcon} />
-   <TextTip>{t('VladIsAssHole')}</TextTip>
-  </Button>
- );
+  return (
+    <Button className="menu-button" onClick={() => setIsMinified(!isMinified)} ariaLabel={t('Open Menu')}>
+      <SvgIcon className="menu-button__icon" icon={MenuIcon} />
+      <TextTip>{t('VladIsAssHole')}</TextTip>
+    </Button>
+  );
 });

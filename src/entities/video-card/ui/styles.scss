@@ -1,107 +1,111 @@
+@import '../../../app/styles/set-line-clamp';
+
 .video {
- position: relative;
- display: grid;
- grid-template:
-  'video-preview video-preview video-preview'
-  'channel-icon title title'
-  '. channel-name channel-name'
-  '. views released-ago';
- grid-template-rows: min-content min-content min-content min-content;
- grid-template-columns: auto auto 1fr;
+  position: relative;
+  display: grid;
+  grid-template:
+    'video-preview video-preview video-preview video-preview'
+    'channel-icon title title dots-button'
+    '. channel-name channel-name channel-name'
+    '. views released-ago released-ago';
+  grid-template-columns: auto auto 1fr min-content;
+  grid-template-rows: min-content min-content min-content min-content;
 
- &:hover {
+  &:hover {
+    & .dots-button {
+      visibility: visible;
+    }
+  }
+
   & .dots-button {
-   display: flex;
+    display: flex;
+    position: relative;
+    bottom: 16px;
+    left: 12px;
+    grid-area: dots-button;
+    visibility: hidden;
+
+    &.opened {
+      visibility: visible;
+    }
   }
- }
 
- & .dots-button {
-  display: none;
-  position: absolute;
-  bottom: 20%;
-  right: 0;
-
-  &.opened {
-   display: flex;
+  & > .video-preview-wrapper {
+    grid-area: video-preview;
+    margin-bottom: 13px;
+    pointer-events: none;
   }
- }
 
- & > .video-preview-wrapper {
-  grid-area: video-preview;
-  margin-bottom: 13px;
-  pointer-events: none;
- }
-
- & .video__channel-icon {
-  grid-area: channel-icon;
-  width: 36px;
-  border-radius: 50%;
-  margin-right: 10px;
- }
-
- & .video_title {
-  grid-area: title;
-  padding-right: 30px;
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  text-overflow: ellipsis;
-  overflow: hidden;
- }
-
- & .video__channel-name,
- & .video__views,
- & .video__ago {
-  grid-area: channel-name;
-  font-size: 14px;
-  color: var(--light-gray-color);
-  margin-bottom: 3px;
- }
-
- & .video__channel-name {
-  grid-area: channel-name;
-  font-size: 14px;
-  color: var(--light-gray-color);
-  margin-top: -8px;
- }
-
- & .video__views {
-  grid-area: views;
- }
-
- & .video__ago {
-  grid-area: released-ago;
-
-  &:before {
-   content: '•';
-   margin-left: 5px;
-   margin-right: 5px;
+  & .video__channel-icon {
+    grid-area: channel-icon;
+    width: 36px;
+    border-radius: 50%;
+    margin-right: 10px;
   }
- }
+
+  & .video__title {
+    grid-area: title;
+    margin-right: -3%;
+    padding-right: 30px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    @include set-line-clamp(2);
+  }
+
+  & .video__channel-name,
+  & .video__views,
+  & .video__ago {
+    grid-area: channel-name;
+    font-size: 14px;
+    color: var(--light-gray-color);
+    margin-bottom: 3px;
+  }
+
+  & .video__channel-name {
+    grid-area: channel-name;
+    font-size: 14px;
+    color: var(--light-gray-color);
+    margin-top: -8px;
+  }
+
+  & .video__views {
+    grid-area: views;
+  }
+
+  & .video__ago {
+    grid-area: released-ago;
+
+    &:before {
+      content: '•';
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
 }
 //TODO Find more ease way to fix bug(video-actions-modal goes off screen on the right most column of video)
 @media (max-width: 1920px) {
- .video:nth-child(5n) .dots-button .video-actions-list {
-  left: initial;
-  right: 0;
- }
+  .video:nth-child(5n) .dots-button .video-actions-list {
+    left: initial;
+    right: 0;
+  }
 }
 @media (max-width: 1704px) {
- .video:nth-child(4) .dots-button .video-actions-list {
-  left: initial;
-  right: 0;
- }
+  .video:nth-child(4) .dots-button .video-actions-list {
+    left: initial;
+    right: 0;
+  }
 }
 @media (max-width: 1388px) {
- .video:nth-child(3) .dots-button .video-actions-list {
-  left: initial;
-  right: 0;
- }
+  .video:nth-child(3) .dots-button .video-actions-list {
+    left: initial;
+    right: 0;
+  }
 }
 @media (max-width: 1072px) {
- .video:nth-child(2) .dots-button .video-actions-list {
-  left: initial;
-  right: 0;
- }
+  .video:nth-child(2) .dots-button .video-actions-list {
+    left: initial;
+    right: 0;
+  }
 }

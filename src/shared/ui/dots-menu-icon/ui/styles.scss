@@ -1,23 +1,23 @@
 .dots-button {
- padding: 6px;
- border: 1px solid transparent;
- border-radius: 50%;
- fill: currentColor;
+  padding: 6px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  fill: currentColor;
 
- & .button__interaction {
-  &:active {
-   border-color: var(--gray-color);
-   background-color: var(--gray-color);
+  & .button__interaction {
+    &:active {
+      border-color: var(--gray-color);
+      background-color: var(--gray-color);
+    }
+
+    &:not(:active) {
+      transition: 0.5s border;
+    }
   }
 
-  &:not(:active) {
-   transition: 0.5s border;
+  & .dots-button__icon {
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
   }
- }
-
- & .dots-button__icon {
-  position: relative;
-  z-index: 3;
-  pointer-events: none;
- }
 }

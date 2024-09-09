@@ -9,8 +9,7 @@
   padding-right: 45px;
   padding-top: 8px;
 
-  grid-template:
-         'menu-icon logo search create-video-icon notifications-icon user-profile-icon' auto / auto auto 1fr auto auto auto auto;
+  grid-template: 'menu-icon logo search create-video-icon notifications-icon user-profile-icon' auto / auto auto 1fr auto auto auto auto;
 
   & > .logo {
     grid-area: logo;
