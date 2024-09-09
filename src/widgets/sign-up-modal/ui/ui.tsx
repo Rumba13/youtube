@@ -1,18 +1,25 @@
 import './styles.scss';
-import { MouseEventHandler } from 'react';
 import clsx from 'clsx';
 import { SignUpFormSlotType } from '../../sign-up-form/ui/ui';
+import { useModal } from '../../../shared/lib/use-modal';
+import { signUpStore } from '../model/sign-up-store';
+import { observer } from 'mobx-react';
 
 type PropsType = {
- isOpened: boolean;
- onClick?: MouseEventHandler;
  SignUpFormSlot: SignUpFormSlotType;
 };
 
-export function SignUpModal({ isOpened, onClick, SignUpFormSlot }: PropsType) {
+export const SignUpModal = observer(({ SignUpFormSlot }: PropsType) => {
+ const {
+  isModalOpened,
+  toggleModal,
+  stopPropagationInModal,
+ } = useModal(false, { parentModalSelector: '.user-actions-modal' });
+ signUpStore.setToggleModal(toggleModal);
+
  return (
-  <div className={clsx('sign-up-modal', isOpened && 'opened')} onClick={onClick}>
+  <div className={clsx('sign-up-modal', isModalOpened && 'opened')} onClick={stopPropagationInModal}>
    <SignUpFormSlot />
   </div>
  );
-}
+});

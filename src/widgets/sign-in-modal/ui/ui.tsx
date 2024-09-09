@@ -1,21 +1,29 @@
 import './styles.scss';
-import { FC, MouseEventHandler } from 'react';
+import { FC } from 'react';
 import clsx from 'clsx';
 import { SignInFormSlot } from '../../sign-in-form';
+import { useModal } from '../../../shared/lib/use-modal';
+import { signInStore } from '../model/sign-in-store';
+import { observer } from 'mobx-react';
 
 export type LoginModalSlotType = FC<PropsType>;
 
 type PropsType = {
- isOpened: boolean;
- onClick?: MouseEventHandler;
  SignInFormSlot: SignInFormSlot;
 };
 
-export function SignInModal({ isOpened, onClick, SignInFormSlot }: PropsType) {
- //separate login form from modal
+export const SignInModal = observer(({  SignInFormSlot }: PropsType) => {
+ const {
+  isModalOpened,
+  toggleModal,
+  stopPropagationInModal
+ } = useModal(false, { parentModalSelector: '.user-actions-modal' });
+
+ signInStore.setToggleModal(toggleModal);
+
  return (
-  <div className={clsx('login-modal', isOpened && 'opened')} onClick={onClick}>
+  <div className={clsx('login-modal', isModalOpened && 'opened')} onClick={stopPropagationInModal}>
    <SignInFormSlot />
   </div>
  );
-}
+});

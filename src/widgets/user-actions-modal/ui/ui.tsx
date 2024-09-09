@@ -22,8 +22,8 @@ import { userStore } from '../../../entities/user';
 import { observer } from 'mobx-react';
 import noUserProfileIcon from '../../../assets/images/no-user-profile-icon.webp';
 import clsx from 'clsx';
-import { SignInModalStoreContext } from '../../sign-in-modal';
-import { SignUpModalStoreContext } from '../../sign-up-modal';
+import { signInStore } from '../../sign-in-modal/model/sign-in-store';
+import { signUpStore } from '../../sign-up-modal/model/sign-up-store';
 
 type PropsType = {
  className?: string;
@@ -39,8 +39,6 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
  const theme = t('theme_' + 'sync');
  const location = t('by');
  const isRestrictedModeEnable = false;
- const { toggleModal: toggleRegisterModal } = useContext(SignUpModalStoreContext);
- const { toggleModal: toggleLoginModal } = useContext(SignInModalStoreContext);
  const user = userStore.user;
 
  return (
@@ -157,13 +155,13 @@ export const UserActionsModal = observer(({ className, isOpened, onClick }: Prop
     {user === null && (
      <>
       <li className="user-actions-list__item">
-       <span className="item-link" onClick={toggleRegisterModal} key={15}>
+       <span className="item-link" onClick={signUpStore.toggleModal} key={15}>
         <SvgIcon className="item-icon" icon={AccountChangeIcon} />
         {t('Sign Up')}
        </span>
       </li>
       <li className="user-actions-list__item">
-       <span className="item-link" onClick={toggleLoginModal} key={16}>
+       <span className="item-link" onClick={signInStore.toggleModal} key={16}>
         <SvgIcon className="item-icon" icon={AccountIcon} />
         {t('Login')}
        </span>
